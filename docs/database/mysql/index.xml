@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>MySQL on IWiki</title>
-    <link>https://localhost:1313/docs/database/mysql/</link>
+    <link>https://jiandar.github.io/docs/database/mysql/</link>
     <description>Recent content in MySQL on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/database/mysql/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/database/mysql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>基础元素</title>
-      <link>https://localhost:1313/docs/database/mysql/basic/</link>
+      <link>https://jiandar.github.io/docs/database/mysql/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/database/mysql/basic/</guid>
+      <guid>https://jiandar.github.io/docs/database/mysql/basic/</guid>
       <description>基础元素#数据类型#整数类型#   类型 描述 大小 范围（有符号） 范围（无符号）     TINYINT 迷你整形 1 字节 (-128，127) (0，255)   SMALLINT 小整形 2 字节 (-32 768，32 767) (0，65 535)   MEDIUMINT 中整形 3 字节     INT或INTEGER 标准整形 4 字节     BIGINT 大整形 8 字节      小数类型# 语法：如Float(M,D)，M表示数值总位数，D代表小数部分位数     类型 描述 大小     FLOAT 单精度浮点型 4 字节   DOUBLE 双精度浮点型 8 字节   DECIMAL 数值型 16 字节    日期时间类型#   类型 描述 大小 格式 范围     YEAR 年 1 字节 YYYY 1901 ~ 2155   DATE 日期 3 字节 YYYY-MM-DD 1000-01-01 ~ 9999-12-31   TIME 时间 3 字节 HH:MM:SS &amp;lsquo;-838:59:59&amp;rsquo; ~ &amp;lsquo;838:59:59&amp;rsquo;   TIMESTAMP 时间戳 4 字节 YYYYMMDD HHMMSS 1970-01-01 00:00:00 ~ 2038-1-19 11:14:07   DATETIME 日期时间 8 字节 YYYY-MM-DD HH:MM:SS 1000-01-01 00:00:00 ~9999-12-31 23:59:59    字符串类型#   类型 描述 大小     CHAR 定长字符 0-255字节   VARCHAR 变长字符 0-65535 字节   TINYTEXT 短文本 0-255字节   TEXT 文本 0-65 535字节   MEDIUMTEXT 长文本 0-16 777 215字节   LONGTEXT 极大文本 0-4 294 967 295字节   TINYBLOB 二进制，短文本 0-255字节   BLOB 二进制，文本 0-65 535字节   MEDIUMBLOB 二进制，长文本 0-16 777 215字节   LONGBLOB 二进制，极大文本 0-4 294 967 295字节    操作符#逻辑/算术/位运算符#   逻辑运算符 描述 算术运算符 描述 位运算符 描述     NOT、!</description>
     </item>
     

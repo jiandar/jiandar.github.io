@@ -2,43 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS 样式 on IWiki</title>
-    <link>https://localhost:1313/docs/dev-lang/css/style/</link>
+    <link>https://jiandar.github.io/docs/dev-lang/css/style/</link>
     <description>Recent content in CSS 样式 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/dev-lang/css/style/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-lang/css/style/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>字体样式</title>
-      <link>https://localhost:1313/docs/dev-lang/css/style/font/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/style/font/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/style/font/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/style/font/</guid>
       <description>字体样式#属性属性说明属性值属性值说明color字体颜色color颜色值font-style字体风格normal正常italic斜体oblique斜体font-weight字体粗细100 - 900数值：400=normal，700=boldlighter更细normal标准bold粗体bolder更粗font-size字体尺寸size数值xx-small&amp;nbsp;&amp;nbsp;9px&amp;nbsp;x-small11px&amp;nbsp;&amp;nbsp; small13px&amp;nbsp; medium16px&amp;nbsp;&amp;nbsp; large19px&amp;nbsp;x-large23pxxx-large28pxfont-family字体系列字体名Times、&#34;</description>
     </item>
     
     <item>
       <title>文本样式</title>
-      <link>https://localhost:1313/docs/dev-lang/css/style/text/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/style/text/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/style/text/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/style/text/</guid>
       <description>文本样式#属性属性说明属性值属性值说明text-align水平对齐&amp;nbsp;
 仅对块级元素有效left左对齐center居中right右对齐justify两端对齐vertical-align垂直对齐baseline默认sub下标super上标top最顶端对齐text-top顶端对齐middle中部对齐bottom最底端对齐text-bottom底端对齐size数值line-height文本行高size数值word-spacing单词间距size数值letter-spacing字符间距size数值text-indent首行缩进size数值text-transform文本大小写none默认capitalize单词大写字母开头uppercase字母都大写lowercase字母都小写text-decoration修饰文本none默认underline划线，文本底部overline划线，文本顶部line-through划线，穿过文本文字基线#</description>
     </item>
     
     <item>
       <title>列表样式</title>
-      <link>https://localhost:1313/docs/dev-lang/css/style/list/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/style/list/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/style/list/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/style/list/</guid>
       <description>列表样式#属性属性说明属性值属性值说明list-style简写属性&amp;nbsp;空格分隔各值，不分顺序list-style-image列表项标志的图片none无图片，默认URL图片路径list-style-position列表项标志的位置outside标记在文本外，文本与文本对齐。默认inside标记在文本内，文本与标记对齐list-style-type列表项标志的类型none无标记disc实心圆，默认circle空心圆square实心方块decimal数字lower-alpha小写英文字母(a、b、c、...)upper-alpha大写英文字母(A、B、C、...)lower-roman小写罗马数字(i、ii、iii、.</description>
     </item>
     
     <item>
       <title>背景样式</title>
-      <link>https://localhost:1313/docs/dev-lang/css/style/background/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/style/background/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/style/background/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/style/background/</guid>
       <description>背景样式#属性属性说明属性值属性值说明background简写&amp;nbsp;空格分隔各值，不分顺序background-color背景颜色transparent透明色，默认color颜色值background-image背景图片none无图片，默认url(&#39;URL&#39;)图片路径background-repeat背景图片重复repeat默认。垂直方向及水平方向重复repeat-x水平方向重复repeat-y垂直方向重复no-repeat不重复background-attachment背景图片滚动scroll跟随滚动。默认fixed固定background-position背景图片起始位置当只有一个值时，第二个值默认为居中x%、y%百分比，默认0% 0%x、y数值top上bottom下left左right右center中示例#body{ background-image:url(&amp;#39;/i/eg_bg_03.</description>
     </item>
     

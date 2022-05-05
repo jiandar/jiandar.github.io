@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>虚拟机 on IWiki</title>
-    <link>https://localhost:1313/docs/java/jvm/</link>
+    <link>https://jiandar.github.io/docs/java/jvm/</link>
     <description>Recent content in 虚拟机 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/jvm/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/java/jvm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>内存结构</title>
-      <link>https://localhost:1313/docs/java/jvm/memory-structure/</link>
+      <link>https://jiandar.github.io/docs/java/jvm/memory-structure/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/jvm/memory-structure/</guid>
+      <guid>https://jiandar.github.io/docs/java/jvm/memory-structure/</guid>
       <description>内存结构#运行时数据区# JVM 在执行 Java 程序的过程中，会把它所管理的内存区域划分为若干个不同的数据区域  方法区# 即永久代 用于存储类信息、常量、静态常量、即时编译后的代码 运行时常量池，也是方法区的一部分，用于存放编译期生成的各种字面量和符号引用  堆内存# 用于存储对象实例、数组 是垃圾收集器管理的主要区域 堆内存采用分代收集算法，又细分为：新生代（Eden区、SurvivorFrom区、SurvivorTo区）、老年代  虚拟机栈# 栈内存，是Java方法执行的内存模型 每个方法被执行时，都会创建一个栈帧来存储局部变量表、操作数栈、动态链接、方法出口等信息 方法从被调用到执行完成的过程，就对应着栈帧在虚拟机栈中从入栈到出栈的过程  本地方法栈# 与虚拟机栈相同，区别是虚拟机栈为执行 Java 方法服务，而本地方法栈则为 Native 方法服务  程序计算器# 在 Java 虚拟机中，唯一没有 OOM 的区域 是一小块内存空间，用于存储当前线程正在执行字节码指令的地址值  正在执行 Java 方法时，记录的是当前指令的地址 正在执行 Native 方法时，则为 Undefined    内存区域分代#新生代# 由于频繁创建对象，所以新生代会频繁触发 MinorGC 进行垃圾回收    分区 说明     Eden 区 Java 新对象的出生地（大对象直接分配到老年代）当 Eden 区内存不够的时候就会触发 MinorGC，对新生代区进行一次垃圾回收   ServivorFrom 区ServivorTo 区 存放 MinorGC 过程中的幸存者使用复制算法，From、To区交互配合使用      老年代# 主要存放应用程序中生命周期长的内存对象，老年代的对象比较稳定，所以 MajorGC 不会频繁执行  永久代# 指内存的永久保存区域，主要存放 Class 和 Meta（元数据）的信息 GC 不会在主程序运行期对永久区域进行清理 在JDK1.</description>
     </item>
     

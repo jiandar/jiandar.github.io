@@ -2,51 +2,51 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>面向对象 on IWiki</title>
-    <link>https://localhost:1313/docs/java/oop/</link>
+    <link>https://jiandar.github.io/docs/java/oop/</link>
     <description>Recent content in 面向对象 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/oop/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/java/oop/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>类和对象</title>
-      <link>https://localhost:1313/docs/java/oop/class/</link>
+      <link>https://jiandar.github.io/docs/java/oop/class/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/oop/class/</guid>
+      <guid>https://jiandar.github.io/docs/java/oop/class/</guid>
       <description>类和对象#概述# 类：是一个模板，它描述一类对象的状态和行为。 对象：是类的一个实例，有状态和行为。  构造方法# 每个类都有构造方法。 如果没有显式定义，Java编译器将会为该类提供一个默认构造方法。 在创建一个对象的时候，至少要调用一个构造方法。 构造方法的名称必须与类同名。 一个类可以有多个构造方法。  public class Puppy{ public Puppy(){ } public Puppy(String name){ // 这个构造器仅有一个参数：name  } } 创建对象#// 创建类 class 类名{ // 成员变量定义...  // 方法定义... } // 创建对象，调用类构造方法 className myObject = new className(); 对象操作#public class Puppy { private String name; public Puppy(String name) { this.name = name; } public String getName() { return this.</description>
     </item>
     
     <item>
       <title>封装</title>
-      <link>https://localhost:1313/docs/java/oop/encapsulation/</link>
+      <link>https://jiandar.github.io/docs/java/oop/encapsulation/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/oop/encapsulation/</guid>
+      <guid>https://jiandar.github.io/docs/java/oop/encapsulation/</guid>
       <description>封装#封装# 将属性和行为绑定起来，并隐藏部分实现的细节，对外只提供访问接口。  优点# 降低耦合 隐藏细节 类内部可自由修改  示例# 设为私有 对外提供公共访问方法  public class Person{ private String name; public String getName(){ return name; } public void setName(String name){ this.name = name; } } </description>
     </item>
     
     <item>
       <title>继承</title>
-      <link>https://localhost:1313/docs/java/oop/Inheritance/</link>
+      <link>https://jiandar.github.io/docs/java/oop/Inheritance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/oop/Inheritance/</guid>
+      <guid>https://jiandar.github.io/docs/java/oop/Inheritance/</guid>
       <description>继承#继承# 指继承父类的状态和行为，创建子类的过程。 不支持多继承。  特性# 子类拥有父类非 private 的属性、方法 子类可以对父类进行扩展 子类可以重写父类方法 支持单继承、多重继承 提高类之间的耦合性  格式#class 父类 { //... } class 子类 extends 父类 { //... } this &amp;amp; super#   this 指向自己的引用 this() 调用自己的构造方法     super 指向父类的引用 super() 调用父类的构造方法    class Animal { public void eat() { System.out.println(&amp;#34;animal : eat&amp;#34;); } } class Dog extends Animal { public void eat() { System.</description>
     </item>
     
     <item>
       <title>多态</title>
-      <link>https://localhost:1313/docs/java/oop/polymorphism/</link>
+      <link>https://jiandar.github.io/docs/java/oop/polymorphism/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/oop/polymorphism/</guid>
+      <guid>https://jiandar.github.io/docs/java/oop/polymorphism/</guid>
       <description>多态#多态# 指允许不同子类对象对同一消息作出不同的响应  前提# 继承 重写 父类引用指向子类对象  示例#abstract class Animal { public abstract void run(); } class Cat extends Animal { public void run() { System.out.println(&amp;#34;猫跑了......&amp;#34;); } } class Dog extends Animal { public void run() { System.out.println(&amp;#34;狗跑了......&amp;#34;); } } class Lady { private Animal pet; Lady(Animal pet) { this.pet = pet; } public void myPetRun(){ pet.run(); } } public class Test { public static void main(String args[]){ Cat c = new Cat(); Dog d = new Dog(); Lady l1 = new Lady(c); Lady l2 = new Lady(d); l1.</description>
     </item>
     
     <item>
       <title>抽象</title>
-      <link>https://localhost:1313/docs/java/oop/abstraction/</link>
+      <link>https://jiandar.github.io/docs/java/oop/abstraction/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/oop/abstraction/</guid>
+      <guid>https://jiandar.github.io/docs/java/oop/abstraction/</guid>
       <description>抽象#抽象# 是将一类对象的共同特征总结出来构造类的过程  抽象类# 抽象方法：只有方法声明，没有方法实现 抽象类：包含抽象方法的类 特征：  抽象类不能实例化。 抽象类的非抽象子类必须实现父类抽象方法 抽象方法、抽象类必须被abstract修饰 抽象类中不一定包含抽象方法，但是有抽象方法的类必定是抽象类 构造方法，类方法（用 static 修饰的方法）不能声明为抽象方法    //示例 abstract class Animal{ String name; public abstract void run(); } class Dog extends Animal{ public void run(){ System.out.println(&amp;#34;run&amp;#34;); } } 接口# 接口是一种特殊的抽象类，是抽象方法的集合。用 interface 定义。 特点  隐式抽象 支持多继承 没有构造方法 接口的方法都是公有的、隐式抽象的 接口的成员变量只能是public static final 的。    //示例 interface Animal{ public static final int id = 1; public void run(); public void eat(); } //接口继承接口 interface fish extends Animal{ //.</description>
     </item>
     

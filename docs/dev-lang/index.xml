@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>编程语言 on IWiki</title>
-    <link>https://localhost:1313/docs/dev-lang/</link>
+    <link>https://jiandar.github.io/docs/dev-lang/</link>
     <description>Recent content in 编程语言 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/dev-lang/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-lang/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Markdown</title>
-      <link>https://localhost:1313/docs/dev-lang/markdown/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/markdown/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/markdown/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/markdown/</guid>
       <description>Markdown#概述# 是一种可以使用普通文本编辑器编写的 标记语言 通过简单的标记语法，它可以使普通文本内容具有一定的格式  标题# 语法 # h1 ## h2 ### h3 #### h4 ##### h5 ###### h6   文字#  语法
 *斜体* **粗体** ***斜体粗体*** ~~删除线~~   效果
 斜体 粗体 斜体粗体 删除线

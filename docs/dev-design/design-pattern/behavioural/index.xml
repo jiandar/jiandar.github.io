@@ -2,106 +2,106 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>行为型 on IWiki</title>
-    <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/</link>
+    <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/</link>
     <description>Recent content in 行为型 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>状态模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/13-state/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/13-state/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/13-state/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/13-state/</guid>
       <description>状态模式#概述# 英文：State Pattern 简述：根据不同的状态做出不同的行为 归纳：状态驱动行为，行为决定状态 目的：状态驱动行为，行为决定状态 案例：订单状态跟踪  示例#// 状态类 public abstract class LiftState { // 定义一个环境角色  protected Context context; public void setContext(Context context) { this.context = context; } public abstract void open(); public abstract void close(); public abstract void run(); public abstract void stop(); } // 类似状态：ClosingState、RunningState、StoppingState public class OpeningState extends LiftState { @Override public void close() { super.context.setLiftState(Context.closingState); super.</description>
     </item>
     
     <item>
       <title>策略模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/14-strategy/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/14-strategy/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/14-strategy/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/14-strategy/</guid>
       <description>策略模式#概述# 英文：Strategy Pattern 简述：封装不同的算法，算法之间能互相替换 归纳：条条大道通罗马，具体哪条你来定 目的：把选择权交给用户 案例：选择支付方式  示例#业务场景：获取多种数据库的元数据
 // 策略类 public interface DatabaseMeta { void getColumns(); } // 类似策略类：PgsqlDatabaseMeta、OracleDatabaseMeta public class MysqlDatabaseMeta implements DatabaseMeta { @Override public void getColumns() { System.out.println(&amp;#34;Mysql column...&amp;#34;); } } // 环境类 public class Context { private DatabaseMeta meta; public Context(DatabaseMeta meta) { this.meta = meta; } public void getColumns() { meta.getColumns(); } } public class Test { public static void main(String[] args) { Context context; context = new Context(new MysqlDatabaseMeta()); context.</description>
     </item>
     
     <item>
       <title>模板模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/15-template/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/15-template/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/15-template/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/15-template/</guid>
       <description>模板模式#概述# 英文：Template Pattern 简述：定义一套流程模板，根据需要实现模板中的操作 归纳：流程全部标准化，需要微调请覆盖 目的：逻辑复用 案例：把大象装进冰箱  示例#// 模板类 public abstract class Game { abstract void initialize(); abstract void startPlay(); abstract void endPlay(); // 模板方法  public final void play() { init(); startPlay(); endPlay(); } } // 类似实例：Volleyball public class Football extends Game { @Override void init() { System.out.println(&amp;#34;Football：Initialized! Start playing.&amp;#34;); } @Override void startPlay() { System.out.println(&amp;#34;Football：Started. Enjoy the game!&amp;#34;); } @Override void endPlay() { System.</description>
     </item>
     
     <item>
       <title>命令模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/16-command/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/16-command/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/16-command/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/16-command/</guid>
       <description>命令模式#概述# 英文：Command Pattern 简述：将请求封装成命令，并记录下来，能够撤销与重做 归纳：运筹帷幄之中，决胜千里之外 目的：解耦请求和处理 案例：遥控器  示例#// 命令 public interface Command { void execute(); } // 开机命令ConcreteCommand public class CommandOn implements Command { private Tv myTv; public CommandOn(Tv tv) { myTv = tv; } public void execute() { myTv.turnOn(); } } // 关机命令ConcreteCommand public class CommandOff implements Command { private Tv myTv; public CommandOff(Tv tv) { myTv = tv; } public void execute() { myTv.</description>
     </item>
     
     <item>
       <title>迭代器模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/17-iterator/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/17-iterator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/17-iterator/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/17-iterator/</guid>
       <description>迭代器模式#概述# 英文：Iterator Pattern 简述：提供一种方法顺序访问一个聚合对象中的各个元素，而又无须暴露该对象的内部细节 归纳：流水线上坐一天，每个包裹扫一遍 目的：统一对集合的访问方式 案例：逐个检票进站  示例#// 抽象迭代器 public interface Iterator { public boolean hasNext(); public Object next(); } // 抽象聚合 public interface Container { public Iterator getIterator(); } // 具体聚合 public class NameRepository implements Container { public String[] names = {&amp;#34;Robert&amp;#34;, &amp;#34;John&amp;#34;, &amp;#34;Julie&amp;#34;, &amp;#34;Lora&amp;#34;}; @Override public Iterator getIterator() { return new NameIterator(); } // 具体迭代器  private class NameIterator implements Iterator { int index = 0; @Override public boolean hasNext() { return index &amp;lt; names.</description>
     </item>
     
     <item>
       <title>解释器模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/18-interpreter/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/18-interpreter/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/18-interpreter/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/18-interpreter/</guid>
       <description>解释器模式#概述# 英文：Interpreter Pattern 简述：给定一个语言，定义它的语法表示，并定义一个解释器，这个解释器使用该标识来解释语言中的句子 归纳：我想说”方言“，一切解释权都归我 目的：实现特定语法解析 案例：摩斯密码  示例#// 解释器 public interface Expression { public boolean interpret(String context); } // 解释器TerminalExpression public class TerminalExpression implements Expression { private String data; public TerminalExpression(String data) { this.data = data; } @Override public boolean interpret(String context) { return context.contains(data); } } // 解释器OrExpression public class OrExpression implements Expression { private Expression expr1; private Expression expr2; public OrExpression(Expression expr1, Expression expr2) { this.</description>
     </item>
     
     <item>
       <title>观察者模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/19-observer/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/19-observer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/19-observer/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/19-observer/</guid>
       <description>观察者模式#概述# 英文：Observer Pattern 简述：状态发生改变时通知观察者，一对多的关系 归纳：到点就通知我 目的：解耦观察者与被观察者 案例：闹钟  示例#// 目标 public class Subject { private int state; private List&amp;lt;Observer&amp;gt; observers = new ArrayList&amp;lt;&amp;gt;(); public int getState() { return state; } public void setState(int state) { this.state = state; notifyAllObservers(); } public void attach(Observer observer) { observers.add(observer); } public void notifyAllObservers() { for (Observer observer : observers) { observer.update(); } } } // 抽象观察者 public abstract class Observer { protected Subject subject; public abstract void update(); } // 观察者BinaryObserver public class BinaryObserver extends Observer{ public BinaryObserver(Subject subject){ this.</description>
     </item>
     
     <item>
       <title>访问者模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/20-visitor/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/20-visitor/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/20-visitor/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/20-visitor/</guid>
       <description>访问者模式#概述# 英文：Visitor Pattern 简述：稳定数据结构，定义新的操作行为 归纳：横看成岭侧成峰，远近高低各不同 目的：解耦数据结构和数据操作 案例：KPI考核  示例#// 被访问者：员工 public abstract class Staff { public String name; public int kpi; public Staff(String name) { this.name = name; kpi = new Random().nextInt(10); } // 核心方法，接受Visitor的访问  public abstract void accept(Visitor visitor); } // 工程师 public class Engineer extends Staff { public Engineer(String name) { super(name); } @Override public void accept(Visitor visitor) { visitor.</description>
     </item>
     
     <item>
       <title>中介者模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/21-mediator/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/21-mediator/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/21-mediator/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/21-mediator/</guid>
       <description>中介者模式#概述# 英文：Mediator Pattern 简述：将对象之间的通信关联关系封装到一个中介类中单独处理，从而使其耦合松散 归纳：联系方式我给你，怎么搞定我不管 目的：统一管理网状资源 案例：朋友圈  示例#// 中介者 public class ChatRoom { public static void showMessage(User user, String message) { System.out.println(new Date().toString() + &amp;#34; [&amp;#34; + user.getName() + &amp;#34;] : &amp;#34; + message); } } // 用户 public class User { @Setter @Getter private String name; public User(String name) { this.name = name; } public void sendMessage(String message) { ChatRoom.</description>
     </item>
     
     <item>
       <title>备忘录模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/22-memento/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/22-memento/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/22-memento/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/22-memento/</guid>
       <description>备忘录模式#概述# 英文：Memento Pattern 简述：保存对象的状态，在需要时进行恢复 归纳：失足不成千古恨，想重来时就重来 目的：备份、后悔机制 案例：草稿箱  示例#// 备忘录 public class Memento { private String state; public Memento(String state) { this.state = state; } public String getState() { return state; } } // 备忘录管理员 public class CareTaker { private List&amp;lt;Memento&amp;gt; mementoList = new ArrayList&amp;lt;Memento&amp;gt;(); public void add(Memento state) { mementoList.add(state); } public Memento get(int index) { return mementoList.get(index); } } // 发起人 public class Originator { private String state; public void setState(String state) { this.</description>
     </item>
     
     <item>
       <title>职责链模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/behavioural/23-chainOfResponsibility/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/23-chainOfResponsibility/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/behavioural/23-chainOfResponsibility/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/behavioural/23-chainOfResponsibility/</guid>
       <description>职责链模式#概述# 英文：Chain of Responsibility Pattern 简述：  拦截的类都实现统一接口，每个接收者都包含对下一个接收者的引用。 将这些对象连接成一条链，并且沿着这条链传递请求，直到有对象处理它为止。   归纳：各人自扫门前雪，莫管他们瓦上霜 目的：解耦处理逻辑 案例：踢皮球  示例#// 处理者 public abstract class Logger { public static int INFO = 1; public static int DEBUG = 2; public static int ERROR = 3; protected int level; //责任链中的下一个元素  protected Logger nextLogger; public void setNextLogger(Logger nextLogger) { this.nextLogger = nextLogger; } public void logMessage(int level, String message) { if (this.</description>
     </item>
     

@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>创建型 on IWiki</title>
-    <link>https://localhost:1313/docs/dev-design/design-pattern/creational/</link>
+    <link>https://jiandar.github.io/docs/dev-design/design-pattern/creational/</link>
     <description>Recent content in 创建型 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/dev-design/design-pattern/creational/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-design/design-pattern/creational/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>单例模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/creational/01-singleton/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/creational/01-singleton/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/creational/01-singleton/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/creational/01-singleton/</guid>
       <description>单例模式#概述# 英文：Singleton Pattern 简述：保证一个类仅有一个实例，并且提供一个全局访问点 归纳：世上只有一个我 目的：保证独一无二 案例：CEO  示例#饿汉式# 一般情况下，推荐使用  // 在类初始化时，已经自行实例化 public class Singleton { private static final Singleton instance = new Singleton(); private Singleton(){} public static Singleton getInstance(){ return instance; } } 懒汉式# 一般情况下，不建议使用  // 在第一次调用的时候实例化自己 public class Singleton { private static volatile Singleton instance = null; private Singleton(){} public static Singleton getInstance(){ //双重判定：效率、同步  if(instance == null){ synchronized(Singleton.</description>
     </item>
     
     <item>
       <title>工厂模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/creational/02-factory/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/creational/02-factory/</link>
       <pubDate>Fri, 04 Jun 2021 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/creational/02-factory/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/creational/02-factory/</guid>
       <description>工厂模式#概述# 英文：Factory Pattern 简述：不同条件下创建不同实例 归纳：产品标准化，生产更高效 目的：封装创建细节 案例：实体工厂  示例#简单工厂#// 产品 public interface Phone { void function(); } // 类似产品：XiaoMi，Iphone public class HuanWei implements Phone{ @Override public void function() { System.out.println(&amp;#34;华为手机&amp;#34;); } } // 统一工厂 public class PhoneFactory { public static Phone createPhone(String type){ if (&amp;#34;XiaoMi&amp;#34;.equals(type)){ return new XiaoMi(); } if (&amp;#34;HuanWei&amp;#34;.equals(type)){ return new HuanWei(); } if (&amp;#34;Iphone&amp;#34;.equals(type)){ return new Iphone(); } return null; } } 工厂方法# 主要解决： 接口选择的问题 应用场景：  日志记录器（记录到硬盘/系统事件/远程服务器） 数据库访问（多种类型数据库） 连接服务器（多种通讯协议）    // 产品 public interface Phone { void function(); } // 类似产品：XiaoMi，Iphone public class HuanWei implements Phone{ @Override public void function() { System.</description>
     </item>
     
     <item>
       <title>原型模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/creational/04-prototype/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/creational/04-prototype/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/creational/04-prototype/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/creational/04-prototype/</guid>
       <description>原型模式#概述# 英文：Prototype Pattern 简述：通过拷贝原型创建新的对象 归纳：拔一根猴毛，吹出千万个 目的：高效创建对象 案例：克隆  示例#// 原型类：实现Cloneable接口 public class Prototype implements Cloneable { private String name; // setter、getter...  // clone方法  public Object clone(){ try { return super.clone(); } catch (Exception e) { e.printStackTrace(); return null; } } } public class Test { public static void main(String[] args) { Prototype pro1=new Prototype(); pro1.setName(&amp;#34;张三&amp;#34;); //以pro1为原型，克隆得到pro2  Prototype pro2=(Prototype)pro1.clone(); System.</description>
     </item>
     
     <item>
       <title>建造者模式</title>
-      <link>https://localhost:1313/docs/dev-design/design-pattern/creational/05-builder/</link>
+      <link>https://jiandar.github.io/docs/dev-design/design-pattern/creational/05-builder/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/design-pattern/creational/05-builder/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/design-pattern/creational/05-builder/</guid>
       <description>建造者模式#概述# 英文：Builder Pattern 简述：用来创建复杂的复合对象 归纳：高配中配和低配，想选哪配就哪配 目的：开放个性配置步骤 案例：选配  示例#// 被建造的复杂对象 public class House { private String baise; private String wall; private String roofed; // getter、setter  //... } // 抽象建造者：主要用来指定建造步骤 public abstract class HouseBuilder { protected House house = new House(); //建设房屋的基本方法，建设根基、建设墙、建设屋顶 	public abstract void buildBasic(); public abstract void buildWalls(); public abstract void roofed(); public House buildHouse() { return house; } } // 类似产品类：CommonHouse public class HighBuilding extends HouseBuilder{ @Override public void buildBasic() { System.</description>
     </item>
     

@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>并发理论 on IWiki</title>
-    <link>https://localhost:1313/docs/java/concurrency/theory/</link>
+    <link>https://jiandar.github.io/docs/java/concurrency/theory/</link>
     <description>Recent content in 并发理论 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/concurrency/theory/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/java/concurrency/theory/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Java 内存模型</title>
-      <link>https://localhost:1313/docs/java/concurrency/theory/JMM/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/theory/JMM/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/theory/JMM/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/theory/JMM/</guid>
       <description>Java 内存模型#JMM# Java Memory Model，是一种抽象的概念。 描述的是一组规则或规范，规定了程序中各个变量的访问方式。  内存# 主内存：共享的内存区域，所有线程都可访问。代表：内存条 工作内存：每个线程的私有数据区域。代表：CPU缓存  规则# 线程解锁前，必须把共享变量的值刷新回主内存 线程加锁前，必须读取主内存的最新值到自己的工作内存 加锁解锁是同一把锁  访问过程# 线程对变量的操作(读取赋值等)，必须在工作内存中进行 首先要将变量从主内存拷贝到自己的工作空间，然后对变量进行操作，操作完成再将变量写回主内存  并发三特性#   原子性 不可分割，是一个整体。即一个操作或者多个操作，要么全部执行并且不被打断，要么就都不执行     可见性 当多个线程访问同一个变量时，一个线程修改了这个变量的值，其他线程能够立即看得到修改的值   有序性 程序执行的顺序按照代码的先后顺序执行    指令重排# 为了优化程序性能，编译器和处理器重新对指令序列进行排序的一种手段  内存屏障# Memory Barrier 作用：  阻止屏障两侧的指令重排序 强制将缓存数据刷新到主内存   类型：  Load指令：读屏障，将内存存储的数据拷贝到处理器的缓存中。 Store指令：写屏障，让当前线程写入高速缓存中的最新数据更新写入到内存，让其他线程也可见。 分为四类：LoadLoad、StoreStore、LoadStore、 StoreLoad    数据依赖性# 如果两个操作访问同一个变量，且这两个操作中有一个为写操作，此时这两个操作之间就存在数据依赖性  语义：as-if-serial# 不管怎么指令重排，单线程程序的执行结果不会改变 为了遵循此语义，编译器不会对存在数据依赖关系的操作做重排序，因为会改变执行结果。 编译器、runtime和处理器都遵守as-if-serial语义  规则：happens-before# 如果A Happens-Before B，则A操作的结果对B操作可见，且A操作在B操作之前执行 JMM承诺保证happens-before规则  as-if-serial &amp;amp; happens-before# 两者目的，都是为了在不改变程序执行结果的前提下，尽可能地提高程序执行的并行度     as-if-serial 保证结果：单线程程序的执行结果不被改变     as-if-serial 创造环境：单线程程序是按程序的顺序来执行的   happens-before 保证结果：正确同步的多线程程序的执行结果不被改变   happens-before 创造环境：正确同步的多线程程序是按happens-before指定的顺序来执行的    </description>
     </item>
     
     <item>
       <title>synchronized</title>
-      <link>https://localhost:1313/docs/java/concurrency/theory/synchronized/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/theory/synchronized/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/theory/synchronized/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/theory/synchronized/</guid>
       <description>synchronized#特性# 并发三特性：原子性、可见性、有序性 可重入性：是可重入锁  基本用法# synchronized 内置锁，是一种“对象锁”，锁的是对象而非引用变量，作用粒度是对象  同步原理#对象头# 实例数据：存放类的属性数据信息，包括父类的属性信息 对齐填充：非必须，仅仅是为了字节对齐 对象头：Mark Word、Class Metadata Address、Array Length    Mark Word 存储对象自身的运行时数据，如 hashCode、锁信息或分代年龄或GC标志等     Class Metadata Address 存储指向对象类型数据的指针   Array Length 存储数组长度（如果当前对象是数组）      锁记录# Lock Record，是线程私有的数据结构。 当线程进入同步代码块时，如果此同步对象没有被锁定，JVM会在当前线程的栈中创建Lock Record空间，用于存储锁对象的Mark Word的拷贝。 每一个被锁住的对象Mark Word都会和一个Lock Record关联，同时Lock Record中有一个Owner字段存放拥有该锁的线程的唯一标识，表示该锁被这个线程占用。  监视器# Monitor，可以理解为一种同步机制、一个对象。任何一个对象都有一个Monitor与之关联。 Monitor只能被一个线程持有，此时当前对象就处于锁定状态，其它线程只能阻塞等待。 在JVM中，Synchronized是基于进入和退出Monitor对象，来实现方法同步和代码块同步。    MonitorEnter指令 插入在同步代码块的开始位置。当代码执行到该指令时，将会尝试获取该对象Monitor的所有权，即尝试获得该对象的锁；     MonitorExit指令 插入在方法结束处和异常处。JVM保证每个MonitorEnter必须有对应的MonitorExit；      同步优化# 为优化synchronized性能，在JDK1.</description>
     </item>
     
     <item>
       <title>volatile</title>
-      <link>https://localhost:1313/docs/java/concurrency/theory/volatile/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/theory/volatile/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/theory/volatile/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/theory/volatile/</guid>
       <description>volatile#概述# volatile：是一种比sychronized关键字更轻量级的同步机制，用来确保将变量的更新操作通知到其他线程。 保证所修饰变量对所有的线程的可见性 禁止指令重排优化 不保证原子性  实现原理# 对于volatile所修饰变量的写操作，在生成汇编代码时，会增加Lock前缀指令 缓存一致性：每个处理器通过嗅探在总线上传播的数据来检查自己缓存的值是不是过期  内存语义# 写volatile变量会重新刷新到主内存中，其他线程读volatile变量，会重新从主内存中读取新值  内存语义的实现# 在生成字节码时，编译器会在指令序列中插入内存屏障，来禁止特定类型的处理器重排序     StoreStore屏障 禁止上面的普通写和下面的volatile写重排序     StoreLoad屏障 防止上面的volatile写与下面可能有的volatile读/写重排序   LoadLoad屏障 禁止下面所有的普通读操作和上面的volatile读重排序   LoadStore屏障 禁止下面所有的普通写操作和上面的volatile读重排序    解决：不保证原子性# 解决办法：使用 synchronized 修饰、使用 AtomicInteger 类型  public class Singleton { //volatile：禁止指令重排  private static volatile Singleton instance = null; private Singleton() { } // 双重检测机制  public static Singleton getInstance() { if (instance == null) { synchronized (Singleton.</description>
     </item>
     
     <item>
       <title>final</title>
-      <link>https://localhost:1313/docs/java/concurrency/theory/final/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/theory/final/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/theory/final/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/theory/final/</guid>
       <description>final#概述# final，即最终、不可变 可以用来修饰类、方法和变量  用法#  修饰类
  final 修饰的类，不能被继承 final 类中的方法，都会被隐式地指定为 final 方法  ​
   修饰方法
@@ -50,10 +50,10 @@
     
     <item>
       <title>CAS</title>
-      <link>https://localhost:1313/docs/java/concurrency/theory/CAS/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/theory/CAS/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/theory/CAS/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/theory/CAS/</guid>
       <description>CAS 算法#CAS# 比较并交换，Compare-And-Swap，是一种无锁算法 基于硬件原语实现，能够在不使用锁的情况下实现多线程之间的变量同步 Java CAS硬件底层接口 ：sun.misc.Unsafe  CAS 机制# 涉及到三个参数，数据所在的内存地址 V，旧的预期值 A，要修改的更新值 B 从 V 取值，和 A 做比较，如果相等，则更新为 B。如果不相等则重试 一般情况下是一个自旋操作，即不断的重试。  CAS 缺点# 自旋时间长开销很大 只能保证一个共享变量的原子性 存在 ABA 问题  ABA 问题# 在 CAS 操作中，内存中某时刻的值与下一时刻再次读取的值相等，并不意味着数据没有被修改 存在这种情况：在这段时间内，其他线程将 A 值改成 B 值，又改回 A 值。而CAS却误认为数据未被修改 解决方案：  1、加版本号（时间戳）； 2、时间戳原子引用：AtomicStampedReference&amp;lt;V&amp;gt;    </description>
     </item>
     

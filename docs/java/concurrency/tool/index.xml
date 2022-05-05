@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>并发工具 on IWiki</title>
-    <link>https://localhost:1313/docs/java/concurrency/tool/</link>
+    <link>https://jiandar.github.io/docs/java/concurrency/tool/</link>
     <description>Recent content in 并发工具 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/concurrency/tool/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/java/concurrency/tool/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CountDownLatch</title>
-      <link>https://localhost:1313/docs/java/concurrency/tool/CountDownLatch/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/tool/CountDownLatch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/tool/CountDownLatch/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/tool/CountDownLatch/</guid>
       <description>CountDownLatch#功能# 倒计时器 一个或多个线程一直等待，直到其他线程完成某件事情之后再执行  原理# 通过一个计数器进行实现。计数器初始值为线程的数量。 每当一个线程执行完毕后，计数器的值就减 1。 当计数器的值为 0 时，表示所有线程都执行完毕，然后在 CountDownLatch 上等待的线程就可以恢复执行了。  方法#// 构造方法：设定计数器初始值 public CountDownLatch(int count) // 计数器值减1 public void countDown() // 获取当前计数器值 public long getCount() // 非定时等待 public void await() // 定时等待 public boolean await(long timeout, TimeUnit unit) 示例#// 自习室锁门 public class Test { public static void main(String[] args) throws Exception { CountDownLatch countDownLatch = new CountDownLatch(6); for (int i = 1; i &amp;lt;= 6; i++) { new Thread(() -&amp;gt; { System.</description>
     </item>
     
     <item>
       <title>CyclicBarrier</title>
-      <link>https://localhost:1313/docs/java/concurrency/tool/CyclicBarrier/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/tool/CyclicBarrier/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/tool/CyclicBarrier/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/tool/CyclicBarrier/</guid>
       <description>CyclicBarrier#功能# 循环栅栏 多个线程互相等待，直到全部都到达同一个同步点，再继续一起执行  原理# 在CyclicBarrier类的内部有一个计数器 每个线程在到达屏障点的时候都会调用 await() 将自己阻塞，此时计数器会减 1 当计数器减为 0 的时候，所有因调用 await() 而被阻塞的线程将被唤醒  方法#// 构造方法：设置要拦截的线程数，及安全栅跳闸时无预定义的动作 public CyclicBarrier(int parties) // 构造方法：设置要拦截的线程数，及安全栅跳闸时执行的预定义动作 public CyclicBarrier(int parties, Runnable barrierAction) // 非定时等待 public int await() // 定时等待 public int await(long timeout, TimeUnit unit) // 定时等待 public void reset() 示例#// 集齐七龙珠 public static void main(String[] args) { CyclicBarrier cyclicBarrier = new CyclicBarrier(7, () -&amp;gt; { System.</description>
     </item>
     
     <item>
       <title>Semaphore</title>
-      <link>https://localhost:1313/docs/java/concurrency/tool/Semaphore/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/tool/Semaphore/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/tool/Semaphore/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/tool/Semaphore/</guid>
       <description>Semaphore#功能# 信号灯 作为一种流量控制手段，用于控制同时访问特定资源的线程数量，保证合理的使用共享资源。  原理# Semaphore 管理一系列许可（仅维护许可的计数）。 线程通过 acquire() 获取许可。当没有可用的许可的时候，线程阻塞，直到有可用的许可为止。 线程通过 release() 释放许可。  方法#// 构造方法：设定许可数量 public Semaphore(int permits) // 构造方法：设定许可数量，公平/非公平模式 public Semaphore(int permits, boolean fair) // 获取许可 public void acquire() // 释放许可 public void release() // 获取剩余许可数量 public int drainPermits() 示例#// 抢车位 public class Test { public static void main(String[] args) { // 模拟3个停车位  Semaphore semaphore = new Semaphore(3); // 模拟6部汽车  for (int i = 1; i &amp;lt;= 6; i++) { new Thread(() -&amp;gt; { try { String thread = Thread.</description>
     </item>
     
     <item>
       <title>Exchanger</title>
-      <link>https://localhost:1313/docs/java/concurrency/tool/Exchanger/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/tool/Exchanger/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/tool/Exchanger/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/tool/Exchanger/</guid>
       <description>Exchanger#功能# 交换器 是一个用于线程间协作的工具类，用于两个线程间交换数据。  原理# Exchanger提供了一个交换的同步点，在这个同步点两个线程能够交换数据。 如果一个线程先执行exchange()，那它会阻塞等待另一个线程也执行 exchange()。 当两个线程就都达到了同步点，它们就可以交换数据。  方法#// 构造方法 public Exchanger() // 交换 public V exchange(V x) // 交换（超时限制） public V exchange(V x, long timeout, TimeUnit unit) 示例#public class Test { public static void main(String[] args) { Exchanger&amp;lt;String&amp;gt; exchanger = new Exchanger&amp;lt;&amp;gt;(); new Thread(() -&amp;gt; { try { String out=&amp;#34;20块钱&amp;#34;; String in = exchanger.</description>
     </item>
     

@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>线程基础 on IWiki</title>
-    <link>https://localhost:1313/docs/java/concurrency/thread/</link>
+    <link>https://jiandar.github.io/docs/java/concurrency/thread/</link>
     <description>Recent content in 线程基础 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/concurrency/thread/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/java/concurrency/thread/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>创建线程</title>
-      <link>https://localhost:1313/docs/java/concurrency/thread/thread-create/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/thread/thread-create/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/thread/thread-create/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/thread/thread-create/</guid>
       <description>创建线程#继承Thread类#public class MyThread extends Thread { @Override public void run() { // 执行体...  } } public class Test { public static void main(String[] args) { MyThread myThread = new MyThread(); myThread.start(); } } 实现 Runnable 接口#public class MyRunnable implements Runnable { @Override public void run() { // 执行体...  } } public class Test { public static void main(String[] args) { MyRunnable myRunnable = new MyRunnable(); Thread thread = new Thread(myRunnable); thread.</description>
     </item>
     
     <item>
       <title>停止线程</title>
-      <link>https://localhost:1313/docs/java/concurrency/thread/thread-stop/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/thread/thread-stop/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/thread/thread-stop/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/thread/thread-stop/</guid>
       <description>停止线程#正常结束# 程序运行结束，线程自动结束  使用退出标志# 使用一个停止标记，在线程中进行判断该标记的状态然后进行处理  public class MyThread extends Thread { private volatile boolean isShutDown = false; public void run() { while (!isShutDown) { // 执行体...  } } public void shutDown() { this.isShutDown = true; } } public class Test { public static void main(String[] args) throws Exception { MyThread thread = new MyThread(); thread.start(); Thread.sleep(5000); thread.shutDown(); } } 使用 interrupt()# 线程处于阻塞状态时，调用 interrupt() 会抛出 InterruptException 异常 线程未处于阻塞状态时，使用 isInterrupted() 判断线程的中断标志来退出循环  public class MyThread extends Thread { public void run() { // 非阻塞状态：通过判断中断标志来退出  while (!</description>
     </item>
     
     <item>
       <title>守护线程</title>
-      <link>https://localhost:1313/docs/java/concurrency/thread/thread-daemon/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/thread/thread-daemon/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/thread/thread-daemon/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/thread/thread-daemon/</guid>
       <description>守护线程#概述# 在Java中有两类线程：User Thread(用户线程)、Daemon Thread(守护线程) 守护线程的作用是为其他线程的运行提供便利服务 守护线程最典型的应用就是 GC (垃圾回收器)  创建守护线程# 不能把正在运行的常规线程设置为守护线程，必须在线程启动前设置为守护线程，否则会抛异常。 在Daemon线程中产生的新线程也是Daemon的。 不要认为所有的应用都可以分配给Daemon来进行服务，比如读写操作或者计算逻辑。  Thread daemonTread = new Thread(); // 设定 daemonThread 为 守护线程，default false(非守护线程) daemonThread.setDaemon(true); // 验证当前线程是否为守护线程，返回 true 则为守护线程 daemonThread.isDaemon(); 为什么要用守护线程？# 在JVM实例中，如果存在任何一个未结束的非守护线程，守护线程就全部工作 当非守护线程全部结束后，则JVM 进程即会退出，守护线程会随着JVM一同结束工作 守护线程拥有自动结束自己生命周期的特性，而非守护线程不具备这个特点  </description>
     </item>
     
     <item>
       <title>线程状态</title>
-      <link>https://localhost:1313/docs/java/concurrency/thread/thread-state/</link>
+      <link>https://jiandar.github.io/docs/java/concurrency/thread/thread-state/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/java/concurrency/thread/thread-state/</guid>
+      <guid>https://jiandar.github.io/docs/java/concurrency/thread/thread-state/</guid>
       <description>线程状态#线程状态#   状态码 状态 说明     NEW 初始状态 线程被构建，但是还没有调用 start() 方法   RUNNABLE 运行状态 线程已经启动，拥有执行资格，如果取得执行资源则执行   BLOCKED 阻塞状态 线程挂起，阻塞于锁   WAITING 等待状态 线程等待中，需要被显式地唤醒，否则会无限期等待   TIMED_WAITING 超时等待 线程等待中，在达到一定时间后，会自动唤醒   TERMINATED 终止状态 线程已经执行完毕    状态转换#   方法 调用者 描述 对象锁 唤醒     Thread.sleep(t) 当前线程 休眠当前线程 不释放 一定时间后自动唤醒   Thread.</description>
     </item>
     

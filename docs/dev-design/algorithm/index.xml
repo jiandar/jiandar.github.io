@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>算法 on IWiki</title>
-    <link>https://localhost:1313/docs/dev-design/algorithm/</link>
+    <link>https://jiandar.github.io/docs/dev-design/algorithm/</link>
     <description>Recent content in 算法 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/dev-design/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-design/algorithm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>时间复杂度</title>
-      <link>https://localhost:1313/docs/dev-design/algorithm/time-complexity/</link>
+      <link>https://jiandar.github.io/docs/dev-design/algorithm/time-complexity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-design/algorithm/time-complexity/</guid>
+      <guid>https://jiandar.github.io/docs/dev-design/algorithm/time-complexity/</guid>
       <description>时间复杂度#算法的效率# 由以下两个复杂度来评估，算法主要研究的是时间复杂度 时间复杂度：评估执行程序所需的时间。 空间复杂度：评估执行程序所需的存储空间。  时间频度# 一个算法花费的时间与算法中语句的执行次数，是成正比的 一个算法中语句的执行次数，称为时间频度，记为T(n)  时间复杂度# 记作 T(n)=O(f(n))，表示随问题规模 n 的增大，算法执行时间的增长率和 f(n) 的增长率相同 n：问题规模 f(n)：是 n 的某个函数 T(n)：算法中语句总的执行次数，是 n 的某个函数  推导时间复杂度# 用常数1取代运行时间中的所有加法常数。 在修改后的运行次数函数中，只保留最高阶项。 如果最高阶项存在且不是1，则去除与这个项相乘的常数。  示例：T(n) = 2n²+7n+6 =&amp;gt; T(n) = 2n²+7n+1 =&amp;gt; T(n) = 2n² =&amp;gt; T(n) = n² 记为 O(n²) 常见时间复杂度# O(1) &amp;lt; O(logn) &amp;lt; O(n) &amp;lt; O(nlogn)&amp;lt; O(n²) &amp;lt; O(n³ ) &amp;lt; O(2ⁿ ) &amp;lt; O(n!</description>
     </item>
     

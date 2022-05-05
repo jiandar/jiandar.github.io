@@ -2,33 +2,33 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS 位置 on IWiki</title>
-    <link>https://localhost:1313/docs/dev-lang/css/position/</link>
+    <link>https://jiandar.github.io/docs/dev-lang/css/position/</link>
     <description>Recent content in CSS 位置 on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/dev-lang/css/position/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-lang/css/position/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>边</title>
-      <link>https://localhost:1313/docs/dev-lang/css/position/border/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/position/border/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/position/border/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/position/border/</guid>
       <description>边框#属性属性说明属性值属性值说明border简写属性border: \[宽度]\[样式][颜色]border-width | style | color简写属性&amp;nbsp;border-left | right | top | bottom简写属性&amp;nbsp;border-[ left | right | top | bottom ]-width边框宽度thin细边框medium中边框，默认thick粗边框size数值border-[ left | right | top | bottom ]-style边框样式none无边框hidden无边框，用于解决边框冲突dotted点状边框dashed虚线边框solid实线边框double双线边框groove3D 凹槽边框ridge3D 垄状边框inset3D inset 边框outset3D outset 边框border-[ left | right | top | bottom ]-color边框颜色transparent透明色，默认color颜色值边距#paddingpadding-left | right | top | bottom内边距marginmargin-left | right | top | bottom外边距值auto浏览器自动计算size数值简写&amp;nbsp;</description>
     </item>
     
     <item>
       <title>宽高</title>
-      <link>https://localhost:1313/docs/dev-lang/css/position/width-height/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/position/width-height/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/position/width-height/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/position/width-height/</guid>
       <description>宽高#   属性 属性说明     width 宽度   min-width 最小宽度   max-width 最大宽度   height 高度   min-height 最小高度   max-height 最大高度       属性值 属性值说明     auto 默认   size 数值   inherit 继承    </description>
     </item>
     
     <item>
       <title>定位</title>
-      <link>https://localhost:1313/docs/dev-lang/css/position/position/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/position/position/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/position/position/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/position/position/</guid>
       <description>定位#属性属性说明属性值属性值说明position定位static没有定位，默认值fixed绝对定位，相对于浏览器窗口，脱离标准流absolute绝对定位，相对于父元素，脱离标准流relative相对定位，相对于自身正常位置inherit继承z-index层级auto与父元素相等，默认number层级数值inherit继承top&amp;nbsp;
 bottom&amp;nbsp;
 left&amp;nbsp;
@@ -37,10 +37,10 @@ right上下左右auto浏览器计算，默认size数值inherit继承
     
     <item>
       <title>浮动</title>
-      <link>https://localhost:1313/docs/dev-lang/css/position/float/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/position/float/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/position/float/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/position/float/</guid>
       <description>浮动#属性属性说明属性值属性值说明float浮动none不浮动，默认left左浮动right右浮动inherit继承clear清除浮动none两侧元素，允许浮动，默认值。left左侧元素，不允许浮动right右侧元素，不允许浮动both两侧元素，不允许浮动inherit继承浮动规则# 浮动元素  不会重叠 不会上下浮动 会脱离标准流   浮动元素的外边距，不会超过父元素内边距 非浮动元素的文本，会环绕浮动元素周围  </description>
     </item>
     

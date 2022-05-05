@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CSS on IWiki</title>
-    <link>https://localhost:1313/docs/dev-lang/css/</link>
+    <link>https://jiandar.github.io/docs/dev-lang/css/</link>
     <description>Recent content in CSS on IWiki</description>
-    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/dev-lang/css/index.xml" rel="self" type="application/rss+xml" />
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-lang/css/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>CSS 基础</title>
-      <link>https://localhost:1313/docs/dev-lang/css/basic/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/basic/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/basic/</guid>
       <description>CSS 基础#CSS# Cascading Style Sheets，层叠样式表 使网页内容与表现相分离，简化网页代码，提高页面浏览速度  层叠样式# HTML 同一元素，可以定义多个样式 HTML 子元素，会继承其父元素的CSS样式 样式不冲突时，多个样式效果可叠加；样式冲突时，按样式的优先级来显示  语法规则# CSS规则，由选择器、声明组成 注释：/*注释语句*/  引入方式# 外部样式表 内部样式表 内联样式  //外部样式表：在网页头部引入 &amp;lt;head&amp;gt; &amp;lt;link rel=&amp;#34;stylesheet&amp;#34; type=&amp;#34;text/css&amp;#34; href=&amp;#34;XXX.css&amp;#34;&amp;gt; &amp;lt;/head&amp;gt; //内部样式表：在网页头部，定义样式表 &amp;lt;head&amp;gt; &amp;lt;style type=&amp;#34;text/css&amp;#34;&amp;gt; p {color:red;} ... &amp;lt;/style&amp;gt; &amp;lt;/head&amp;gt; //内联颜色表：在相关标签内，定义style属性 &amp;lt;p style=&amp;#34;color:red;&amp;#34;&amp;gt;这是一个段落。&amp;lt;/p&amp;gt; 基础单位#尺寸：size#   值 说明 备注     % 百分比    in 英寸 25.</description>
     </item>
     
     <item>
       <title>CSS 选择器</title>
-      <link>https://localhost:1313/docs/dev-lang/css/selector/</link>
+      <link>https://jiandar.github.io/docs/dev-lang/css/selector/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://localhost:1313/docs/dev-lang/css/selector/</guid>
+      <guid>https://jiandar.github.io/docs/dev-lang/css/selector/</guid>
       <description>CSS 选择器#基础选择器#   选择器 说明 CSS 示例 所选择的 HTML     标签选择器 以 标签名 来定义 p {...} &amp;lt;p&amp;gt;&amp;hellip;&amp;hellip;&amp;hellip;&amp;hellip;..&amp;lt;/p&amp;gt;   ID选择器 以 #  来定义 #p1 {...} &amp;lt;p id=&amp;ldquo;p1&amp;rdquo;&amp;gt;&amp;hellip;&amp;hellip;&amp;lt;/p&amp;gt;   类选择器 以 . 来定义 .c1 {...} &amp;lt;p class=&amp;ldquo;c1&amp;rdquo;&amp;gt;&amp;hellip;&amp;lt;/p&amp;gt;    派生选择器#   选择器 说明 CSS 示例     全局选择器 通配符，* *{...}   组合选择器 多个选择器，用逗号分隔 div,p{.</description>
     </item>
     
