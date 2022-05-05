@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>List on IWiki</title>
+    <link>https://localhost:1313/docs/java/container/List/</link>
+    <description>Recent content in List on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/container/List/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vector</title>
+      <link>https://localhost:1313/docs/java/container/List/Vector/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/container/List/Vector/</guid>
+      <description>Vector#概述# 是一个动态数组，其容量能够动态增长 和 ArrayList 很相似，不同的是，Vector 是线程安全的，且包含了许多非集合框架方法 不推荐使用  特点#   顺序 有序     元素 允许为 null，允许重复   效率 比 ArrayList 效率低   多线程 线程安全    继承关系#public class Vector&amp;lt;E&amp;gt; extends AbstractList&amp;lt;E&amp;gt; implements List&amp;lt;E&amp;gt;, RandomAccess, Cloneable, java.io.Serializable    AbstractList、List接口 提供了列表的骨干功能     RandomAccess接口 提供了随机访问功能   Cloneable接口 支持克隆   Serializable接口 支持序列化    成员变量#// 保存元素的数组 protected Object[] elementData; // 元素的个数 protected int elementCount; // 扩容因子 protected int capacityIncrement; 构造方法#// 默认 public Vector() { this(10); } // 指定初始容量 public Vector(int initialCapacity) { this(initialCapacity, 0); } // 指定初始容量、扩容因子 public Vector(int initialCapacity, int capacityIncrement) { //.</description>
+    </item>
+    
+    <item>
+      <title>ArrayList</title>
+      <link>https://localhost:1313/docs/java/container/List/ArrayList/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/container/List/ArrayList/</guid>
+      <description>ArrayList#概述# 是一个动态数组，其容量能够动态增长  特点#   顺序 有序     元素 允许为 null，允许重复   效率 修改和查询元素效率高，插入和移除元素效率不高   多线程 线程不安全    继承关系#public class ArrayList&amp;lt;E&amp;gt; extends AbstractList&amp;lt;E&amp;gt; implements List&amp;lt;E&amp;gt;, RandomAccess, Cloneable, java.io.Serializable    AbstractList、List接口 提供了列表的骨干功能     RandomAccess接口 提供了随机访问功能   Cloneable接口 支持克隆   Serializable接口 支持序列化    成员变量#// 默认的初始化容量 private static final int DEFAULT_CAPACITY = 10; // 指定容量为0时，返回该空数组 private static final Object[] EMPTY_ELEMENTDATA = {}; // 当调用无参构造方法，返回的是该空数组 private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {}; // 保存元素的数组 transient Object[] elementData; // 元素的个数 private int size; // 最大数组容量 private static final int MAX_ARRAY_SIZE = Integer.</description>
+    </item>
+    
+    <item>
+      <title>LinkedList</title>
+      <link>https://localhost:1313/docs/java/container/List/LinkedList/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/container/List/LinkedList/</guid>
+      <description>LinkedList#概述# 是一种双向链表  特点#   顺序 有序     元素 允许为 null，允许重复   效率 查询慢，增删快   多线程 线程不安全    继承关系#public class LinkedList&amp;lt;E&amp;gt; extends AbstractSequentialList&amp;lt;E&amp;gt; implements List&amp;lt;E&amp;gt;, Deque&amp;lt;E&amp;gt;, Cloneable, java.io.Serializable    AbstractSequentialList、List接口 提供了列表的骨干功能     Deque接口 提供了双端队列的骨干功能   Cloneable接口 支持克隆   Serializable接口 支持序列化    成员变量#// 元素的个数 transient int size = 0; // 头节点 transient Node&amp;lt;E&amp;gt; first; // 尾节点 transient Node&amp;lt;E&amp;gt; last; // 节点（内部类） private static class Node&amp;lt;E&amp;gt; { E item; Node&amp;lt;E&amp;gt; next; Node&amp;lt;E&amp;gt; prev; Node(Node&amp;lt;E&amp;gt; prev, E element, Node&amp;lt;E&amp;gt; next) { this.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,3357 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.80.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Decorator Pattern">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="装饰器模式" />
+<meta property="og:description" content="Decorator Pattern" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://localhost:1313/docs/dev-design/design-pattern/structural/12-decorator/" />
+<meta property="article:modified_time" content="2022-04-12T02:45:55+08:00" /><meta property="og:site_name" content="IWiki" />
+<title>装饰器模式 | IWiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6c7c6446dfdee7c8c933e9bbc6e80ee3ed6c913b2a59519f2092c3c6a9d63e55.css" integrity="sha256-bHxkRt/e58jJM&#43;m7xugO4&#43;1skTsqWVGfIJLDxqnWPlU=">
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+
+  
+<link rel="stylesheet" href="/css/common.css" />
+<script defer src="/js/common/jquery.min.js"></script>
+<script defer src="/js/common/jquery.cookie.min.js"></script>
+<script defer src="/js/common.js"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>IWiki</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-eca69da21de5b0cd25d8421dec09a327" class="toggle"  />
+    <label for="section-eca69da21de5b0cd25d8421dec09a327" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/" class="">Java - 开发</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-701a5e4b70e899af26f3b4581b8e335c" class="toggle"  />
+    <label for="section-701a5e4b70e899af26f3b4581b8e335c" class="flex justify-between">
+      <a  class="">基础语法</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/syntax-element/" class="">语法元素</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/data-type/" class="">数据类型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/process-control/" class="">流程控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/array/" class="">数组</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/method/" class="">方法</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3118d23b01b05a46cf767ff83a2d1ed0" class="toggle"  />
+    <label for="section-3118d23b01b05a46cf767ff83a2d1ed0" class="flex justify-between">
+      <a  class="">面向对象</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/class/" class="">类和对象</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/encapsulation/" class="">封装</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/Inheritance/" class="">继承</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/polymorphism/" class="">多态</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/abstraction/" class="">抽象</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7eed87a13764aa0eb626ebbc547f3eeb" class="toggle"  />
+    <label for="section-7eed87a13764aa0eb626ebbc547f3eeb" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/container/" class="">集合容器</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-845472a49974fa26d5b88b0b050233c7" class="toggle"  />
+    <label for="section-845472a49974fa26d5b88b0b050233c7" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/container/Map/" class="">Map</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/TreeMap/" class="">TreeMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/HashMap/" class="">HashMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/HashTable/" class="">HashTable</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/LinkedHashMap/" class="">LinkedHashMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/ConcurrentHashMap/" class="">ConcurrentHashMap</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-84f89c052eeb4ff00fe19a3f39141a7a" class="toggle"  />
+    <label for="section-84f89c052eeb4ff00fe19a3f39141a7a" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/container/List/" class="">List</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/List/Vector/" class="">Vector</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/List/ArrayList/" class="">ArrayList</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/List/LinkedList/" class="">LinkedList</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6beb3e1071bb1c5c51f9403fd170dd13" class="toggle"  />
+    <label for="section-6beb3e1071bb1c5c51f9403fd170dd13" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/container/Set/" class="">Set</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Set/TreeSet/" class="">TreeSet</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Set/HashSet/" class="">HashSet</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Set/LinkedHashSet/" class="">LinkedHashSet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-402b0e9453b26ea851a0a20299cde4df" class="toggle"  />
+    <label for="section-402b0e9453b26ea851a0a20299cde4df" class="flex justify-between">
+      <a  class="">其他</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Queue/Queue/" class="">Queue</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a780fba0a170aaf946bbcef1d6b361b6" class="toggle"  />
+    <label for="section-a780fba0a170aaf946bbcef1d6b361b6" class="flex justify-between">
+      <a  class="">通用类库</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-class/jdbc/" class="">JDBC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-class/datetime/" class="">日期时间</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-124ab9595d96a674121d40dc5be8acb1" class="toggle"  />
+    <label for="section-124ab9595d96a674121d40dc5be8acb1" class="flex justify-between">
+      <a  class="">语言特性</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b1f0e963ccf97a301a0bf8703be0593a" class="toggle"  />
+    <label for="section-b1f0e963ccf97a301a0bf8703be0593a" class="flex justify-between">
+      <a  class="">Java</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java/regular-expressions/" class="">正则表达式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java/exception/" class="">异常处理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java/reflection/" class="">反射机制</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cb2bfb4fa57b693ba5c2e3303fe74566" class="toggle"  />
+    <label for="section-cb2bfb4fa57b693ba5c2e3303fe74566" class="flex justify-between">
+      <a  class="">Java5</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dbd33d29aa5a386e0e08e52943692943" class="toggle"  />
+    <label for="section-dbd33d29aa5a386e0e08e52943692943" class="flex justify-between">
+      <a  class="">Java8</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java8/lambda/" class="">Lambda</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java8/method-reference/" class="">方法引用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java8/functional-interface/" class="">函数式接口</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java8/stream-api/" class="">Java8 Stream</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-55499d4cc67716b87a2d9dd6c2cecf7e" class="toggle"  />
+    <label for="section-55499d4cc67716b87a2d9dd6c2cecf7e" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/concurrency/" class="">并发编程</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-135c218adb7a4b3af1fcf22aa5aa4fb3" class="toggle"  />
+    <label for="section-135c218adb7a4b3af1fcf22aa5aa4fb3" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/concurrency/thread/" class="">线程基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/thread/thread-create/" class="">创建线程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/thread/thread-stop/" class="">停止线程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/thread/thread-daemon/" class="">守护线程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/thread/thread-state/" class="">线程状态</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-45dedb109adabfd17f6e0421ddd0014e" class="toggle"  />
+    <label for="section-45dedb109adabfd17f6e0421ddd0014e" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/concurrency/theory/" class="">并发理论</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/JMM/" class="">Java 内存模型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/synchronized/" class="">synchronized</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/volatile/" class="">volatile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/final/" class="">final</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/CAS/" class="">CAS</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e781990c75fd8128707aee9d5c134f01" class="toggle"  />
+    <label for="section-e781990c75fd8128707aee9d5c134f01" class="flex justify-between">
+      <a  class="">并发容器</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/container/ThreadLocal/" class="">ThreadLocal</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/container/BlockingQueue/" class="">BlockingQueue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/container/ConcurrentHashMap/" class="">ConcurrentHashMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/container/CopyOnWriteArrayList/" class="">CopyOnWriteArrayList</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c35758f12a542218a4c965ad0e1947b9" class="toggle"  />
+    <label for="section-c35758f12a542218a4c965ad0e1947b9" class="flex justify-between">
+      <a  class="">并发工具</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/tool/CountDownLatch/" class="">CountDownLatch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/tool/CyclicBarrier/" class="">CyclicBarrier</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/tool/Semaphore/" class="">Semaphore</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/tool/Exchanger/" class="">Exchanger</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-423d8638a6f726e14f89e320a5463b42" class="toggle"  />
+    <label for="section-423d8638a6f726e14f89e320a5463b42" class="flex justify-between">
+      <a  class="">锁体系</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/concurrency-lock/" class="">锁</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/aqs/" class="">AQS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/ReentrantLock/" class="">ReentrantLock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/ReentrantReadWriteLock/" class="">ReentrantReadWrite...</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/Condition/" class="">Condition</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/LockSupport/" class="">LockSupport</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4f800630fcbdcb323791cc591ac7f1b2" class="toggle"  />
+    <label for="section-4f800630fcbdcb323791cc591ac7f1b2" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/concurrency/threadpool/" class="">线程池</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/threadpool-theory/" class="">线程池 - 原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/threadpool-type/" class="">线程池 - 种类</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/threadpool-operate/" class="">线程池 - 操作</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/ScheduledThreadPoolExecutor/" class="">定时线程池</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/FutureTask/" class="">FutureTask</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-55605fbb1582caa8aa13d761d89fc4fd" class="toggle"  />
+    <label for="section-55605fbb1582caa8aa13d761d89fc4fd" class="flex justify-between">
+      <a  class="">并发问题</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/problem/deadlock/" class="">死锁</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/problem/ConcurrentModificationException/" class="">并发修改异常</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7306aa85f16c9f917c8e83f95df5f357" class="toggle"  />
+    <label for="section-7306aa85f16c9f917c8e83f95df5f357" class="flex justify-between">
+      <a  class="">IO / NIO</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/io-nio/io/" class="">IO 流</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/io-nio/nio/" class="">NIO</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-197db6bcac5ea0eafcb283f4889907f1" class="toggle"  />
+    <label for="section-197db6bcac5ea0eafcb283f4889907f1" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/jvm/" class="">虚拟机</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-80ecf4e1bce2858e148a21dd8a852c72" class="toggle"  />
+    <label for="section-80ecf4e1bce2858e148a21dd8a852c72" class="flex justify-between">
+      <a  class="">类加载</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/class-load/loader/" class="">加载器</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/class-load/load-process/" class="">加载过程</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/memory-structure/" class="">内存结构</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5c83a4eae655f3ef9028a6494662174d" class="toggle"  />
+    <label for="section-5c83a4eae655f3ef9028a6494662174d" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/jvm/gc/" class="">垃圾回收</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/gc/reference-type/" class="">引用类型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/gc/judge/" class="">判定算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/gc/collect/" class="">回收算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/gc/collector/" class="">垃圾收集器</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3db35518c122193e98d97a4f8125d793" class="toggle"  />
+    <label for="section-3db35518c122193e98d97a4f8125d793" class="flex justify-between">
+      <a  class="">JVM 调优</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/tuning/parameter/" class="">JVM 参数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/tuning/oom/" class="">OOM 问题</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fd1e9074d3ca9b625372916e95f19a1c" class="toggle"  />
+    <label for="section-fd1e9074d3ca9b625372916e95f19a1c" class="flex justify-between">
+      <a  class="">计算机基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/basic/" class="">基础知识</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/network-model/" class="">网络模型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/tcp-ip/" class="">TCP/IP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/http/" class="">HTTP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/question/" class="">Q&amp;A</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5be00476a79d95f64d0cd68b7f7c13d7" class="toggle" checked />
+    <label for="section-5be00476a79d95f64d0cd68b7f7c13d7" class="flex justify-between">
+      <a  class="">程序设计</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d6f035a7ed565038177bf8579b9b1325" class="toggle"  />
+    <label for="section-d6f035a7ed565038177bf8579b9b1325" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/algorithm/" class="">算法</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/time-complexity/" class="">时间复杂度</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-41ba6b183933d5c93da3001ee830e482" class="toggle"  />
+    <label for="section-41ba6b183933d5c93da3001ee830e482" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/algorithm/sort/" class="">排序算法</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/bubble/" class="">冒泡排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/selection/" class="">选择排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/insertion/" class="">插入排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/merge/" class="">归并排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/quick/" class="">快速排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/shell/" class="">希尔排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/counting/" class="">计数排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/radix/" class="">基数排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/bucket/" class="">桶排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/heap/" class="">堆排序</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-80b4da73d6ee514e7e75d5922507a251" class="toggle"  />
+    <label for="section-80b4da73d6ee514e7e75d5922507a251" class="flex justify-between">
+      <a  class="">查找算法</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/search/binary/" class="">二分查找</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cdd17ed4dc88ccbd0fc3daf0f575b21a" class="toggle"  />
+    <label for="section-cdd17ed4dc88ccbd0fc3daf0f575b21a" class="flex justify-between">
+      <a  class="">数据结构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-97aa815b887b479e889248ea7051a97a" class="toggle" checked />
+    <label for="section-97aa815b887b479e889248ea7051a97a" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/design-pattern/" class="">设计模式</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-addd668eaebe3628dd27193727a56701" class="toggle"  />
+    <label for="section-addd668eaebe3628dd27193727a56701" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/" class="">创建型</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/01-singleton/" class="">单例模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/02-factory/" class="">工厂模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/04-prototype/" class="">原型模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/05-builder/" class="">建造者模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-91539113b2b8b32bdeede6c35874f3ad" class="toggle" checked />
+    <label for="section-91539113b2b8b32bdeede6c35874f3ad" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/" class="">结构型</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/06-proxy/" class="">代理模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/07-bridge/" class="">桥接模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/08-facade/" class="">外观模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/09-composite/" class="">组合模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/10-flyweight/" class="">享元模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/11-adapter/" class="">适配器模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/12-decorator/" class=" active">装饰器模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-be05c8452f353c5349ea34990826b042" class="toggle"  />
+    <label for="section-be05c8452f353c5349ea34990826b042" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/" class="">行为型</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/13-state/" class="">状态模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/14-strategy/" class="">策略模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/15-template/" class="">模板模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/16-command/" class="">命令模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/17-iterator/" class="">迭代器模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/18-interpreter/" class="">解释器模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/19-observer/" class="">观察者模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/20-visitor/" class="">访问者模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/21-mediator/" class="">中介者模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/22-memento/" class="">备忘录模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/23-chainOfResponsibility/" class="">职责链模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-62a4f864cb4398cc0696ddfa2164cdd3" class="toggle"  />
+    <label for="section-62a4f864cb4398cc0696ddfa2164cdd3" class="flex justify-between">
+      <a  class="">编程语言</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/markdown/" class="">Markdown</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e075eb301b3b23f8f3c72a4abb486a4a" class="toggle"  />
+    <label for="section-e075eb301b3b23f8f3c72a4abb486a4a" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-lang/html/" class="">HTML</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/document/" class="">文档标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/text/" class="">文本标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/list/" class="">列表标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/link/" class="">链接标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/table/" class="">表格标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/form/" class="">表单标签</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5ea3f7af0b9329b5237426683b3155a8" class="toggle"  />
+    <label for="section-5ea3f7af0b9329b5237426683b3155a8" class="flex justify-between">
+      <a  class="">CSS</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/basic/" class="">CSS 基础</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-46d995f5fbb586376a81e6a230a6eb29" class="toggle"  />
+    <label for="section-46d995f5fbb586376a81e6a230a6eb29" class="flex justify-between">
+      <a  class="">CSS 样式</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/style/font/" class="">字体样式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/style/text/" class="">文本样式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/style/list/" class="">列表样式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/style/background/" class="">背景样式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-32711bf7389a6a6b8e135f1d02f94385" class="toggle"  />
+    <label for="section-32711bf7389a6a6b8e135f1d02f94385" class="flex justify-between">
+      <a  class="">CSS 位置</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/position/border/" class="">边</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/position/width-height/" class="">宽高</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/position/position/" class="">定位</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/position/float/" class="">浮动</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/selector/" class="">CSS 选择器</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c44c2e5d043270d5d25fd4cc0b004fe7" class="toggle"  />
+    <label for="section-c44c2e5d043270d5d25fd4cc0b004fe7" class="flex justify-between">
+      <a  class="">框架工具</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-945603671b2430ee180d3aee2195915e" class="toggle"  />
+    <label for="section-945603671b2430ee180d3aee2195915e" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/tools/" class="">开发工具</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e4833db1c7b15f74d38358fb240e5437" class="toggle"  />
+    <label for="section-e4833db1c7b15f74d38358fb240e5437" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/tools/git/" class="">Git</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-tool/tools/git/version-control/" class="">版本控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-tool/tools/git/basic-logic/" class="">运行原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-tool/tools/git/basic-command/" class="">基本命令</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-tool/tools/git/git-operate/" class="">Git 使用</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7a003fa905f04ac2c991992a2b530727" class="toggle"  />
+    <label for="section-7a003fa905f04ac2c991992a2b530727" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/frameworks/" class="">应用框架</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6724eca88d81b033fe19fe599c3dfb8f" class="toggle"  />
+    <label for="section-6724eca88d81b033fe19fe599c3dfb8f" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/middleware/" class="">中间件</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1cbb7c8ff3241d90c98b5a7021bd8e86" class="toggle"  />
+    <label for="section-1cbb7c8ff3241d90c98b5a7021bd8e86" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/micro-service/" class="">微服务</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-afa1946b478a589a42eddb40f61d5730" class="toggle"  />
+    <label for="section-afa1946b478a589a42eddb40f61d5730" class="flex justify-between">
+      <a  class="">大数据</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
+    <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
+      <a href="https://localhost:1313/docs/database/" class="">数据库</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e93f6e4f1239bf01dc0cbed76c64ccca" class="toggle"  />
+    <label for="section-e93f6e4f1239bf01dc0cbed76c64ccca" class="flex justify-between">
+      <a href="https://localhost:1313/docs/database/mysql/" class="">MySQL</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/database/mysql/basic/" class="">基础元素</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/database/transaction/" class="">事务</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3ae3d975cb9f46a319bb6762100a285d" class="toggle"  />
+    <label for="section-3ae3d975cb9f46a319bb6762100a285d" class="flex justify-between">
+      <a  class="">Jiandar</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4604dc5b0352ee2d8a152be1fb91c65b" class="toggle"  />
+    <label for="section-4604dc5b0352ee2d8a152be1fb91c65b" class="flex justify-between">
+      <a  class="">个人信息</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/p-info/self-introduction/" class="">自我介绍</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/p-info/project-exp/" class="">项目经验</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9748420ec0e3faebcbec53e1f07a863d" class="toggle"  />
+    <label for="section-9748420ec0e3faebcbec53e1f07a863d" class="flex justify-between">
+      <a  class="">求职就业</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/career-plan/" class="">职业规划</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/resume-edit/" class="">简历编写</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f384650adbaec522879cbd53c1e8a980" class="toggle"  />
+    <label for="section-f384650adbaec522879cbd53c1e8a980" class="flex justify-between">
+      <a  class="">面试求职</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/before-interview/" class="">准备工作</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/interview/" class="">面试过程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/salary/" class="">薪资待遇</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/after-interview/" class="">收尾工作</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/interview-question/" class="">典型面试问题</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/offer/" class="">offer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>装饰器模式</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#示例">示例</a></li>
+    <li><a href="#应用">应用</a></li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="装饰器模式">
+  装饰器模式
+  <a class="anchor" href="#%e8%a3%85%e9%a5%b0%e5%99%a8%e6%a8%a1%e5%bc%8f">#</a>
+</h1>
+<h2 id="概述">
+  概述
+  <a class="anchor" href="#%e6%a6%82%e8%bf%b0">#</a>
+</h2>
+<ul>
+<li>英文：Decorator Pattern</li>
+<li>简述：不改变原类结构、不使用继承的情况下，动态地给一个对象添加一些额外的职责。</li>
+<li>归纳：他大舅他二舅都是他舅</li>
+<li>目的：灵活扩展、同宗同源</li>
+<li>案例：煎饼</li>
+</ul>
+<h2 id="示例">
+  示例
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b">#</a>
+</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 被装饰类
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">interface</span> <span style="color:#008b45;font-weight:bold">Shape</span> {
+    <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">draw</span>();
+}
+
+<span style="color:#228b22">// 类似形状：Circle
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Rectangle</span> <span style="color:#8b008b;font-weight:bold">implements</span> Shape {
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">draw</span>() {
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Shape: 正方形&#34;</span>);
+    }
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 装饰类
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">abstract</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">ShapeDecorator</span> <span style="color:#8b008b;font-weight:bold">implements</span> Shape {
+    <span style="color:#8b008b;font-weight:bold">protected</span> Shape shape;
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">ShapeDecorator</span>(Shape shape) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">shape</span> = shape;
+    }
+
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">draw</span>() {
+        shape.<span style="color:#658b00">draw</span>();
+    }
+}
+
+<span style="color:#228b22">// 类似装饰类:GreenShapeDecorator
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">RedShapeDecorator</span> <span style="color:#8b008b;font-weight:bold">extends</span> ShapeDecorator {
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">RedShapeDecorator</span>(Shape shape) {
+        <span style="color:#8b008b;font-weight:bold">super</span>(shape);
+    }
+
+    <span style="color:#707a7c">@Override</span>
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">draw</span>() {
+        <span style="color:#8b008b;font-weight:bold">super</span>.<span style="color:#658b00">draw</span>();
+        setRedBorder(shape);
+    }
+
+    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">setRedBorder</span>(Shape shape) {
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Border Color: Red&#34;</span>);
+    }
+}
+</code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Test</span> {
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) {
+        Shape circle = <span style="color:#8b008b;font-weight:bold">new</span> Circle();
+        ShapeDecorator redCircle = <span style="color:#8b008b;font-weight:bold">new</span> RedShapeDecorator(<span style="color:#8b008b;font-weight:bold">new</span> Circle());
+        ShapeDecorator redRectangle = <span style="color:#8b008b;font-weight:bold">new</span> RedShapeDecorator(<span style="color:#8b008b;font-weight:bold">new</span> Rectangle());
+
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Circle with normal border&#34;</span>);
+        circle.<span style="color:#658b00">draw</span>();
+
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Circle of red border&#34;</span>);
+        redCircle.<span style="color:#658b00">draw</span>();
+
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;Rectangle of red border&#34;</span>);
+        redRectangle.<span style="color:#658b00">draw</span>();
+    }
+}
+</code></pre></div><h2 id="应用">
+  应用
+  <a class="anchor" href="#%e5%ba%94%e7%94%a8">#</a>
+</h2>
+<ul>
+<li><strong>主要解决：</strong> 使用继承方式扩展类的功能，随着扩展功能的增多，导致子类膨胀问题</li>
+<li><strong>应用场景：</strong> 扩展一个类的功能、动态增加/撤销功能</li>
+<li><strong>注意事项：</strong> 可代替继承</li>
+</ul>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://gitee.com/commit/5dd0a027061d7c14b3c2884c459d85883ca38497" title='最后修改者 jiandar | April 12, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 12, 2022</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://gitee.com/blob/master/content.zh/docs/dev-design/design-pattern/structural/12-decorator.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#示例">示例</a></li>
+    <li><a href="#应用">应用</a></li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

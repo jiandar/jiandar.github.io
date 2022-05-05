@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java8 on IWiki</title>
+    <link>https://localhost:1313/docs/java/basic-feature/Java8/</link>
+    <description>Recent content in Java8 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/basic-feature/Java8/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Lambda</title>
+      <link>https://localhost:1313/docs/java/basic-feature/Java8/lambda/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/basic-feature/Java8/lambda/</guid>
+      <description>Lambda 表达式#Lambda# 允许把函数作为一个方法的参数，即函数作为参数传递到方法中 也可称为闭包，能使代码更加简洁  基本语法# 参数列表：() 操作符：-&amp;gt; 方法体：{}  (参数1,参数2,...) -&amp;gt; { // 方法体 }; 简写规则#   特征 说明     可选类型声明 不需要声明参数类型，编译器可以统一识别参数值。   可选的参数圆括号 一个参数无需定义圆括号，但多个参数需要定义圆括号。   可选的大括号 如果主体包含了一个语句，就不需要使用大括号。   可选的返回关键字 如果主体只有一个表达式返回值则编译器会自动返回值，大括号需要指定明表达式返回了一个数值。    变量作用域# Lambda 表达式只能引用标记了 final 的外层局部变量，否则会编译错误。 Lambda 表达式的局部变量隐性的具有 final 的语义。  public class Test { public static void main(String[] args) { // 隐性 final  int num = 1; Converter s = (param) -&amp;gt; System.</description>
+    </item>
+    
+    <item>
+      <title>方法引用</title>
+      <link>https://localhost:1313/docs/java/basic-feature/Java8/method-reference/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/basic-feature/Java8/method-reference/</guid>
+      <description>方法引用#方法引用# 通过方法的名字来指向一个方法 使用一对冒号 :: 进行引用  引用方式#public class Test { public static void main(String[] args) { // 构造器引用  // Class::new或Class&amp;lt; T &amp;gt;::new  final Car car = Car.create(Car::new); final List&amp;lt;Car&amp;gt; cars = Collections.singletonList(car); // 静态方法引用  // Class::static_method  cars.forEach(Car::collide); // 特定类的任意对象的方法引用  // Class::method  cars.forEach(Car::repair); // 特定对象的方法引用  // instance::method  final Car police = Car.create(Car::new); cars.forEach(police::follow); } } @FunctionalInterface public interface Supplier&amp;lt;T&amp;gt; { T get(); } public class Car { public static Car create(final Supplier&amp;lt;Car&amp;gt; supplier) { return supplier.</description>
+    </item>
+    
+    <item>
+      <title>函数式接口</title>
+      <link>https://localhost:1313/docs/java/basic-feature/Java8/functional-interface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/basic-feature/Java8/functional-interface/</guid>
+      <description>函数式接口#概述# Functional Interface 就是一个有且仅有一个抽象方法，但可以有多个非抽象方法的接口 可以被隐式转换为 lambda 表达式，使用 @FunctionalInterface 进行检测  // JDK 1.8 之前已有的常用函数式接口 @FunctionalInterface public interface Runnable { void run(); } @FunctionalInterface public interface Callable&amp;lt;V&amp;gt; { V call() throws Exception; } @FunctionalInterface public interface Comparator&amp;lt;T&amp;gt; { int compare(T var1, T var2); } java.util.function#Consumer# 消费型 接受数据，没有返回值  // 消费一个数据 public interface Consumer&amp;lt;T&amp;gt; { void accept(T t); } // 消费两个数据 public interface BiConsumer&amp;lt;T, U&amp;gt; { void accept(T t, U u); }    接口 函数     IntConsumer void accept(int value);   LongConsumer void accept(long value);   DoubleConsumer void accept(double value);   ObjIntConsumer&amp;lt;T&amp;gt; void accept(T t, int value);   ObjLongConsumer&amp;lt;T&amp;gt; void accept(T t, long value);   ObjDoubleConsumer&amp;lt;T&amp;gt; void accept(T t, double value);    Supplier# 供给型 无需接受数据，返回一个结果  // 无参数，返回一个结果 public interface Supplier&amp;lt;T&amp;gt; { T get(); }    接口 函数     IntSupplier int getAsInt();   LongSupplier long getAsLong();   DoubleSupplier double getAsDouble();   BooleanSupplier boolean getAsBoolean();    Predicate# 断言型 接受一个数据，返回布尔值  // 接受一个数据，返回布尔值 public interface Predicate&amp;lt;T&amp;gt; { boolean test(T t); } // 接受两个数据，返回布尔值 public interface BiPredicate&amp;lt;T, U&amp;gt; { boolean test(T t, U u); }    接口 函数     IntPredicate boolean test(int value);   LongPredicate boolean test(long value);   DoublePredicate boolean test(double value);    Function# 函数型 接受数据，返回一个值  // 接受一个数据，返回一个结果 public interface Function&amp;lt;T, R&amp;gt; { R apply(T t); } // 接受两个数据，返回一个结果 public interface BiFunction&amp;lt;T, U, R&amp;gt; { R apply(T t, U u); }    接口 函数     IntFunction&amp;lt;R&amp;gt; R apply(int value);   LongFunction&amp;lt;R&amp;gt; R apply(long value);   DoubleFunction&amp;lt;R&amp;gt; R apply(double value);       ToIntBiFunction&amp;lt;T, U&amp;gt; int applyAsInt(T t, U u);   ToIntFunction&amp;lt;T&amp;gt; int applyAsInt(T value);   LongToIntFunction int applyAsInt(long value);   DoubleToIntFunction int applyAsInt(double value);       ToLongBiFunction&amp;lt;T, U&amp;gt; long applyAsLong(T t, U u);   ToLongFunction&amp;lt;T&amp;gt; long applyAsLong(T value);   IntToLongFunction long applyAsLong(int value);   DoubleToLongFunction long applyAsLong(double value);       ToDoubleBiFunction&amp;lt;T, U&amp;gt; double applyAsDouble(T t, U u);   ToDoubleFunction&amp;lt;T&amp;gt; double applyAsDouble(T value);   IntToDoubleFunction double applyAsDouble(int value);   LongToDoubleFunction double applyAsDouble(long value);    Operator# 操作同类型数据     接口 函数     UnaryOperator&amp;lt;T&amp;gt; T apply(T t);   IntUnaryOperator int applyAsInt(int operand);   LongUnaryOperator long applyAsLong(long operand);   DoubleUnaryOperator double applyAsDouble(double operand);       BinaryOperator&amp;lt;T&amp;gt; T apply(T t1, T t2);   IntBinaryOperator int applyAsInt(int left, int right);   LongBinaryOperator long applyAsLong(long left, long right);   DoubleBinaryOperator double applyAsDouble(double left, double right);    </description>
+    </item>
+    
+    <item>
+      <title>Java8 Stream</title>
+      <link>https://localhost:1313/docs/java/basic-feature/Java8/stream-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/basic-feature/Java8/stream-api/</guid>
+      <description>Java8 流#Stream# 是一个来自数据源的元素队列，并支持聚合操作  元素是特定类型的对象，形成一个队列。 Java中的Stream并不会存储元素，而是按需计算。 数据源流的来源。 可以是集合，数组，I/O channel， 产生器generator 等。 聚合操作类似 SQL 语句一样的操作， 比如 filter, map, reduce, find, match, sorted 等   基础特征  管道：中间操作都会返回流对象本身 内部迭代：通过访问者模式实现    创建流#String[] array = {&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;c&amp;#34;}; Path pathObj = Paths.get(&amp;#34;filePath&amp;#34;); Collection&amp;lt;String&amp;gt; collection = Lists.newArrayList(); SecureRandom random = SecureRandom.getInstanceStrong(); // 序列 Stream.of(&amp;#34;a&amp;#34;, &amp;#34;b&amp;#34;, &amp;#34;c&amp;#34;); // 数组 Arrays.stream(array); // 集合 collection.stream(); // 文件 Files.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>并发问题 on IWiki</title>
+    <link>https://localhost:1313/docs/java/concurrency/problem/</link>
+    <description>Recent content in 并发问题 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/concurrency/problem/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>死锁</title>
+      <link>https://localhost:1313/docs/java/concurrency/problem/deadlock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/problem/deadlock/</guid>
+      <description>死锁#概述# 两个或两个以上的线程，在执行过程中，因争夺资源而造成的一种相互等待的现象  产生条件#   互斥使用 即当资源被一个线程使用(占有)时，别的线程不能使用     不可抢占 资源请求者不能强制从资源占有者手中夺取资源，资源只能由资源占有者主动释放   请求和保持 即当资源请求者在请求其他的资源的同时保持对原有资源的占有   循环等待 即存在一个等待队列：P1占有P2的资源，P2占有P3的资源，P3占有P1的资源。这样就形成了一个等待环路    图示#示例#public class HoldThread implements Runnable { private String lockA; private String lockB; public HoldThread(String lockA, String lockB) { this.lockA = lockA; this.lockB = lockB; } @Override public void run() { String threadName = Thread.</description>
+    </item>
+    
+    <item>
+      <title>并发修改异常</title>
+      <link>https://localhost:1313/docs/java/concurrency/problem/ConcurrentModificationException/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/problem/ConcurrentModificationException/</guid>
+      <description>并发修改异常#故障现象#public class Test { public static void main(String[] args) { ArrayList&amp;lt;Integer&amp;gt; list = new ArrayList&amp;lt;Integer&amp;gt;(); list.add(2); Iterator&amp;lt;Integer&amp;gt; iterator = list.iterator(); while(iterator.hasNext()){ Integer integer = iterator.next(); if(integer==2) list.remove(integer); } } } Exception in thread &amp;#34;main&amp;#34; java.util.ConcurrentModificationException at java.util.ArrayList$Itr.checkForComodification(ArrayList.java:911) at java.util.ArrayList$Itr.next(ArrayList.java:861) at org.local.Test.main(Test.java:15) 导致原因# 并发争抢修改导致。一个正在写，另一个抢夺，导致数据不一致，并发修改异常  解决方案# new Vector&amp;lt;&amp;gt;(); Collections.synchronizedList(new ArrayList&amp;lt;&amp;gt;()); new CopyOnWriteArrayList&amp;lt;&amp;gt;();  </description>
+    </item>
+    
+  </channel>
+</rss>

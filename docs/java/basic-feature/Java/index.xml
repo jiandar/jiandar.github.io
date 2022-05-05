@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on IWiki</title>
+    <link>https://localhost:1313/docs/java/basic-feature/Java/</link>
+    <description>Recent content in Java on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/basic-feature/Java/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>正则表达式</title>
+      <link>https://localhost:1313/docs/java/basic-feature/Java/regular-expressions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/basic-feature/Java/regular-expressions/</guid>
+      <description>正则表达式#简介# Regular Expression 是一种字符串匹配的描述模式，用来检索、替换那些符合某个规则的字符串  语法#转义字符# 特殊字符：( ) [ ] { } 、? * + 、^ $、 . \ |     构造 匹配     x 字符 x   \ 反斜线字符   \t 水平制表符   \v 垂直制表符   \r 回车符   \n 换行符   \f 换页符    普通字符类#   构造 匹配     [abc] 包含：a、b 或 c   [^abc] 排除：任何字符，除了 a、b 或 c   [a-z] 区间：a 到 z   [a-zA-Z] 并集：a 到 z 或 A 到 Z   [a-z&amp;amp;&amp;amp;[^bc]] 交集：a 到 z，除了 b 和 c    预定义字符类#   构造 匹配 构造 匹配     .</description>
+    </item>
+    
+    <item>
+      <title>异常处理</title>
+      <link>https://localhost:1313/docs/java/basic-feature/Java/exception/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/basic-feature/Java/exception/</guid>
+      <description>异常处理#异常# 就是程序出现了不正常的情况  异常体系#  编译时异常
+ RuntimeException之外的异常，又称受检异常 在编译期间出现的异常，必须处理，否则无法通过编译 比如：FileNotFoundException    运行时异常
+ RuntimeException及其子类，又称非受检异常 在运行期间出现的异常，可延后处理 比如：NullPointerException    抛出异常#  默认方式
+ JVM会把异常信息输出在了控制台，并停止程序    throw 方式
+ 用在方法内，后面跟异常对象    thorws 方式
+ 用在方法声明上，后面跟异常类名 可以跟多个，用逗号隔开    // 在方法内 throw new Exception(); // 在方法声明上 public void method() throws Exception { } 捕获异常# try - catch - finally  try { // 可能出现异常的语句 } catch (异常类 变量){ // 处理异常的代码，可以有多个  // 出现异常，才会执行 } finally { // 不是必须的  // 无论是否产生异常，一定会执行的语句 } 自定义异常# 自定义类，使之继承 Exception 等异常类  // 用法与内置异常类一样 public class MyException extends Exception { MyException(String message) { super(message); } } finally &amp;amp; return# 执行逻辑  // finally块前的return语句，记为out-return // finally块内的return语句，记为in-return  // finally块中无return： // 执行out-return，保存结果到缓存槽，执行finally块，返回缓存槽的数据  // finally块中有return： // 执行out-return，保存结果到缓存槽，执行finally块，执行in-return提前退出  场景示例  // finally块中无return，且未操作变量 public static void test1() { try { System.</description>
+    </item>
+    
+    <item>
+      <title>反射机制</title>
+      <link>https://localhost:1313/docs/java/basic-feature/Java/reflection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/basic-feature/Java/reflection/</guid>
+      <description>反射机制#概述# 是一种动态获取程序信息以及动态调用对象的功能 是Java被视为动态语言的关键  功用# 在运行时，判断任意一个类所具有的成员变量和方法 在运行时，判断任意一个对象所属的类 在运行时，调用任意一个对象的方法 在运行时，构造任意一个类的对象 在运行时，获取泛型信息 在运行时，处理注解 生成动态代理  反射API# java.lang.Class：代表一个类 java.lang.reflect.Field：代表类的成员变量 java.lang.reflect.Method：代表类的方法 java.lang.reflect.Constructor：代表类的构造器 java.lang.reflect.Array：提供了动态创建和访问 Java 数组的方法  java.lang.Class#  获取 Class 实例
+// 1 通过类属性 Class clazz1 = Person.class; // 2 通过实例对象 Person person = new Person(); Class clazz2 = person.getClass(); // 3 通过类名（常用） Class clazz3 = Class.forName(&amp;#34;com.test.Person&amp;#34;); // 4 通过了类加载器（不常用） ClassLoader classLoader = Test.</description>
+    </item>
+    
+  </channel>
+</rss>

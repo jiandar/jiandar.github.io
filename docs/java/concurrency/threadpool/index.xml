@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>线程池 on IWiki</title>
+    <link>https://localhost:1313/docs/java/concurrency/threadpool/</link>
+    <description>Recent content in 线程池 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/concurrency/threadpool/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>线程池 - 原理</title>
+      <link>https://localhost:1313/docs/java/concurrency/threadpool/threadpool-theory/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/threadpool/threadpool-theory/</guid>
+      <description>线程池原理#核心参数# 创建线程池主要是 ThreadPoolExecutor 类来完成  corePoolSize# 核心线程数 如果线程池中的线程数小于 corePoolSize，则会创建新线程来执行新提交的任务 如果线程池中的线程数到达 corePoolSize，则不会创建新线程，而是把新任务放入到缓存队列当中 类比：银行网点中，当值业务窗口数  maximumPoolSize# 最大线程数量 如果阻塞队列已满，且线程池中线程数量未超过 maximumPoolSize，就会创建新线程来执行新提交的任务 类比：银行网点中，最大业务窗口数  keepAliveTime、unit# 空闲线程的存活时间 如果线程数量超过 corePoolSize，且多余空闲线程的存活时间超过 keepAliveTime 时，会销毁空闲的线程 类比：银行网点中，加开的业务窗口，如果其空闲时间超过一定时限，则撤除  workQueue# 阻塞队列 用于保存被提交但尚未被执行的任务 类比：银行网点中，等候区  threadFactory# 创建线程的工厂类 可定制线程，一般使用默认即可  handler# 饱和策略 如果阻塞队列满了，并且没有空闲的线程，这时如果继续提交任务，就需要采取一种策略处理该任务。    策略 说明     AbortPolicy 默认策略， 直接拒绝所提交的任务，并抛出RejectedExecutionException异常   CallerRunPolicy 用调用者所在的线程来执行任务   DiscardOldestPolicy 丢弃掉阻塞队列中存放时间最久的任务，执行当前任务   DiscardPolicy 不处理直接丢弃掉任务      工作过程# 创建线程池后，等待提交过来的任务请求 当调用 execute() 添加一个新任务时，线程池会做如下判断：  如果当前运行的线程数量还小于 corePoolSize，则会创建新线程来执行新任务 如果当前运行的线程数量不小于 corePoolSize，则会将提交的任务放入阻塞队列中 如果当前阻塞队列满了，且当前运行的线程数量还小于 maximumPoolSize，则创建线程运行这个任务 如果当前阻塞队列满了，且当前运行的线程数量不小于 maximumPoolSize，则启动拒绝策略   当一个线程完成任务时，它会从队列中取下一个任务来执行 当一个线程空闲超过一定时间，并且此时当前运行的线程大于 corePoolSize 时，这个线程会被销毁  </description>
+    </item>
+    
+    <item>
+      <title>线程池 - 种类</title>
+      <link>https://localhost:1313/docs/java/concurrency/threadpool/threadpool-type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/threadpool/threadpool-type/</guid>
+      <description>常见线程池#四种线程池#newSingleThreadExecutor# 创建一个单线程化的线程池 它只会用唯一的工作线程来执行任务，保证所有任务都按照指定顺序执行 public static ExecutorService newSingleThreadExecutor() { return new FinalizableDelegatedExecutorService (new ThreadPoolExecutor(1, 1, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue&amp;lt;Runnable&amp;gt;())); }   newFixedThreadPool# 创建一个指定工作线程数量的线程池 可控制线程的最大并发数，超出的线程会在队列中等待。 public static ExecutorService newFixedThreadPool(int nThreads) { return new ThreadPoolExecutor(nThreads, nThreads, 0L, TimeUnit.MILLISECONDS, new LinkedBlockingQueue&amp;lt;Runnable&amp;gt;()); }   newCachedThreadPool# 创建一个可缓存线程池 如果线程池长度超过处理需要，可灵活回收空闲线程，若无可回收，则创建新线程 public static ExecutorService newCachedThreadPool() { return new ThreadPoolExecutor(0, Integer.MAX_VALUE, 60L, TimeUnit.SECONDS, new SynchronousQueue&amp;lt;Runnable&amp;gt;()); }   newScheduledThreadPool# 创建一个可定期或者延时执行任务的定长线程池，支持定时及周期性任务执行 public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) { return new ScheduledThreadPoolExecutor(corePoolSize); } public ScheduledThreadPoolExecutor(int corePoolSize) { super(corePoolSize, Integer.</description>
+    </item>
+    
+    <item>
+      <title>线程池 - 操作</title>
+      <link>https://localhost:1313/docs/java/concurrency/threadpool/threadpool-operate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/threadpool/threadpool-operate/</guid>
+      <description>线程池操作#ExecutorService#   方法 描述     execute() 向线程池提交新任务，无返回值   submit() 向线程池提交新任务，返回 Future   shutdown() 1、停止接收新任务2、线程池中，已经提交的任务会继续执行，执行完毕后关闭线程池   shutdownNow() 1、停止接收新任务2、试图关闭正在执行的任务3、移除线程池队列中等待执行的任务   isShutdown() 线程池是否关闭   isTerminated() 判断线程池关闭后所有的任务是否都执行完了仅当 shutdown()/shutdownNow() 被调用后才有效   awaitTermination() 阻塞，直到以下情况出现：1、超时；2、当前线程中断；3、所有任务已经执行完成    创建线程池#  使用 ThreaPoolExecutor 构造函数，创建线程池，参数自定义
+public class MyRunnable implements Runnable { @Override public void run() { System.out.println(Thread.currentThread().getName() + &amp;#34; is running.</description>
+    </item>
+    
+    <item>
+      <title>定时线程池</title>
+      <link>https://localhost:1313/docs/java/concurrency/threadpool/ScheduledThreadPoolExecutor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/threadpool/ScheduledThreadPoolExecutor/</guid>
+      <description>ScheduledThreadPoolExecutor#</description>
+    </item>
+    
+    <item>
+      <title>FutureTask</title>
+      <link>https://localhost:1313/docs/java/concurrency/threadpool/FutureTask/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/threadpool/FutureTask/</guid>
+      <description>FutureTask#</description>
+    </item>
+    
+  </channel>
+</rss>

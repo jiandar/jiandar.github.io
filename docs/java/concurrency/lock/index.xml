@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>锁体系 on IWiki</title>
+    <link>https://localhost:1313/docs/java/concurrency/lock/</link>
+    <description>Recent content in 锁体系 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/concurrency/lock/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>锁</title>
+      <link>https://localhost:1313/docs/java/concurrency/lock/concurrency-lock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/lock/concurrency-lock/</guid>
+      <description>锁#并发锁# 锁是用来控制多个线程访问共享资源的方式 一个锁能够防止多个线程同时访问共享资源  实现方案#synchronized#   存在层次 是一个Java关键字，基于JVM层面实现     锁的获取 假设A线程持有锁，B线程等待。如果A线程阻塞，B线程会一直等待   锁的释放 自动释放：当持有锁的线程执行完同步代码，释放锁；当线程执行发生异常，jvm会让线程释放锁   锁的状态 无法判断   锁的类型 可重入、不可中断、非公平   锁的机制 悲观锁机制    Lock#   存在层次 是一个Java接口，基于JDK层面实现     锁的获取 有多种方式获取锁，线程可以不用一直等待   锁的释放 手动释放：需要在finally中释放锁，不然容易造成线程死锁   锁的状态 可以判断   锁的类型 可重入、可中断、可公平/可非公平   锁的机制 乐观锁机制    性能# 推荐优先使用synchronized，而不是Lock synchronized：少量同步 Lock：大量同步  调度# synchronized：使用Object对象本身的wait 、notify、notifyAll调度机制 Lock：可以使用Condition进行线程之间的调度  锁的类型#偏向锁 / 轻量级锁 / 重量级锁# 详情  乐观锁 &amp;amp; 悲观锁#  乐观锁</description>
+    </item>
+    
+    <item>
+      <title>AQS</title>
+      <link>https://localhost:1313/docs/java/concurrency/lock/aqs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/lock/aqs/</guid>
+      <description>AQS 原理#AQS# 抽象的队列同步器，AbstarctQueuedSynchronizer，简称AQS AQS 定义了一套多线程访问共享资源的同步器基础框架，许多同步类实现都依赖于它，如ReentrantLock、Semaphore&amp;hellip;  CLH 队列# 是一个FIFO双向队列。 （FIFO：First in First out，先入先出）   AQS 原理# AQS 维护了一个共享变量 state 和一个 CLH 队列。 线程通过 CAS 去改变 state 状态，成功则获取锁成功，失败则进入等待队列，等待被唤醒。  ASQ 实现# AQS的设计是基于模板模式。 AQS已实现了对等待队列的维护，自定义同步器只需要实现共享资源state的获取与释放方式即可。 AQS 定义了两种资源共享方式：  Exclusive：独占方式，只有一个线程能执行，如ReentrantLock Share：共享方式，多个线程可以同时执行，如Semaphore、CountDownLatch    同步状态# state用来表示当前的同步状态，根据当前state的值，来判断当前处于锁定状态还是其他状态  // 同步状态 private volatile int state; // 获取当前同步状态 int getState() // 设置当前同步状态 void setState(int newState) // 使用CAS设置当前同步状态，该方法能够保证设置同步状态时的原子性； // 参数expect为state的预期旧值，而update是需要修改的新值，若设置成功，方法返回true，否则false boolean compareAndSetState(int expect, int update) 需重写的方法#// 独占方式。尝试获取共享资源，成功则返回true，失败则返回false protected boolean tryAcquire(int arg) // 独占方式。尝试释放共享资源，成功则返回true，失败则返回false protected boolean tryRelease(int arg) // 共享方式。尝试获取共享资源，成功则返回正数，失败则返回负数，0表示无可用资源 protected int tryAcquireShared(int arg) // 共享方式。尝试释放共享资源，成功则返回true，失败则返回false protected boolean tryReleaseShared(int arg) // 当前同步器是否在独占模式下被线程占用。只有用到condition才需要去实现它 protected boolean isHeldExclusively() 提供的模板方法#// 独占方式，获取同步状态 public final void acquire(int arg) // 与acquire()相同，该方法响应中断 public final void acquireInterruptibly(int arg) // 在acquireInteruptibly()上增加了超时限制 public final boolean tryAcquireNanos(int arg, long nanosTimeout) // 独占方式，释放同步状态 public final boolean release(int arg) // 共享方式，获取同步状态 public final void acquireShared(int arg) // 与acquireShared()相同，该方法响应中断 public final void acquireSharedInterruptibly(int arg) // 在acquireSharedInterruptibly()基础上增加了超时限制。 public final boolean tryAcquireSharedNanos(int arg, long nanosTimeout) // 共享方式，释放同步状态 public final boolean releaseShared(int arg) // 获取等待在同步队列上的线程集合 public final Collection&amp;lt;Thread&amp;gt; getQueuedThreads() </description>
+    </item>
+    
+    <item>
+      <title>ReentrantLock</title>
+      <link>https://localhost:1313/docs/java/concurrency/lock/ReentrantLock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/lock/ReentrantLock/</guid>
+      <description>ReentrantLock#</description>
+    </item>
+    
+    <item>
+      <title>ReentrantReadWrite...</title>
+      <link>https://localhost:1313/docs/java/concurrency/lock/ReentrantReadWriteLock/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/lock/ReentrantReadWriteLock/</guid>
+      <description>ReentrantReadWriteLock#</description>
+    </item>
+    
+    <item>
+      <title>Condition</title>
+      <link>https://localhost:1313/docs/java/concurrency/lock/Condition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/lock/Condition/</guid>
+      <description>Condition#</description>
+    </item>
+    
+    <item>
+      <title>LockSupport</title>
+      <link>https://localhost:1313/docs/java/concurrency/lock/LockSupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/concurrency/lock/LockSupport/</guid>
+      <description>LockSupport#</description>
+    </item>
+    
+  </channel>
+</rss>

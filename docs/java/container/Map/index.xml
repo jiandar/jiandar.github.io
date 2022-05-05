@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Map on IWiki</title>
+    <link>https://localhost:1313/docs/java/container/Map/</link>
+    <description>Recent content in Map on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/container/Map/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>TreeMap</title>
+      <link>https://localhost:1313/docs/java/container/Map/TreeMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/container/Map/TreeMap/</guid>
+      <description>TreeMap#概述# TreeMap 是有序集合，通过红黑树实现  特点#   键 不允许为null，不允许重复     值 允许为null，允许重复   顺序 有序   多线程 线程不安全    继承关系#public class TreeMap&amp;lt;K,V&amp;gt; extends AbstractMap&amp;lt;K,V&amp;gt; implements NavigableMap&amp;lt;K,V&amp;gt;, Cloneable, java.io.Serializable    AbstractMap接口 提供了Map骨干功能     NavigableMap接口 SortedMap 的扩展接口，提供了一系列的导航方法   Cloneable接口 支持克隆   Serializable接口 支持序列化    成员变量#// 比较器 private final Comparator&amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>HashMap</title>
+      <link>https://localhost:1313/docs/java/container/Map/HashMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/container/Map/HashMap/</guid>
+      <description>HashMap#概述# 是一个哈希表，存储的是键值对 (key-value) 映射。  特点#   键 允许为null（放在第一位），不允许重复     值 允许为null，允许重复   顺序 无序   效率 插入、获取的时间复杂度基本是 O(1)。遍历整个 Map 需要的时间与数组的长度成正比   多线程 线程不安全    继承关系#public class HashMap&amp;lt;K,V&amp;gt; extends AbstractMap&amp;lt;K,V&amp;gt; implements Map&amp;lt;K,V&amp;gt;, Cloneable, Serializable {    AbstractMap、Map接口 提供了Map接口的骨干功能     Cloneable接口 支持克隆   Serializable接口 支持序列化    成员变量#// 默认初始容量为16 static final int DEFAULT_INITIAL_CAPACITY = 1 &amp;lt;&amp;lt; 4; // 默认负载因子为0.</description>
+    </item>
+    
+    <item>
+      <title>HashTable</title>
+      <link>https://localhost:1313/docs/java/container/Map/HashTable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/container/Map/HashTable/</guid>
+      <description>HashTable#概述# 是一个哈希表，存储的是键值对 (key-value) 映射。 和 HashMap 很相似，不同的是，HashTable 是线程安全的  特点#   键 不允许为null，不允许重复     值 不允许为null，允许重复   顺序 无序   多线程 线程安全    继承关系#public class Hashtable&amp;lt;K,V&amp;gt; extends Dictionary&amp;lt;K,V&amp;gt; implements Map&amp;lt;K,V&amp;gt;, Cloneable, java.io.Serializable    Dictionary、Map接口 提供了键值对的骨干功能     Cloneable接口 支持克隆   Serializable接口 支持序列化    成员变量#// 保存key-value的数组。 private transient Entry&amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>LinkedHashMap</title>
+      <link>https://localhost:1313/docs/java/container/Map/LinkedHashMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/container/Map/LinkedHashMap/</guid>
+      <description>LinkedHashMap#概述# LinkedHashMap 是 HashMap 的子类，可以认为是等同于 HashMap+LinkedList，哈希表+双向链表  特点#   键 允许为null（放在第一位），不允许重复     值 允许为null，允许重复   顺序 有序   多线程 线程不安全    继承关系#public class LinkedHashMap&amp;lt;K,V&amp;gt; extends HashMap&amp;lt;K,V&amp;gt; implements Map&amp;lt;K,V&amp;gt; 成员变量#// 控制访问顺序：false：基于插入顺序；true：基于访问顺序 final boolean accessOrder; // 其他变量从HashMap中继承 构造方法#// 默认 public LinkedHashMap() { super(); accessOrder = false; } // 指定初始容量 public LinkedHashMap(int initialCapacity) { super(initialCapacity); accessOrder = false; } // 指定初始容量、负载因子 public LinkedHashMap(int initialCapacity, float loadFactor) { super(initialCapacity, loadFactor); accessOrder = false; } // 指定初始容量、负载因子、accessOrder public LinkedHashMap(int initialCapacity, float loadFactor, boolean accessOrder) { super(initialCapacity, loadFactor); this.</description>
+    </item>
+    
+    <item>
+      <title>ConcurrentHashMap</title>
+      <link>https://localhost:1313/docs/java/container/Map/ConcurrentHashMap/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/container/Map/ConcurrentHashMap/</guid>
+      <description>ConcurrentHashMap#概述# ConcurrentHashMap 是 HashMap 的扩展版本，支持并发，是线程安全的  特点#   键 允许为null，不允许重复     值 允许为null，允许重复   顺序 无序   多线程 线程安全    继承关系#public class ConcurrentHashMap&amp;lt;K,V&amp;gt; extends AbstractMap&amp;lt;K,V&amp;gt; implements ConcurrentMap&amp;lt;K,V&amp;gt;, Serializable { 构造方法#// 默认 public ConcurrentHashMap() { } // 指定初始容量 public ConcurrentHashMap(int initialCapacity) { //... } // 指定初始容量、负载因子 public ConcurrentHashMap(int initialCapacity, float loadFactor) { this(initialCapacity, loadFactor, 1); } // 指定初始容量、负载因子、并发级别 public ConcurrentHashMap(int initialCapacity, float loadFactor, int concurrencyLevel) { //.</description>
+    </item>
+    
+  </channel>
+</rss>

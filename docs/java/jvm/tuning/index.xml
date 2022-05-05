@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JVM 调优 on IWiki</title>
+    <link>https://localhost:1313/docs/java/jvm/tuning/</link>
+    <description>Recent content in JVM 调优 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/jvm/tuning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>JVM 参数</title>
+      <link>https://localhost:1313/docs/java/jvm/tuning/parameter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/jvm/tuning/parameter/</guid>
+      <description>JVM 参数#JVM 参数#标配参数、X参数（了解）#   -version 版本信息     -help 帮助   -showversion 版本详情       -Xint 解释模式，强制 JVM 执行所有的字节码   -Xcomp 编译模式，第一次使用就把所有的字节码编译成本地代码   -Xmixed 混合模式，将解释模式和编译模式进行混合使用    XX 参数（重点）# 布尔类型：-XX:+或-某个属性（+ 表示开启，- 表示关闭） 键值类型：-XX:属性键=属性值     示例 说明     -XX:-PrintGCDetails 关闭：打印GC收集细节   -XX:+PrintGCDetails 开启：打印GC收集细节   -XX:-UseSerialGC 关闭：使用串行垃圾回收器   -XX:+UseSerialGC 开启：使用串行垃圾回收器       -XX:MetaspaceSize=128m 设置元空间的内存大小，默认21m   -XX:MaxTenuringThreshold=15 设置GC垃圾年龄阈值，默认15    常用 JVM 参数#-Xms、-Xmx、-Xss、-Xmn#   参数 说明 备注     -Xms 初始分配内存，默认是物理内存的1/64 -Xms 等价于 -XX:InitialHeapSize   -Xmx 最大分配内存，默认是物理内存的1/4 -Xmx 等价于 -XX:MaxHeapSize   -Xss 设置单个线程栈的内存大小，一般默认512K ~ 1024K -Xss 等价于 -XX:ThreadStackSize   -Xmn 设置年轻代的内存大小，一般使用默认值     -XX:MetaspaceSize# 设置元空间的内存大小，默认21m 元空间（Java8）和老年代（Java7）类似，但元空间并不在虚拟机中，而是使用本地内存  -XX:SurvivorRatio#  配置新生代中 eden 和 S0/S1 空间比例</description>
+    </item>
+    
+    <item>
+      <title>OOM 问题</title>
+      <link>https://localhost:1313/docs/java/jvm/tuning/oom/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/jvm/tuning/oom/</guid>
+      <description>OOM 问题#内存溢出# Out Of Memory，内存溢出 java.lang.OutOfMemoryError     OOM 异常信息     栈内存溢出 java.lang.StackOverflowError   堆内存溢出 java.lang.OutOfMemoryError：Java heap space   元空间内存溢出 java.lang.OutOfMemoryError：MetaSpace   直接内存溢出 java.lang.OutOfMemoryError：Direct buffer memory    GC 回收时间过长# java.lang.OutOfMemoryError：GC overhead limit exceeded 超过 98% 的时间都在用来做 GC，且回收了不到 2% 的堆内存  不能再创建新的线程# java.lang.OutOfMemoryError：unable to create new native thread 原因：创建了太多的线程，超过系统承载极限 解决：想办法减少应用程序创建的线程的数量  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>类加载 on IWiki</title>
+    <link>https://localhost:1313/docs/java/jvm/class-load/</link>
+    <description>Recent content in 类加载 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/jvm/class-load/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>加载器</title>
+      <link>https://localhost:1313/docs/java/jvm/class-load/loader/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/jvm/class-load/loader/</guid>
+      <description>加载器#类加载# 虚拟机加载class文件到内存，并对数据进行校验，解析和初始化，最终形成可以被虚拟机直接使用的Class对象  类加载器# 实现 “通过一个类的全限定名来获取描述此类的二进制字节流” 动作的代码模块，称为类加载器。 相同的字节码被不同的类加载器加载的类不相等。  类加载器类型#  启动类加载器
+ BootstrapClassLoader C++ 编写，负责加载 jre/lib 下面的核心类库（java.lang.*等）    扩展类加载器
+ ExtClassLoader Java 编写，负责加载 jre/lib/ext 目录下的一些扩展类库， 只有一个实例。    应用程序类加载器
+ AppClassLoader Java 编写，负责加载应用程序的主函数类 ， 只有一个实例。    用户自定义类加载器
+ CustomClassLoader Java 编写，负责加载指定路径的 class 文件    双亲委派机制# 当类加载器需要加载某一个 .class 字节码文件时，它会首先将这个任务委托给其父类加载器。 递归这个操作，直至传递到顶层的启动类加载器。 只有当父类加载器无法完成此加载任务时，子类加载器才会自己去加载。  双亲委派的作用# 防止类的重复加载。通过委派的方式，判断上级是否已经加载过该 .</description>
+    </item>
+    
+    <item>
+      <title>加载过程</title>
+      <link>https://localhost:1313/docs/java/jvm/class-load/load-process/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/jvm/class-load/load-process/</guid>
+      <description>加载过程#1、加载# 通过一个类的全限定名，获取定义此类的二进制字节流。 将这个字节流所代表的静态存储结构，转化为方法区的运行时数据结构。 在内存中生成一个代表这个类的 java.lang.Class 对象，作为方法区该类各种数据的访问入口。  2、验证# 目的是为了确保 Class 文件的字节流中包含的信息符合当前虚拟机的要求，并且不会危害虚拟机自身的安全    阶段 说明     文件格式验证 验证字节流是否符合 Class 文件格式的规范，确保能被当前虚拟机处理。   元数据验证 对字节码进行语义验证，确保其描述信息符合 Java 语言规范的要求   字节码验证 通过数据流和控制流分析，确保程序语义是合法的、符合逻辑的   符号引用验证 验证符号引用是否为可用的直接引用，确保解析动作能正确执行。      3、准备# 为类变量（静态变量）分配内存，并将其初始化为系统默认值（零值） 如果是 final 修饰的类变量，则会直接初始化设定的值。  4、解析# 将常量池内的符号引用替换为直接引用 解析：类或接口、字段、类方法、接口方法  5、初始化#  初始化阶段是执行类构造器 &amp;lt;clinit&amp;gt;() 方法的过程</description>
+    </item>
+    
+  </channel>
+</rss>

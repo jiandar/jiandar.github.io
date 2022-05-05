@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机基础 on IWiki</title>
+    <link>https://localhost:1313/docs/computer/</link>
+    <description>Recent content in 计算机基础 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/computer/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>基础知识</title>
+      <link>https://localhost:1313/docs/computer/basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/computer/basic/</guid>
+      <description>基础知识#计算机网络# 指将地理位置不同的具有独立功能的多台计算机及其外部设备，通过通信线路连接起来，在网络操作系统，网络管理软件及网络通信协议的管理和协调下，实现资源共享和信息传递的计算机系统 组成：硬件系统（终端计算机、网络设备、传输介质）、软件系统（网络通信软件、网络设备软件）  通信协议# Communication Protocol 是指双方实体完成通信或服务所必须遵循的规则和约定  软件结构#   C/S B/S     Client/Server，即客户机/服务器架构 Browser/Server，即浏览器/服务器架构   例如：QQ、office 例如：京东、淘宝、百度   使用软件前，需先安装客户端软件更新时，客户端需要更新不能跨平台使用通信采用自有协议，相对来说较安全 本质上也是C/S，只不过B/S软件使用浏览器作为客户端软件不需要安装，可使用浏览器直接访问软件更新时，客户端不需要更新可以跨平台使用通信采用的是HTTP协议，相对来说不安全    进制# 即进位计数制 几进制就是满几进一     二进制 0、1     八进制 0、1、2、3、4、5、6、7、8   十进制 0、1、2、3、4、5、6、7、8、9   十六进制 0、1、2、3、4、5、6、7、8、9、a、b、c、d、e、f    编码# 编码：依据一定的规则，将字符转换为二进制编码的过程 解密：依据一定的规则，将二进制编码转换为字符的过程  字符集# 编码和解码所采用的规则，我们称为字符集 常用字符集  美国：ASCII 欧盟：ISO-8859-1 中国：GBK、GB2312（默认） 全球：UTF-8    </description>
+    </item>
+    
+    <item>
+      <title>网络模型</title>
+      <link>https://localhost:1313/docs/computer/network-model/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/computer/network-model/</guid>
+      <description>网络模型#概述# 为了使计算机厂家生产的计算机可以相互通讯，国际标准化组织（ISO）制定了OSI模型，该模型定义了不同计算机互联的标准 OSI模型是理论模型，一般用于理论研究，其分层有些冗余，实际应用中选择TCP/IP的四层模型 常见网络模型：TCP/IP四层模型、TCP/IP五层模型、OSI七层模型  OSI 模型# Open System Interconnection 开放式系统互联参考模型，是一个逻辑上的定义和规范     OSI层 功能 设备     应用层 为应用程序提供服务 网关   表示层 数据格式转化、数据加密 网关   会话层 建立、管理和维护会话 网关   传输层 建立、管理和维护端到端的链接 网关   网络层 IP选址及路由选择 路由器   数据链路层 提供介质访问和链路管理 交换机、网桥   物理层 在物理媒介体上传输数据 网卡，网线，集线器，中继器，调制解调器    协议栈#</description>
+    </item>
+    
+    <item>
+      <title>TCP/IP</title>
+      <link>https://localhost:1313/docs/computer/tcp-ip/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/computer/tcp-ip/</guid>
+      <description>TCP/IP 协议#概述# Transmission Control Protocol / Internet Protocol，传输控制协议/网际协议 定义了电子设备如何连入因特网，以及数据如何在它们之间传输的标准，是一系列互联网通信协议的统称 包括TCP，UDP，IP，HTTP，FTP，SMTP等协议，因TCP和IP最具代表性，所以被称为TCP/IP协议  TCP 协议# Transmission Control Protocol，传输控制协议 是面向连接的协议，在收发数据前，必须和对方建立可靠的连接。 一个TCP连接必须有三次握手、四次挥手  报文首部#   字段 描述 说明     序号，seq 报文序号    确认号，ask 期望的报文序号    URG 紧急 当URG=1时，表明报文段有紧急数据，应当尽快传送。   ACK 确认 当ACK=1时，上面的确认号才管用。   PSH  当PSH=1时，接收端应当将缓冲区中的数据尽快交付上层。   RST  当RST=1时，表示TCP连接出现严重差错，必须释放连接，再重新建立连接。   SYN 同步 当SYN=1时，表示请求建立连接。   FIN 终止 当FIN=1时，表示要求释放连接。    建立连接：三次握手#  三次握手（Three-way Handshake），是指建立一个 TCP 连接时，需要客户端和服务器总共发送3个包</description>
+    </item>
+    
+    <item>
+      <title>HTTP</title>
+      <link>https://localhost:1313/docs/computer/http/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/computer/http/</guid>
+      <description>HTTP 协议#概述# Hyper Text Transfer Protocol，超文本传输协议，是互联网上应用最为广泛的一种网络通信协议 用于将超文本标记语言（HTML）文档从Web服务器传送到本地浏览器 基于客户端/服务端（C/S）模型，将浏览器为客户端，通过URL向服务端发送所有请求    工作过程  客户与服务器建立连接 客户向服务器提出请求 服务器接受请求，并根据请求返回相应的文件作为应答 客户与服务器关闭连接      注意事项  HTTP 的默认端口号为80 HTTP 是无连接的，每次连接只处理一个请求 HTTP 是媒体独立的，可以发送任何类型的数据 HTTP 是无状态的，对于事务处理没有记忆能力    报文格式#请求方式#   请求方式 含义     GET 返回请求路径所对应的资源。   HEAD 不需要返回资源，仅返回响应行和响应头即可。   POST 向请求路径提交数据，创建新的资源。   PUT 更新请求路径所对应的资源。   PATCH 更新请求路径所对应的部分资源。   DELETE 删除请求路径所对应的资源。   OPTIONS 获取请求路径对应资源的信息（是否可可跨域获取，可以支持哪些请求方式等）。   TRACE 直接返回请求，主要用于测试。    状态码# HTTP Status Code，当浏览器发送请求后，服务器会返回一个包含HTTP状态码的消息头，以响应浏览器的请求 其他状态码可查询 &amp;ndash;&amp;gt; 链接 常见状态码  200 - 请求成功 301 - 资源（网页等）被永久转移到其它URL 404 - 请求的资源（网页等）不存在 500 - 内部服务器错误       状态码 含义 描述     1** 信息 服务器收到请求，需要请求者继续执行操作   2** 成功 操作被成功接收并处理   3** 重定向 需要进一步的操作以完成请求   4** 客户端错误 请求包含语法错误或无法完成请求   5** 服务器错误 服务器在处理请求的过程中发生了错误    其他#端口# 用于标识进程的逻辑地址，是一个数字标识 有效端口：0～65535，其中0～1024系统使用或保留端口  响应头#   响应头 说明     Allow 服务器支持哪些请求方法（如GET、POST等）。   Content-Encoding 文档的编码（Encode）方法。   Content-Length 表示内容长度。只有当浏览器使用持久HTTP连接时才需要这个数据。   Content-Type 表示后面的文档属于什么MIME类型。Servlet默认为text/plain，但通常需要显式地指定为text/html。   Date 当前的GMT时间。   Expires 应该在什么时候认为文档已经过期，从而不再缓存它？   Last-Modified 文档的最后改动时间。   Location 表示客户应当到哪里去提取文档。   Refresh 表示浏览器应该在多少时间之后刷新文档，以秒计。   Server 服务器名字。Servlet一般不设置这个值，而是由Web服务器自己设置。   Set-Cookie 设置和页面关联的Cookie。   WWW-Authenticate 客户应该在Authorization头中提供什么类型的授权信息？    内容类型# Content-Type，用于定义网络文件的类型和网页的编码     类型 描述 类型 描述     text/html HTML格式 application/xhtml+xml XHTML格式   text/plain 纯文本格式 application/xml XML数据格式   text/xml XML格式 application/json JSON数据格式   image/gif gif图片格式 application/pdf pdf格式   image/jpeg jpg图片格式 application/msword Word文档格式   image/png png图片格式 application/octet-stream 二进制流数据   multipart/form-data 表单文件上传 application/x-www-form-urlencoded 表单key/value格式    HTTPS# Hypertext Transfer Protocol Secure，超文本传输安全协议 是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议 主要作用：数据保密性、数据完整性、身份校验安全性 默认端口：443  工作原理#HTTPS 优点# 使用HTTPS协议可认证用户和服务器，确保数据发送到正确的客户机和服务器； HTTPS要比http协议安全，可防止数据在传输过程中不被窃取、改变，确保数据的完整性。 HTTPS是现行架构下最安全的解决方案，虽然不是绝对安全，但它大幅增加了中间人攻击的成本。 谷歌曾称“比起同等HTTP网站，采用HTTPS加密的网站在搜索结果中的排名将会更高”。  HTTPS 缺点# HTTPS协议握手阶段比较费时，会使页面的加载时间延长近50%，增加10%到20%的耗电； HTTPS连接缓存不如HTTP高效，会增加数据开销和功耗，甚至已有的安全措施也会因此而受到影响； SSL证书需要钱，功能越强大的证书费用越高，个人网站、小网站没有必要一般不会用。 SSL证书通常需要绑定IP，不能在同一IP上绑定多个域名，IPv4资源不可能支撑这个消耗。 HTTPS协议的加密范围也比较有限，在黑客攻击、拒绝服务攻击、服务器劫持等方面几乎起不到什么作用。最关键的，SSL证书的信用链体系并不安全，特别是在某些国家可以控制CA根证书的情况下，中间人攻击一样可行。  Socket# 套接字，网络上的两个程序通过一个双向的通信连接实现数据的交换，这个连接的一端称为一个socket  TCP 示例# 服务端  // 监听指定端口 ServerSocket server = new ServerSocket(6666); // 接受连接 Socket socket = server.</description>
+    </item>
+    
+    <item>
+      <title>Q&amp;A</title>
+      <link>https://localhost:1313/docs/computer/question/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/computer/question/</guid>
+      <description>Q&amp;amp;A#URL &amp;amp; URI#   URI URL     Uniform Resource Identifier，统一资源标识符 Uniform Resource Location，统一资源定位符   是一种语义上的抽象概念 是URI的一个子集，一种具体的URI   唯一标识了资源 唯一标识并定位了资源    GET &amp;amp; POST#    GET POST     书签 可收藏为书签 不可收藏为书签   缓存 能被缓存 不能缓存   历史 参数保留在浏览器历史中 参数不会保存在浏览器历史中   安全性 安全性比POST低，因为所发送的数据是 URL 的一部分 比GET更安全，因为参数不会被保存在浏览器历史或服务器日志中   可见性 数据在 URL 中对所有人都是可见的 数据不会显示在 URL 中   数据长度 受限，URL 的最大长度是 2048 个字符 无限制   数据类型 只允许 ASCII 字符 无限制   编码类型 application/x-www-form-urlencoded application/x-www-form-urlencoded multipart/form-data   后退/刷新 无害 数据会被重新提交    HTTP &amp;amp; HTTPS# https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。 http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。 http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。 http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。  Cookie &amp;amp; Session# Cookie、Session 都是一种用于维持客户端与服务端之间会话的机制      Cookie Session     数据存放位置 客户的浏览器 服务器   安全程度 可能会被篡改 安全   性能方面 只影响客户的浏览器 占用服务器性能   存储数据量 客户的浏览器对其有限制 不影响   存储结构 键值对形式的文本 哈希表结构    forward &amp;amp; redirect# 转发是服务器行为，重定向是客户端行为     请求转发 请求重定向     服务器内部跳转，所有地址栏上的路径不会改变 是浏览器再次发送请求，地址栏上的路径会发生改变   只发送一次请求 会发送两次请求   只能在当前应用内部跳转 可以在内部跳转，也可以跳出当前应用   可以共享reqeust 不能可以共享reqeust   request.</description>
+    </item>
+    
+  </channel>
+</rss>

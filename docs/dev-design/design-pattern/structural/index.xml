@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>结构型 on IWiki</title>
+    <link>https://localhost:1313/docs/dev-design/design-pattern/structural/</link>
+    <description>Recent content in 结构型 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/dev-design/design-pattern/structural/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>代理模式</title>
+      <link>https://localhost:1313/docs/dev-design/design-pattern/structural/06-proxy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-design/design-pattern/structural/06-proxy/</guid>
+      <description>代理模式#概述# 英文：Proxy Pattern 简述：为其他对象提供一种代理以控制对这个对象的访问 归纳：没有资源没时间，得找别人来帮忙 目的：增强职责 案例：媒婆  示例#   类型 区别     静态代理 手动生成代理类   动态代理 运用反射机制，动态生成代理类   JDK 动态代理 只能代理实现了接口的类   CGLib 动态代理 对目标类生成一个子类，并覆盖其中方法实现增强。 但因为采用的是继承，所以不能对final修饰的类进行代理    静态代理#// 被代理目标类 public interface Wow { void tbc(); } public class Blizzard implements Wow { @Override public void tbc() { System.out.println(&amp;#34;《魔兽世界》：燃烧的远征&amp;#34;); } } // 代理类 public class NetEasy implements Wow { private Blizzard blizzard; // 传递被代理对象  public NetEasy(Blizzard blizzard) { this.</description>
+    </item>
+    
+    <item>
+      <title>桥接模式</title>
+      <link>https://localhost:1313/docs/dev-design/design-pattern/structural/07-bridge/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-design/design-pattern/structural/07-bridge/</guid>
+      <description>桥接模式#概述# 英文：Bridge Pattern 简述：将两个能够独立变化的部分分离开来 归纳：约定优于配置 目的：不允许用继承 案例：桥  示例#// 品牌 public interface Brand { void sale(); } // 类似品牌：Shenzhou、Huawei public class Dell implements Brand { @Override public void sale() { System.out.println(&amp;#34;出售戴尔&amp;#34;); } } // 电脑 public class Computer { protected Brand brand; public Computer(Brand brand) { this.brand = brand; } public void sale(){ brand.sale(); } } // 类似电脑：Laptop public class Desktop extends Computer { public Desktop(Brand b) { super(b); } @Override public void sale() { super.</description>
+    </item>
+    
+    <item>
+      <title>外观模式</title>
+      <link>https://localhost:1313/docs/dev-design/design-pattern/structural/08-facade/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-design/design-pattern/structural/08-facade/</guid>
+      <description>外观模式#概述# 英文：Facade Pattern 简述：对外提供一个统一的接口用来访问子系统 归纳：打开一扇门，通向全世界 目的：统一访问入口 案例：前台  示例#// 子系统 public interface Shape { void draw(); } // 类似子系统：Rectangle、Square public class Circle implements Shape { @Override public void draw() { System.out.println(&amp;#34;Circle::draw()&amp;#34;); } } // 外观类 public class ShapeMaker { private Shape circle; private Shape rectangle; private Shape square; public ShapeMaker() { circle = new Circle(); rectangle = new Rectangle(); square = new Square(); } public void drawCircle() { circle.</description>
+    </item>
+    
+    <item>
+      <title>组合模式</title>
+      <link>https://localhost:1313/docs/dev-design/design-pattern/structural/09-composite/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-design/design-pattern/structural/09-composite/</guid>
+      <description>组合模式#概述# 英文：Composite Pattern 简述：将整体与局部（树形结构）进行递归组合，让客户端能够以一致的方式对其进行处理 归纳：人在一起叫团伙，心在一起叫团队 目的：统一整体和个体 案例：组织架构树  示例#// 节点 public class Employee { // 节点属性  private String name; private String dept; public Employee(String name, String dept) { this.name = name; this.dept = dept; subEmployees = new ArrayList&amp;lt;&amp;gt;(); } // setter、getter  // ......  // 子节点集合  private List&amp;lt;Employee&amp;gt; subEmployees; public List&amp;lt;Employee&amp;gt; getSubEmployees() { return subEmployees; } public void add(Employee employee) { subEmployees.</description>
+    </item>
+    
+    <item>
+      <title>享元模式</title>
+      <link>https://localhost:1313/docs/dev-design/design-pattern/structural/10-flyweight/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-design/design-pattern/structural/10-flyweight/</guid>
+      <description>享元模式#概述# 英文：Flyweight Pattern 简述：使用对象池来减少重复对象的创建 归纳：优化资源配置，减少重复浪费 目的：共享资源池 案例：全国社保联网  示例#// 享元类 public interface IChess { public void draw(); } public class Chess implements IChess { // 内部状态：不可改变，可以共享  private String color; public Chess(String color) { this.color = color; } // 外部状态：可以改变，不可共享  private String position; public void setPosition(String position) { this.position = position; } @Override public void draw() { System.out.println(&amp;#34;围棋：color=&amp;#34; + color + &amp;#34;, position=&amp;#34; + position); } } // 享元工厂 public class ChessFactory { // 池容器  private static final HashMap&amp;lt;String, IChess&amp;gt; chessMap = new HashMap&amp;lt;&amp;gt;(); // 获取享元对象  public static Chess getChess(String color) { if (!</description>
+    </item>
+    
+    <item>
+      <title>适配器模式</title>
+      <link>https://localhost:1313/docs/dev-design/design-pattern/structural/11-adapter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-design/design-pattern/structural/11-adapter/</guid>
+      <description>适配器模式#概述# 英文：Adapter Pattern 简述：将原来不兼容的两个类匹配在一起 归纳：万能充电器 目的：兼容转换 案例：电源适配  示例#// 源 public class Adaptee { public void adapteeMethod() { System.out.println(&amp;#34;Adaptee method!&amp;#34;); } } // 目标 public interface Target { void adapteeMethod(); void adapterMethod(); } // 适配器 public class Adapter implements Target { private Adaptee adaptee; public Adapter(Adaptee adaptee) { this.adaptee = adaptee; } @Override public void adapteeMethod() { adaptee.adapteeMethod(); } @Override public void adapterMethod() { System.</description>
+    </item>
+    
+    <item>
+      <title>装饰器模式</title>
+      <link>https://localhost:1313/docs/dev-design/design-pattern/structural/12-decorator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-design/design-pattern/structural/12-decorator/</guid>
+      <description>装饰器模式#概述# 英文：Decorator Pattern 简述：不改变原类结构、不使用继承的情况下，动态地给一个对象添加一些额外的职责。 归纳：他大舅他二舅都是他舅 目的：灵活扩展、同宗同源 案例：煎饼  示例#// 被装饰类 public interface Shape { void draw(); } // 类似形状：Circle public class Rectangle implements Shape { @Override public void draw() { System.out.println(&amp;#34;Shape: 正方形&amp;#34;); } } // 装饰类 public abstract class ShapeDecorator implements Shape { protected Shape shape; public ShapeDecorator(Shape shape) { this.shape = shape; } @Override public void draw() { shape.draw(); } } // 类似装饰类:GreenShapeDecorator public class RedShapeDecorator extends ShapeDecorator { public RedShapeDecorator(Shape shape) { super(shape); } @Override public void draw() { super.</description>
+    </item>
+    
+  </channel>
+</rss>

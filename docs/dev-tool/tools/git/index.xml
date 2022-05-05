@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on IWiki</title>
+    <link>https://localhost:1313/docs/dev-tool/tools/git/</link>
+    <description>Recent content in Git on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/dev-tool/tools/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>版本控制</title>
+      <link>https://localhost:1313/docs/dev-tool/tools/git/version-control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-tool/tools/git/version-control/</guid>
+      <description>版本控制#概述#  版本控制是一种记录一个或若干文件内容变化，以便将来查阅特定版本修订情况的系统
+  功能：
+ 协同修改：多人并行不悖的修改服务器端的同一个文件。 数据备份：不仅保存目录和文件的当前状态， 还能够保存每一个提交过的历史状态。 版本管理：在保存每一个版本的文件信息的时候要做到不保存重复数据， 以节约存储空间， 提高运行效率。 权限控制：对参与开发的人员进行权限控制及代码审核 历史记录：查看修改人、 修改时间、 修改内容、 日志信息。将本地文件恢复到某一个历史状态。 分支管理：允许开发团队在工作过程中多条生产线同时推进任务， 进一步提高效率    分类#本地式# 用复制整个项目目录的方式来保存不同的版本，或许还会改名加上备份时间以示区别 好处就是简单，但是特别容易犯错  集中式# 使用一个单一的集中管理的服务器，保存所有文件的修订版本 而协同工作的人们都通过客户端连到这台服务器，取出最新的文件或者提交更新 增量维护，特点：  数据不安全：存在单点故障、黑客攻击的问题，需做好数据备份 服务器压力大：所有操作都需要与服务器交互，受限于宽带 强调集中管理：适合人数不多的项目    分布式# 客户端并不只提取最新版本的文件快照， 而是把代码仓库完整地镜像下来，包括完整的历史记录。 全量维护，特点：  数据安全完整：所有节点都是服务器，无带宽和性能瓶颈；提交全部使用SHA1哈希 效率高：提交为本地操作，全离线操作；编码不会被冲突打断 强调个体：适合分布式开发    SVN# 是基于差异的版本控制，存储的是一组基本文件和每个文件随时间逐步累积的差异 优缺点：节省磁盘空间，耗时、效率低。 不适合的领域：跨地域的协同开发、追求高质量代码和代码门禁  Git# 是基于快照的版本控制，存储的是文件的一系列快照 优缺点：版本切换时非常快，占用磁盘空间较大 不适合的领域：目录级别的读授权、word等二进制文档的版本控制  </description>
+    </item>
+    
+    <item>
+      <title>运行原理</title>
+      <link>https://localhost:1313/docs/dev-tool/tools/git/basic-logic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-tool/tools/git/basic-logic/</guid>
+      <description>工作原理#原理# Git 把数据看作是微型文件系统的一系列快照， 每次提交更新时，Git 都会对当前的全部文件制作一个快照并保存这个快照的索引（哈希算法）， 为了高效， 如果文件没有修改，Git 不再重新存储该文件， 而是只保留一个链接指向之前存储的文件。  特性# 直接记录快照，而非差异比较 近乎所有操作都是本地执行，不需要联网 时刻保持数据完整性 一般只是添加数据  工程区域# 工作区：日常工作的工程目录 暂存区：又称索引，工程根目录.git/index 文件夹 版本区：又称本地仓库，工程根目录.git文件夹  工作流程# 文件必须一步一步的依次提交 文件可以依次检出，也可以直接从远程仓库检出到工作目录  </description>
+    </item>
+    
+    <item>
+      <title>基本命令</title>
+      <link>https://localhost:1313/docs/dev-tool/tools/git/basic-command/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-tool/tools/git/basic-command/</guid>
+      <description>基本命令#基本操作#创建仓库#git init## 初始化本地库 # git init [dir] $ git init git clone## 从现有库中拷贝项目 # git clone &amp;lt;repository&amp;gt; &amp;lt;dir&amp;gt; $ git clone git://github.com/schacon/grit.git myDir 变更修改#git add## 添加文件/文件夹到暂存区 # git add [file1] [file2] ... $ git add README hello.php # 格式：git add [dir] $ git add . git rm## 删除工作区和暂存区的文件 # git rm &amp;lt;file&amp;gt; $ git rm runoob.</description>
+    </item>
+    
+    <item>
+      <title>Git 使用</title>
+      <link>https://localhost:1313/docs/dev-tool/tools/git/git-operate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/dev-tool/tools/git/git-operate/</guid>
+      <description>Git 使用#GitHub#免密提交#  生成 SSH Key 文件
+$ ssh-keygen -t rsa -C &amp;#34;youremail@example.com&amp;#34;   打开 ~/.ssh/id_rsa.pub，复制里面的 key
+  回到 github 上，进入Settings，选择 SSH and GPG keys，点击 New SSH key，设置标题，粘贴 key
+  验证
+$ ssh -T git@github.com Hi origin! You&amp;#39;ve successfully authenticated, but GitHub does not provide shell access.   TortoiseGit#与 GitHub 共用密码#  现象：TortoiseGit 不能共用ssh-keygen产生的密钥</description>
+    </item>
+    
+  </channel>
+</rss>

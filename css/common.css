@@ -1,0 +1,138 @@
+body {
+  background: #f0f0e8;
+  overflow-y:scroll;
+}
+
+/* 正文 */
+.book-page {
+  background: white;
+  z-index: 10;
+}
+
+/* 文章菜单 */
+.book-menu .book-menu-content {
+  background: #f0f0e8;
+  max-height: 48rem;
+  z-index: 10;
+}
+
+/* 文章目录 */
+.book-toc .book-toc-content {
+  background: #f0f0e8;
+  max-height: 26rem;
+  z-index: 10;
+}
+
+.book-toc {  
+  font-size: .8rem;
+}
+
+.container {
+  max-width: 90rem;
+}
+
+aside nav ul li {
+  margin: 0.6em 0;
+}
+
+.book-page table tr td {
+  border: 1px solid #adb5bd;
+}
+
+.book-page table tr th {
+  border: 1px solid #adb5bd;
+}
+
+.markdown table {
+  width: 100%;
+  display: table;
+}
+
+.markdown {
+  margin: 0 1rem;
+}
+
+/* 标题h1，h2，h3，h4 */
+.markdown h2+h3,
+.markdown h2+h4,
+.markdown h2+ul,
+.markdown h3+h4,
+.markdown h3+ul,
+.markdown h4+ul{
+  margin-top: 4px;
+  padding-top: 4px;
+}
+
+.markdown h1 {
+  text-align: center;
+  font-weight: bolder;
+  font-size: 2.5rem;
+}
+
+.markdown h2 {
+  font-weight: bolder;
+  font-size: 1.65rem;  
+  padding-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown h3 {
+  color: #1E4E79;
+  font-weight: bolder;
+  font-size: 1.25rem;
+  padding-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown h4 {
+  color: #5B9BD5;
+  font-weight: bolder;
+  font-size: 1rem;
+  padding-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+ul li p{
+  margin-top: 0;
+}
+
+/* 表格 */
+thead {
+  background: var(--gray-100);
+}
+
+/* 锚点 */
+h1 a.anchor {
+  display: none;
+}
+
+/* 段落 */
+p {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+/* 画板娘 */
+body #waifu {
+  right: 2em;
+  left: auto;
+}
+
+/* 代码块文本自动换行 */
+pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+/* 居中 */
+.style-center {
+  text-align: center;
+}
+
+/* 隐藏 */
+.style-hide {
+  display: none;
+}

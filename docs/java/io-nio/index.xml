@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>IO / NIO on IWiki</title>
+    <link>https://localhost:1313/docs/java/io-nio/</link>
+    <description>Recent content in IO / NIO on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://localhost:1313/docs/java/io-nio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>IO 流</title>
+      <link>https://localhost:1313/docs/java/io-nio/io/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/io-nio/io/</guid>
+      <description>IO 流#概述# I/O 即输入Input/ 输出Output的缩写，就是计算机调度把各个存储中的数据写入写出的过程； Java中用“流（stream）”来抽象表示这么一个写入写出的功能，并封装成一个“类”  I/O 体系#  I/O 体系基类：以程序自身为参照基准，判断输入输出
+    字节流 字符流     输入流 InputStream Reader   输出流 OutputStream Writer    ​
+  I/O 体系分类
+    InputStream OutputStream  Reader Writer     文件流 File&amp;ndash; File&amp;ndash;  File&amp;ndash; File&amp;ndash;   管道流 Piped&amp;ndash; Piped&amp;ndash;  Piped&amp;ndash; Piped&amp;ndash;   缓冲流 Buffered&amp;ndash; Buffered&amp;ndash;  Buffered&amp;ndash; Buffered&amp;ndash;   数据流 Data&amp;ndash; Data&amp;ndash; 字符流 String&amp;ndash; String&amp;ndash;   对象流 Object&amp;ndash; Object&amp;ndash; 转换流 InputStream&amp;ndash; OutputStream&amp;ndash;   字节数组流 ByteArray&amp;ndash; ByteArray&amp;ndash; 字符数组流 CharArray&amp;ndash; CharArray&amp;ndash;   打印流  Print&amp;ndash;  Print&amp;ndash;       I/O 示例#文件流#// FileInputStream、FileOutputStream try (FileInputStream fis = new FileInputStream(&amp;#34;E:\\test1.</description>
+    </item>
+    
+    <item>
+      <title>NIO</title>
+      <link>https://localhost:1313/docs/java/io-nio/nio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://localhost:1313/docs/java/io-nio/nio/</guid>
+      <description>NIO# 写NIO程序时，经常使用ByteBuffer来读取或者写入数据，它是使用Native函数库直接分配堆外内存    方式 ByteBuffer.allocate(capability) ByteBuffer.allocateDirect(capability)     说明 分配的是JVM堆内存，属于GC管辖 直接分配OS本地内存，不属于GC管辖   效率 由于需要拷贝，所以速度相对较慢 由于不需要内存拷贝，所以速度相对较快      </description>
+    </item>
+    
+  </channel>
+</rss>

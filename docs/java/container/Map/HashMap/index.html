@@ -1,0 +1,3794 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+
+<head>
+  <meta name="generator" content="Hugo 0.80.0" />
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="HashMap">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="HashMap" />
+<meta property="og:description" content="HashMap" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://localhost:1313/docs/java/container/Map/HashMap/" />
+<meta property="article:modified_time" content="2022-04-12T02:45:55+08:00" /><meta property="og:site_name" content="IWiki" />
+<title>HashMap | IWiki</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.6c7c6446dfdee7c8c933e9bbc6e80ee3ed6c913b2a59519f2092c3c6a9d63e55.css" integrity="sha256-bHxkRt/e58jJM&#43;m7xugO4&#43;1skTsqWVGfIJLDxqnWPlU=">
+<script defer src="/sw.min.74a8bb07f0bee86d6bb9a2750f073f14d93c7e4512f28860370cfd879e9719b4.js" integrity="sha256-dKi7B/C&#43;6G1ruaJ1Dwc/FNk8fkUS8ohgNwz9h56XGbQ="></script>
+
+  
+<link rel="stylesheet" href="/css/common.css" />
+<script defer src="/js/common/jquery.min.js"></script>
+<script defer src="/js/common/jquery.cookie.min.js"></script>
+<script defer src="/js/common.js"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body dir="ltr">
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      <div class="book-menu-content">
+        
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>IWiki</span>
+  </a>
+</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-eca69da21de5b0cd25d8421dec09a327" class="toggle" checked />
+    <label for="section-eca69da21de5b0cd25d8421dec09a327" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/" class="">Java - 开发</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-701a5e4b70e899af26f3b4581b8e335c" class="toggle"  />
+    <label for="section-701a5e4b70e899af26f3b4581b8e335c" class="flex justify-between">
+      <a  class="">基础语法</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/syntax-element/" class="">语法元素</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/data-type/" class="">数据类型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/process-control/" class="">流程控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/array/" class="">数组</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-grammar/method/" class="">方法</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3118d23b01b05a46cf767ff83a2d1ed0" class="toggle"  />
+    <label for="section-3118d23b01b05a46cf767ff83a2d1ed0" class="flex justify-between">
+      <a  class="">面向对象</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/class/" class="">类和对象</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/encapsulation/" class="">封装</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/Inheritance/" class="">继承</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/polymorphism/" class="">多态</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/oop/abstraction/" class="">抽象</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7eed87a13764aa0eb626ebbc547f3eeb" class="toggle" checked />
+    <label for="section-7eed87a13764aa0eb626ebbc547f3eeb" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/container/" class="">集合容器</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-845472a49974fa26d5b88b0b050233c7" class="toggle" checked />
+    <label for="section-845472a49974fa26d5b88b0b050233c7" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/container/Map/" class="">Map</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/TreeMap/" class="">TreeMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/HashMap/" class=" active">HashMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/HashTable/" class="">HashTable</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/LinkedHashMap/" class="">LinkedHashMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Map/ConcurrentHashMap/" class="">ConcurrentHashMap</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-84f89c052eeb4ff00fe19a3f39141a7a" class="toggle"  />
+    <label for="section-84f89c052eeb4ff00fe19a3f39141a7a" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/container/List/" class="">List</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/List/Vector/" class="">Vector</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/List/ArrayList/" class="">ArrayList</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/List/LinkedList/" class="">LinkedList</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6beb3e1071bb1c5c51f9403fd170dd13" class="toggle"  />
+    <label for="section-6beb3e1071bb1c5c51f9403fd170dd13" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/container/Set/" class="">Set</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Set/TreeSet/" class="">TreeSet</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Set/HashSet/" class="">HashSet</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Set/LinkedHashSet/" class="">LinkedHashSet</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-402b0e9453b26ea851a0a20299cde4df" class="toggle"  />
+    <label for="section-402b0e9453b26ea851a0a20299cde4df" class="flex justify-between">
+      <a  class="">其他</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/container/Queue/Queue/" class="">Queue</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-a780fba0a170aaf946bbcef1d6b361b6" class="toggle"  />
+    <label for="section-a780fba0a170aaf946bbcef1d6b361b6" class="flex justify-between">
+      <a  class="">通用类库</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-class/jdbc/" class="">JDBC</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-class/datetime/" class="">日期时间</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-124ab9595d96a674121d40dc5be8acb1" class="toggle"  />
+    <label for="section-124ab9595d96a674121d40dc5be8acb1" class="flex justify-between">
+      <a  class="">语言特性</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-b1f0e963ccf97a301a0bf8703be0593a" class="toggle"  />
+    <label for="section-b1f0e963ccf97a301a0bf8703be0593a" class="flex justify-between">
+      <a  class="">Java</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java/regular-expressions/" class="">正则表达式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java/exception/" class="">异常处理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java/reflection/" class="">反射机制</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cb2bfb4fa57b693ba5c2e3303fe74566" class="toggle"  />
+    <label for="section-cb2bfb4fa57b693ba5c2e3303fe74566" class="flex justify-between">
+      <a  class="">Java5</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-dbd33d29aa5a386e0e08e52943692943" class="toggle"  />
+    <label for="section-dbd33d29aa5a386e0e08e52943692943" class="flex justify-between">
+      <a  class="">Java8</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java8/lambda/" class="">Lambda</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java8/method-reference/" class="">方法引用</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java8/functional-interface/" class="">函数式接口</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/basic-feature/Java8/stream-api/" class="">Java8 Stream</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-55499d4cc67716b87a2d9dd6c2cecf7e" class="toggle"  />
+    <label for="section-55499d4cc67716b87a2d9dd6c2cecf7e" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/concurrency/" class="">并发编程</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-135c218adb7a4b3af1fcf22aa5aa4fb3" class="toggle"  />
+    <label for="section-135c218adb7a4b3af1fcf22aa5aa4fb3" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/concurrency/thread/" class="">线程基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/thread/thread-create/" class="">创建线程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/thread/thread-stop/" class="">停止线程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/thread/thread-daemon/" class="">守护线程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/thread/thread-state/" class="">线程状态</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-45dedb109adabfd17f6e0421ddd0014e" class="toggle"  />
+    <label for="section-45dedb109adabfd17f6e0421ddd0014e" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/concurrency/theory/" class="">并发理论</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/JMM/" class="">Java 内存模型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/synchronized/" class="">synchronized</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/volatile/" class="">volatile</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/final/" class="">final</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/theory/CAS/" class="">CAS</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e781990c75fd8128707aee9d5c134f01" class="toggle"  />
+    <label for="section-e781990c75fd8128707aee9d5c134f01" class="flex justify-between">
+      <a  class="">并发容器</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/container/ThreadLocal/" class="">ThreadLocal</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/container/BlockingQueue/" class="">BlockingQueue</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/container/ConcurrentHashMap/" class="">ConcurrentHashMap</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/container/CopyOnWriteArrayList/" class="">CopyOnWriteArrayList</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c35758f12a542218a4c965ad0e1947b9" class="toggle"  />
+    <label for="section-c35758f12a542218a4c965ad0e1947b9" class="flex justify-between">
+      <a  class="">并发工具</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/tool/CountDownLatch/" class="">CountDownLatch</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/tool/CyclicBarrier/" class="">CyclicBarrier</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/tool/Semaphore/" class="">Semaphore</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/tool/Exchanger/" class="">Exchanger</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-423d8638a6f726e14f89e320a5463b42" class="toggle"  />
+    <label for="section-423d8638a6f726e14f89e320a5463b42" class="flex justify-between">
+      <a  class="">锁体系</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/concurrency-lock/" class="">锁</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/aqs/" class="">AQS</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/ReentrantLock/" class="">ReentrantLock</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/ReentrantReadWriteLock/" class="">ReentrantReadWrite...</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/Condition/" class="">Condition</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/lock/LockSupport/" class="">LockSupport</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4f800630fcbdcb323791cc591ac7f1b2" class="toggle"  />
+    <label for="section-4f800630fcbdcb323791cc591ac7f1b2" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/concurrency/threadpool/" class="">线程池</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/threadpool-theory/" class="">线程池 - 原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/threadpool-type/" class="">线程池 - 种类</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/threadpool-operate/" class="">线程池 - 操作</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/ScheduledThreadPoolExecutor/" class="">定时线程池</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/threadpool/FutureTask/" class="">FutureTask</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-55605fbb1582caa8aa13d761d89fc4fd" class="toggle"  />
+    <label for="section-55605fbb1582caa8aa13d761d89fc4fd" class="flex justify-between">
+      <a  class="">并发问题</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/problem/deadlock/" class="">死锁</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/concurrency/problem/ConcurrentModificationException/" class="">并发修改异常</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7306aa85f16c9f917c8e83f95df5f357" class="toggle"  />
+    <label for="section-7306aa85f16c9f917c8e83f95df5f357" class="flex justify-between">
+      <a  class="">IO / NIO</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/io-nio/io/" class="">IO 流</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/io-nio/nio/" class="">NIO</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-197db6bcac5ea0eafcb283f4889907f1" class="toggle"  />
+    <label for="section-197db6bcac5ea0eafcb283f4889907f1" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/jvm/" class="">虚拟机</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-80ecf4e1bce2858e148a21dd8a852c72" class="toggle"  />
+    <label for="section-80ecf4e1bce2858e148a21dd8a852c72" class="flex justify-between">
+      <a  class="">类加载</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/class-load/loader/" class="">加载器</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/class-load/load-process/" class="">加载过程</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/memory-structure/" class="">内存结构</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5c83a4eae655f3ef9028a6494662174d" class="toggle"  />
+    <label for="section-5c83a4eae655f3ef9028a6494662174d" class="flex justify-between">
+      <a href="https://localhost:1313/docs/java/jvm/gc/" class="">垃圾回收</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/gc/reference-type/" class="">引用类型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/gc/judge/" class="">判定算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/gc/collect/" class="">回收算法</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/gc/collector/" class="">垃圾收集器</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3db35518c122193e98d97a4f8125d793" class="toggle"  />
+    <label for="section-3db35518c122193e98d97a4f8125d793" class="flex justify-between">
+      <a  class="">JVM 调优</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/tuning/parameter/" class="">JVM 参数</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/java/jvm/tuning/oom/" class="">OOM 问题</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-fd1e9074d3ca9b625372916e95f19a1c" class="toggle"  />
+    <label for="section-fd1e9074d3ca9b625372916e95f19a1c" class="flex justify-between">
+      <a  class="">计算机基础</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/basic/" class="">基础知识</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/network-model/" class="">网络模型</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/tcp-ip/" class="">TCP/IP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/http/" class="">HTTP</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/computer/question/" class="">Q&amp;A</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5be00476a79d95f64d0cd68b7f7c13d7" class="toggle"  />
+    <label for="section-5be00476a79d95f64d0cd68b7f7c13d7" class="flex justify-between">
+      <a  class="">程序设计</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-d6f035a7ed565038177bf8579b9b1325" class="toggle"  />
+    <label for="section-d6f035a7ed565038177bf8579b9b1325" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/algorithm/" class="">算法</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/time-complexity/" class="">时间复杂度</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-41ba6b183933d5c93da3001ee830e482" class="toggle"  />
+    <label for="section-41ba6b183933d5c93da3001ee830e482" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/algorithm/sort/" class="">排序算法</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/bubble/" class="">冒泡排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/selection/" class="">选择排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/insertion/" class="">插入排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/merge/" class="">归并排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/quick/" class="">快速排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/shell/" class="">希尔排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/counting/" class="">计数排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/radix/" class="">基数排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/bucket/" class="">桶排序</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/sort/heap/" class="">堆排序</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-80b4da73d6ee514e7e75d5922507a251" class="toggle"  />
+    <label for="section-80b4da73d6ee514e7e75d5922507a251" class="flex justify-between">
+      <a  class="">查找算法</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/algorithm/search/binary/" class="">二分查找</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cdd17ed4dc88ccbd0fc3daf0f575b21a" class="toggle"  />
+    <label for="section-cdd17ed4dc88ccbd0fc3daf0f575b21a" class="flex justify-between">
+      <a  class="">数据结构</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-97aa815b887b479e889248ea7051a97a" class="toggle"  />
+    <label for="section-97aa815b887b479e889248ea7051a97a" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/design-pattern/" class="">设计模式</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-addd668eaebe3628dd27193727a56701" class="toggle"  />
+    <label for="section-addd668eaebe3628dd27193727a56701" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/" class="">创建型</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/01-singleton/" class="">单例模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/02-factory/" class="">工厂模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/04-prototype/" class="">原型模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/creational/05-builder/" class="">建造者模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-91539113b2b8b32bdeede6c35874f3ad" class="toggle"  />
+    <label for="section-91539113b2b8b32bdeede6c35874f3ad" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/" class="">结构型</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/06-proxy/" class="">代理模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/07-bridge/" class="">桥接模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/08-facade/" class="">外观模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/09-composite/" class="">组合模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/10-flyweight/" class="">享元模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/11-adapter/" class="">适配器模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/structural/12-decorator/" class="">装饰器模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-be05c8452f353c5349ea34990826b042" class="toggle"  />
+    <label for="section-be05c8452f353c5349ea34990826b042" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/" class="">行为型</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/13-state/" class="">状态模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/14-strategy/" class="">策略模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/15-template/" class="">模板模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/16-command/" class="">命令模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/17-iterator/" class="">迭代器模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/18-interpreter/" class="">解释器模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/19-observer/" class="">观察者模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/20-visitor/" class="">访问者模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/21-mediator/" class="">中介者模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/22-memento/" class="">备忘录模式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-design/design-pattern/behavioural/23-chainOfResponsibility/" class="">职责链模式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-62a4f864cb4398cc0696ddfa2164cdd3" class="toggle"  />
+    <label for="section-62a4f864cb4398cc0696ddfa2164cdd3" class="flex justify-between">
+      <a  class="">编程语言</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/markdown/" class="">Markdown</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e075eb301b3b23f8f3c72a4abb486a4a" class="toggle"  />
+    <label for="section-e075eb301b3b23f8f3c72a4abb486a4a" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-lang/html/" class="">HTML</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/document/" class="">文档标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/text/" class="">文本标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/list/" class="">列表标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/link/" class="">链接标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/table/" class="">表格标签</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/html/form/" class="">表单标签</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-5ea3f7af0b9329b5237426683b3155a8" class="toggle"  />
+    <label for="section-5ea3f7af0b9329b5237426683b3155a8" class="flex justify-between">
+      <a  class="">CSS</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/basic/" class="">CSS 基础</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-46d995f5fbb586376a81e6a230a6eb29" class="toggle"  />
+    <label for="section-46d995f5fbb586376a81e6a230a6eb29" class="flex justify-between">
+      <a  class="">CSS 样式</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/style/font/" class="">字体样式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/style/text/" class="">文本样式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/style/list/" class="">列表样式</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/style/background/" class="">背景样式</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-32711bf7389a6a6b8e135f1d02f94385" class="toggle"  />
+    <label for="section-32711bf7389a6a6b8e135f1d02f94385" class="flex justify-between">
+      <a  class="">CSS 位置</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/position/border/" class="">边</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/position/width-height/" class="">宽高</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/position/position/" class="">定位</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/position/float/" class="">浮动</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-lang/css/selector/" class="">CSS 选择器</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-c44c2e5d043270d5d25fd4cc0b004fe7" class="toggle"  />
+    <label for="section-c44c2e5d043270d5d25fd4cc0b004fe7" class="flex justify-between">
+      <a  class="">框架工具</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-945603671b2430ee180d3aee2195915e" class="toggle"  />
+    <label for="section-945603671b2430ee180d3aee2195915e" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/tools/" class="">开发工具</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e4833db1c7b15f74d38358fb240e5437" class="toggle"  />
+    <label for="section-e4833db1c7b15f74d38358fb240e5437" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/tools/git/" class="">Git</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-tool/tools/git/version-control/" class="">版本控制</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-tool/tools/git/basic-logic/" class="">运行原理</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-tool/tools/git/basic-command/" class="">基本命令</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/dev-tool/tools/git/git-operate/" class="">Git 使用</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-7a003fa905f04ac2c991992a2b530727" class="toggle"  />
+    <label for="section-7a003fa905f04ac2c991992a2b530727" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/frameworks/" class="">应用框架</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-6724eca88d81b033fe19fe599c3dfb8f" class="toggle"  />
+    <label for="section-6724eca88d81b033fe19fe599c3dfb8f" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/middleware/" class="">中间件</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-1cbb7c8ff3241d90c98b5a7021bd8e86" class="toggle"  />
+    <label for="section-1cbb7c8ff3241d90c98b5a7021bd8e86" class="flex justify-between">
+      <a href="https://localhost:1313/docs/dev-tool/micro-service/" class="">微服务</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-afa1946b478a589a42eddb40f61d5730" class="toggle"  />
+    <label for="section-afa1946b478a589a42eddb40f61d5730" class="flex justify-between">
+      <a  class="">大数据</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e28cc33fe5745d14abf4a0147d0624a5" class="toggle"  />
+    <label for="section-e28cc33fe5745d14abf4a0147d0624a5" class="flex justify-between">
+      <a href="https://localhost:1313/docs/database/" class="">数据库</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-e93f6e4f1239bf01dc0cbed76c64ccca" class="toggle"  />
+    <label for="section-e93f6e4f1239bf01dc0cbed76c64ccca" class="flex justify-between">
+      <a href="https://localhost:1313/docs/database/mysql/" class="">MySQL</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/database/mysql/basic/" class="">基础元素</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/database/transaction/" class="">事务</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-3ae3d975cb9f46a319bb6762100a285d" class="toggle"  />
+    <label for="section-3ae3d975cb9f46a319bb6762100a285d" class="flex justify-between">
+      <a  class="">Jiandar</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-4604dc5b0352ee2d8a152be1fb91c65b" class="toggle"  />
+    <label for="section-4604dc5b0352ee2d8a152be1fb91c65b" class="flex justify-between">
+      <a  class="">个人信息</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/p-info/self-introduction/" class="">自我介绍</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/p-info/project-exp/" class="">项目经验</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-9748420ec0e3faebcbec53e1f07a863d" class="toggle"  />
+    <label for="section-9748420ec0e3faebcbec53e1f07a863d" class="flex justify-between">
+      <a  class="">求职就业</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/career-plan/" class="">职业规划</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/resume-edit/" class="">简历编写</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-f384650adbaec522879cbd53c1e8a980" class="toggle"  />
+    <label for="section-f384650adbaec522879cbd53c1e8a980" class="flex justify-between">
+      <a  class="">面试求职</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/before-interview/" class="">准备工作</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/interview/" class="">面试过程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/salary/" class="">薪资待遇</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/after-interview/" class="">收尾工作</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/interview/interview-question/" class="">典型面试问题</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://localhost:1313/docs/private/employment/offer/" class="">offer</a>
+  
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+  </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var menu=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(event){localStorage.setItem("menu.scrollTop",menu.scrollTop);});menu.scrollTop=localStorage.getItem("menu.scrollTop");})();</script>
+
+
+ 
+      </div>
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>HashMap</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#特点">特点</a></li>
+    <li><a href="#继承关系">继承关系</a></li>
+    <li><a href="#成员变量">成员变量</a></li>
+    <li><a href="#构造方法">构造方法</a></li>
+    <li><a href="#底层结构">底层结构</a></li>
+    <li><a href="#重要函数">重要函数</a>
+      <ul>
+        <li><a href="#新增put">新增：put()</a></li>
+        <li><a href="#查找get">查找：get()</a></li>
+        <li><a href="#扩容resize">扩容：resize()</a></li>
+      </ul>
+    </li>
+    <li><a href="#哈希算法">哈希算法</a>
+      <ul>
+        <li><a href="#应用密码学">应用：密码学</a></li>
+        <li><a href="#应用数据结构">应用：数据结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#单链表创建">单链表创建</a>
+      <ul>
+        <li><a href="#头插法">头插法</a></li>
+        <li><a href="#尾插法">尾插法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="hashmap">
+  HashMap
+  <a class="anchor" href="#hashmap">#</a>
+</h1>
+<h2 id="概述">
+  概述
+  <a class="anchor" href="#%e6%a6%82%e8%bf%b0">#</a>
+</h2>
+<ul>
+<li>是一个<strong>哈希表</strong>，存储的是键值对 (key-value) 映射。</li>
+</ul>
+<h2 id="特点">
+  特点
+  <a class="anchor" href="#%e7%89%b9%e7%82%b9">#</a>
+</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><div style="font-weight:400">键</div></th>
+<th style="text-align:left"><div style="font-weight:400">允许为null（放在第一位），不允许重复</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">值</td>
+<td style="text-align:left">允许为null，允许重复</td>
+</tr>
+<tr>
+<td style="text-align:left">顺序</td>
+<td style="text-align:left">无序</td>
+</tr>
+<tr>
+<td style="text-align:left">效率</td>
+<td style="text-align:left">插入、获取的时间复杂度基本是 O(1)。<br/>遍历整个 Map 需要的时间与数组的长度成正比</td>
+</tr>
+<tr>
+<td style="text-align:left">多线程</td>
+<td style="text-align:left">线程不安全</td>
+</tr>
+</tbody>
+</table>
+<h2 id="继承关系">
+  继承关系
+  <a class="anchor" href="#%e7%bb%a7%e6%89%bf%e5%85%b3%e7%b3%bb">#</a>
+</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">HashMap</span>&lt;K,V&gt;
+    <span style="color:#8b008b;font-weight:bold">extends</span> AbstractMap&lt;K,V&gt;
+    <span style="color:#8b008b;font-weight:bold">implements</span> Map&lt;K,V&gt;, Cloneable, Serializable {
+</code></pre></div><table>
+<thead>
+<tr>
+<th style="text-align:left"><div style="font-weight:400">AbstractMap、Map接口</div></th>
+<th style="text-align:left"><div style="font-weight:400">提供了Map接口的骨干功能</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Cloneable接口</td>
+<td style="text-align:left">支持克隆</td>
+</tr>
+<tr>
+<td style="text-align:left">Serializable接口</td>
+<td style="text-align:left">支持序列化</td>
+</tr>
+</tbody>
+</table>
+<h2 id="成员变量">
+  成员变量
+  <a class="anchor" href="#%e6%88%90%e5%91%98%e5%8f%98%e9%87%8f">#</a>
+</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 默认初始容量为16
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#00688b;font-weight:bold">int</span> DEFAULT_INITIAL_CAPACITY = 1 &lt;&lt; 4;
+
+<span style="color:#228b22">// 默认负载因子为0.75
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#00688b;font-weight:bold">float</span> DEFAULT_LOAD_FACTOR = 0.<span style="color:#658b00">75f</span>;
+
+<span style="color:#228b22">// 临界值 = 容量 * 负载因子
+</span><span style="color:#228b22"></span><span style="color:#00688b;font-weight:bold">int</span> threshold;
+
+<span style="color:#228b22">// 负载因子
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#00688b;font-weight:bold">float</span> loadFactor;
+</code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 最大容量为int的最大值除2
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#00688b;font-weight:bold">int</span> MAXIMUM_CAPACITY = 1 &lt;&lt; 30;
+
+<span style="color:#228b22">// 如果主干数组上的链表的长度大于8，链表转化为红黑树
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#00688b;font-weight:bold">int</span> TREEIFY_THRESHOLD = 8;
+
+<span style="color:#228b22">// 如果发现某一个红黑树的长度小于6，则会重新退化为链表
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#00688b;font-weight:bold">int</span> UNTREEIFY_THRESHOLD = 6;
+
+<span style="color:#228b22">// 当hashmap容量大于64时，链表才能转成红黑树
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#00688b;font-weight:bold">int</span> MIN_TREEIFY_CAPACITY = 64;
+
+<span style="color:#228b22">// 存储元素的数组
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">transient</span> Node&lt;k,v&gt;[] table;
+<span style="color:#8b008b;font-weight:bold">transient</span> Set&lt;map.<span style="color:#658b00">entry</span>&lt;k,v&gt;&gt; entrySet;
+
+<span style="color:#228b22">// 元素的个数
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">transient</span> <span style="color:#00688b;font-weight:bold">int</span> size;
+
+<span style="color:#228b22">// HashMap改变的次数
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">transient</span> <span style="color:#00688b;font-weight:bold">int</span> modCount;
+</code></pre></div><h2 id="构造方法">
+  构造方法
+  <a class="anchor" href="#%e6%9e%84%e9%80%a0%e6%96%b9%e6%b3%95">#</a>
+</h2>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 默认
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">HashMap</span>() {
+    <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">loadFactor</span> = DEFAULT_LOAD_FACTOR; 
+}
+
+<span style="color:#228b22">// 指定初始容量
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">HashMap</span>(<span style="color:#00688b;font-weight:bold">int</span> initialCapacity) {
+    <span style="color:#8b008b;font-weight:bold">this</span>(initialCapacity, DEFAULT_LOAD_FACTOR);
+}
+
+<span style="color:#228b22">// 指定初始容量、负载因子
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">HashMap</span>(<span style="color:#00688b;font-weight:bold">int</span> initialCapacity, <span style="color:#00688b;font-weight:bold">float</span> loadFactor) {
+    <span style="color:#228b22">//...
+</span><span style="color:#228b22"></span>}
+
+<span style="color:#228b22">// 指定集合，转化为HashMap
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">HashMap</span>(Map&lt;? <span style="color:#8b008b;font-weight:bold">extends</span> K, ? <span style="color:#8b008b;font-weight:bold">extends</span> V&gt; m) {
+    <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">loadFactor</span> = DEFAULT_LOAD_FACTOR;
+    <span style="color:#228b22">//...
+</span><span style="color:#228b22"></span>}
+</code></pre></div><h2 id="底层结构">
+  底层结构
+  <a class="anchor" href="#%e5%ba%95%e5%b1%82%e7%bb%93%e6%9e%84">#</a>
+</h2>
+<ul>
+<li>
+<p>JDK1.7：数组 + 链表</p>
+<img src="/images/202202/jiandar_20220214092944.png"/>
+</li>
+<li>
+<p>JDK1.8：数组 + 链表或红黑树</p>
+<img src="/images/202202/jiandar_20220214093538.png"/>
+<p>​</p>
+</li>
+<li>
+<p>内部类</p>
+</li>
+</ul>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 用来实现数组及链表
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">Node</span>&lt;K,V&gt; <span style="color:#8b008b;font-weight:bold">implements</span> Map.<span style="color:#658b00">Entry</span>&lt;K,V&gt; {
+    <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#00688b;font-weight:bold">int</span> hash;
+    <span style="color:#8b008b;font-weight:bold">final</span> K key;
+    V value;
+    Node&lt;K,V&gt; next;
+
+    Node(<span style="color:#00688b;font-weight:bold">int</span> hash, K key, V value, Node&lt;K,V&gt; next) {
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">hash</span> = hash;
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">key</span> = key;
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">value</span> = value;
+        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">next</span> = next;
+    }
+    
+    <span style="color:#228b22">//...
+</span><span style="color:#228b22"></span>}
+
+<span style="color:#228b22">// 用来实现红黑树
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#8b008b;font-weight:bold">final</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">TreeNode</span>&lt;K,V&gt; <span style="color:#8b008b;font-weight:bold">extends</span> LinkedHashMap.<span style="color:#658b00">Entry</span>&lt;K,V&gt; {
+    TreeNode&lt;K,V&gt; parent;  <span style="color:#228b22">// red-black tree links
+</span><span style="color:#228b22"></span>    TreeNode&lt;K,V&gt; left;
+    TreeNode&lt;K,V&gt; right;
+    TreeNode&lt;K,V&gt; prev;    <span style="color:#228b22">// needed to unlink next upon deletion
+</span><span style="color:#228b22"></span>    <span style="color:#00688b;font-weight:bold">boolean</span> red;
+    TreeNode(<span style="color:#00688b;font-weight:bold">int</span> hash, K key, V val, Node&lt;K,V&gt; next) {
+        <span style="color:#8b008b;font-weight:bold">super</span>(hash, key, val, next);
+    }
+    
+    <span style="color:#228b22">//...
+</span><span style="color:#228b22"></span>}
+</code></pre></div><h2 id="重要函数">
+  重要函数
+  <a class="anchor" href="#%e9%87%8d%e8%a6%81%e5%87%bd%e6%95%b0">#</a>
+</h2>
+<h3 id="新增put">
+  新增：put()
+  <a class="anchor" href="#%e6%96%b0%e5%a2%9eput">#</a>
+</h3>
+<ul>
+<li>计算key的hash值，算出元素在底层数组中的下标位置</li>
+<li>如果哈希表为空，则初始化哈希表</li>
+<li>如果没有发生碰撞(hashCode值相同)，直接添加元素到哈希表中去</li>
+<li>如果发生了碰撞，则进行三种判断。
+<ul>
+<li>如果key地址相同或者equals后内容相同，则替换旧值</li>
+<li>如果是红黑树结构，就调用树方法插入。</li>
+<li>如果是链表结构，则循环遍历查找目标节点，找到则覆盖。如果找不到则在尾部插入新节点，并判断是否需要转换为红黑树；</li>
+</ul>
+</li>
+<li>如果数组满了大于阀值，则resize进行扩容。</li>
+</ul>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> V <span style="color:#008b45">put</span>(K key, V value) {
+    <span style="color:#228b22">// 调用hash(key)计算key的hashcode值
+</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">return</span> putVal(hash(key), key, value, <span style="color:#8b008b;font-weight:bold">false</span>, <span style="color:#8b008b;font-weight:bold">true</span>);
+}
+
+<span style="color:#8b008b;font-weight:bold">final</span> V <span style="color:#008b45">putVal</span>(<span style="color:#00688b;font-weight:bold">int</span> hash, K key, V value, <span style="color:#00688b;font-weight:bold">boolean</span> onlyIfAbsent,
+               <span style="color:#00688b;font-weight:bold">boolean</span> evict) {
+    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; p; <span style="color:#00688b;font-weight:bold">int</span> n, i;
+    
+    <span style="color:#228b22">// 如果table为空，初始化哈希表
+</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">if</span> ((tab = table) == <span style="color:#8b008b;font-weight:bold">null</span> || (n = tab.<span style="color:#658b00">length</span>) == 0)
+        n = (tab = resize()).<span style="color:#658b00">length</span>;
+    
+    <span style="color:#228b22">// 计算出索引位置
+</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">if</span> ((p = tab[i = (n - 1) &amp; hash]) == <span style="color:#8b008b;font-weight:bold">null</span>)
+        <span style="color:#228b22">// 节点若不存在，则新增一个节点
+</span><span style="color:#228b22"></span>        tab[i] = newNode(hash, key, value, <span style="color:#8b008b;font-weight:bold">null</span>);
+    <span style="color:#8b008b;font-weight:bold">else</span> {
+        <span style="color:#228b22">// 节点若已经存在，执行赋值操作
+</span><span style="color:#228b22"></span>        Node&lt;K,V&gt; e; K k;
+        
+        <span style="color:#228b22">// 如果节点的key、hash值与传入的相等
+</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">if</span> (p.<span style="color:#658b00">hash</span> == hash &amp;&amp;
+            ((k = p.<span style="color:#658b00">key</span>) == key || (key != <span style="color:#8b008b;font-weight:bold">null</span> &amp;&amp; key.<span style="color:#658b00">equals</span>(k))))
+            e = p;
+        
+        <span style="color:#228b22">// 如果是红黑树
+</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">else</span> <span style="color:#8b008b;font-weight:bold">if</span> (p <span style="color:#8b008b;font-weight:bold">instanceof</span> TreeNode)
+            e = ((TreeNode&lt;K,V&gt;)p).<span style="color:#658b00">putTreeVal</span>(<span style="color:#8b008b;font-weight:bold">this</span>, tab, hash, key, value);
+        
+        <span style="color:#228b22">// 如果是链表
+</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">else</span> {
+            <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> binCount = 0; ; ++binCount) {
+                <span style="color:#8b008b;font-weight:bold">if</span> ((e = p.<span style="color:#658b00">next</span>) == <span style="color:#8b008b;font-weight:bold">null</span>) {
+                    <span style="color:#228b22">// 如果找不到目标节点，则在链表尾部新增一个节点，
+</span><span style="color:#228b22"></span>                    p.<span style="color:#658b00">next</span> = newNode(hash, key, value, <span style="color:#8b008b;font-weight:bold">null</span>);
+                    
+                    <span style="color:#228b22">//链表长度8，将链表转化为红黑树存储
+</span><span style="color:#228b22"></span>                    <span style="color:#8b008b;font-weight:bold">if</span> (binCount &gt;= TREEIFY_THRESHOLD - 1) <span style="color:#228b22">// -1 for 1st
+</span><span style="color:#228b22"></span>                        treeifyBin(tab, hash);
+                    <span style="color:#8b008b;font-weight:bold">break</span>;
+                }
+                
+                <span style="color:#228b22">// 如果目标节点存在
+</span><span style="color:#228b22"></span>                <span style="color:#8b008b;font-weight:bold">if</span> (e.<span style="color:#658b00">hash</span> == hash &amp;&amp;
+                    ((k = e.<span style="color:#658b00">key</span>) == key || (key != <span style="color:#8b008b;font-weight:bold">null</span> &amp;&amp; key.<span style="color:#658b00">equals</span>(k))))
+                    <span style="color:#8b008b;font-weight:bold">break</span>;
+                p = e;
+            }
+        }
+        
+        <span style="color:#228b22">// 如果目标节点存在，则覆盖该节点的value
+</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">if</span> (e != <span style="color:#8b008b;font-weight:bold">null</span>) { <span style="color:#228b22">// existing mapping for key
+</span><span style="color:#228b22"></span>            V oldValue = e.<span style="color:#658b00">value</span>;
+            <span style="color:#8b008b;font-weight:bold">if</span> (!onlyIfAbsent || oldValue == <span style="color:#8b008b;font-weight:bold">null</span>)
+                e.<span style="color:#658b00">value</span> = value;
+            afterNodeAccess(e);
+            <span style="color:#8b008b;font-weight:bold">return</span> oldValue;
+        }
+    }
+    
+    <span style="color:#228b22">// 记录修改次数
+</span><span style="color:#228b22"></span>    ++modCount;
+    
+    <span style="color:#228b22">//判断是否需要扩容
+</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">if</span> (++size &gt; threshold)
+        resize();
+    afterNodeInsertion(evict);
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">null</span>;
+}
+</code></pre></div><h3 id="查找get">
+  查找：get()
+  <a class="anchor" href="#%e6%9f%a5%e6%89%beget">#</a>
+</h3>
+<ul>
+<li>计算key的hash值，算出元素在底层数组中的下标位置</li>
+<li>判断索引处第一个key与传入key是否相等，如果相等直接返回</li>
+<li>如果不相等，判断链表是否是红黑二叉树，如果是，直接从树中取值</li>
+<li>如果不是树，就遍历链表查找</li>
+</ul>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> V <span style="color:#008b45">get</span>(Object key) {
+    Node&lt;K,V&gt; e;
+    <span style="color:#8b008b;font-weight:bold">return</span> (e = getNode(hash(key), key)) == <span style="color:#8b008b;font-weight:bold">null</span> ? <span style="color:#8b008b;font-weight:bold">null</span> : e.<span style="color:#658b00">value</span>;
+}
+
+<span style="color:#8b008b;font-weight:bold">final</span> Node&lt;K,V&gt; <span style="color:#008b45">getNode</span>(<span style="color:#00688b;font-weight:bold">int</span> hash, Object key) {
+    Node&lt;K,V&gt;[] tab; Node&lt;K,V&gt; first, e; <span style="color:#00688b;font-weight:bold">int</span> n; K k;
+    <span style="color:#8b008b;font-weight:bold">if</span> ((tab = table) != <span style="color:#8b008b;font-weight:bold">null</span> &amp;&amp; (n = tab.<span style="color:#658b00">length</span>) &gt; 0 &amp;&amp;
+        (first = tab[(n - 1) &amp; hash]) != <span style="color:#8b008b;font-weight:bold">null</span>) {
+        <span style="color:#8b008b;font-weight:bold">if</span> (first.<span style="color:#658b00">hash</span> == hash &amp;&amp; <span style="color:#228b22">// always check first node
+</span><span style="color:#228b22"></span>            ((k = first.<span style="color:#658b00">key</span>) == key || (key != <span style="color:#8b008b;font-weight:bold">null</span> &amp;&amp; key.<span style="color:#658b00">equals</span>(k))))
+            <span style="color:#8b008b;font-weight:bold">return</span> first;
+        <span style="color:#8b008b;font-weight:bold">if</span> ((e = first.<span style="color:#658b00">next</span>) != <span style="color:#8b008b;font-weight:bold">null</span>) {
+            <span style="color:#8b008b;font-weight:bold">if</span> (first <span style="color:#8b008b;font-weight:bold">instanceof</span> TreeNode)
+                <span style="color:#8b008b;font-weight:bold">return</span> ((TreeNode&lt;K,V&gt;)first).<span style="color:#658b00">getTreeNode</span>(hash, key);
+            <span style="color:#8b008b;font-weight:bold">do</span> {
+                <span style="color:#8b008b;font-weight:bold">if</span> (e.<span style="color:#658b00">hash</span> == hash &amp;&amp;
+                    ((k = e.<span style="color:#658b00">key</span>) == key || (key != <span style="color:#8b008b;font-weight:bold">null</span> &amp;&amp; key.<span style="color:#658b00">equals</span>(k))))
+                    <span style="color:#8b008b;font-weight:bold">return</span> e;
+            } <span style="color:#8b008b;font-weight:bold">while</span> ((e = e.<span style="color:#658b00">next</span>) != <span style="color:#8b008b;font-weight:bold">null</span>);
+        }
+    }
+    <span style="color:#8b008b;font-weight:bold">return</span> <span style="color:#8b008b;font-weight:bold">null</span>;
+}
+</code></pre></div><h3 id="扩容resize">
+  扩容：resize()
+  <a class="anchor" href="#%e6%89%a9%e5%ae%b9resize">#</a>
+</h3>
+<ul>
+<li>当元素的个数大于临界值时，会进行扩容。扩容很耗时</li>
+<li>扩容的新容量为：旧容量 * 2</li>
+<li>扩容机制：
+<ul>
+<li>新表是旧表的两倍容量，以(e.hash &amp; oldCap) == 0把单链表拆分为两队，</li>
+<li>如果等于0，则将元素迁移到新数组 “原位置”的位置上</li>
+<li>如果不等于0，则将元素迁移到新数组 “原位置+oldCap”的位置上
+<img src="/images/202202/jiandar_20220215105850.png"/>
+<img src="/images/202202/jiandar_20220215105851.png"/></li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">final</span> Node&lt;K,V&gt;[] <span style="color:#008b45">resize</span>() {
+    Node&lt;K,V&gt;[] oldTab = table;
+    <span style="color:#228b22">// 原容量
+</span><span style="color:#228b22"></span>    <span style="color:#00688b;font-weight:bold">int</span> oldCap = (oldTab == <span style="color:#8b008b;font-weight:bold">null</span>) ? 0 : oldTab.<span style="color:#658b00">length</span>;
+    <span style="color:#228b22">// 原临界值
+</span><span style="color:#228b22"></span>    <span style="color:#00688b;font-weight:bold">int</span> oldThr = threshold;
+    <span style="color:#228b22">// 新容量，新临界值
+</span><span style="color:#228b22"></span>    <span style="color:#00688b;font-weight:bold">int</span> newCap, newThr = 0;
+    
+    <span style="color:#228b22">// 初始化newCap, newThr
+</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">if</span> (oldCap &gt; 0) {
+        <span style="color:#8b008b;font-weight:bold">if</span> (oldCap &gt;= MAXIMUM_CAPACITY) {
+            threshold = Integer.<span style="color:#658b00">MAX_VALUE</span>;
+            <span style="color:#8b008b;font-weight:bold">return</span> oldTab;
+        }
+        <span style="color:#228b22">// 设新临界值为旧临界值的2倍
+</span><span style="color:#228b22"></span>        <span style="color:#8b008b;font-weight:bold">else</span> <span style="color:#8b008b;font-weight:bold">if</span> ((newCap = oldCap &lt;&lt; 1) &lt; MAXIMUM_CAPACITY &amp;&amp;
+                 oldCap &gt;= DEFAULT_INITIAL_CAPACITY)
+            newThr = oldThr &lt;&lt; 1; <span style="color:#228b22">// double threshold
+</span><span style="color:#228b22"></span>    }
+    <span style="color:#8b008b;font-weight:bold">else</span> <span style="color:#8b008b;font-weight:bold">if</span> (oldThr &gt; 0) <span style="color:#228b22">// initial capacity was placed in threshold
+</span><span style="color:#228b22"></span>        newCap = oldThr;
+    <span style="color:#8b008b;font-weight:bold">else</span> {               <span style="color:#228b22">// zero initial threshold signifies using defaults
+</span><span style="color:#228b22"></span>        newCap = DEFAULT_INITIAL_CAPACITY;
+        newThr = (<span style="color:#00688b;font-weight:bold">int</span>)(DEFAULT_LOAD_FACTOR * DEFAULT_INITIAL_CAPACITY);
+    }
+    <span style="color:#8b008b;font-weight:bold">if</span> (newThr == 0) {
+        <span style="color:#00688b;font-weight:bold">float</span> ft = (<span style="color:#00688b;font-weight:bold">float</span>)newCap * loadFactor;
+        newThr = (newCap &lt; MAXIMUM_CAPACITY &amp;&amp; ft &lt; (<span style="color:#00688b;font-weight:bold">float</span>)MAXIMUM_CAPACITY ?
+                  (<span style="color:#00688b;font-weight:bold">int</span>)ft : Integer.<span style="color:#658b00">MAX_VALUE</span>);
+    }
+    threshold = newThr;
+    
+    <span style="color:#228b22">// 下面开始构造新表，初始化表中的数据
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@SuppressWarnings</span>({<span style="color:#cd5555">&#34;rawtypes&#34;</span>,<span style="color:#cd5555">&#34;unchecked&#34;</span>})
+    Node&lt;K,V&gt;[] newTab = (Node&lt;K,V&gt;[])<span style="color:#8b008b;font-weight:bold">new</span> Node[newCap];
+    table = newTab;
+    
+    <span style="color:#228b22">// 遍历所有节点，将节点赋值到新表
+</span><span style="color:#228b22"></span>    <span style="color:#8b008b;font-weight:bold">if</span> (oldTab != <span style="color:#8b008b;font-weight:bold">null</span>) {
+        <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> j = 0; j &lt; oldCap; ++j) {
+            Node&lt;K,V&gt; e;
+            <span style="color:#8b008b;font-weight:bold">if</span> ((e = oldTab[j]) != <span style="color:#8b008b;font-weight:bold">null</span>) {
+                oldTab[j] = <span style="color:#8b008b;font-weight:bold">null</span>;
+                <span style="color:#8b008b;font-weight:bold">if</span> (e.<span style="color:#658b00">next</span> == <span style="color:#8b008b;font-weight:bold">null</span>)
+                    newTab[e.<span style="color:#658b00">hash</span> &amp; (newCap - 1)] = e;
+                <span style="color:#228b22">// 如果是红黑树节点，则进行红黑树的重新hash分布
+</span><span style="color:#228b22"></span>                <span style="color:#8b008b;font-weight:bold">else</span> <span style="color:#8b008b;font-weight:bold">if</span> (e <span style="color:#8b008b;font-weight:bold">instanceof</span> TreeNode)
+                    ((TreeNode&lt;K,V&gt;)e).<span style="color:#658b00">split</span>(<span style="color:#8b008b;font-weight:bold">this</span>, newTab, j, oldCap);
+                <span style="color:#228b22">// 如果是普通的链表节点，则进行普通的重新hash分布
+</span><span style="color:#228b22"></span>                <span style="color:#8b008b;font-weight:bold">else</span> { <span style="color:#228b22">// preserve order
+</span><span style="color:#228b22"></span>                    <span style="color:#228b22">// 存储索引位置为：“原索引位置”，即低位链
+</span><span style="color:#228b22"></span>                    Node&lt;K,V&gt; loHead = <span style="color:#8b008b;font-weight:bold">null</span>, loTail = <span style="color:#8b008b;font-weight:bold">null</span>;
+                    <span style="color:#228b22">// 存储索引位置为：“原索引位置+oldCap”，即高位链
+</span><span style="color:#228b22"></span>                    Node&lt;K,V&gt; hiHead = <span style="color:#8b008b;font-weight:bold">null</span>, hiTail = <span style="color:#8b008b;font-weight:bold">null</span>;
+                    Node&lt;K,V&gt; next;
+                    <span style="color:#8b008b;font-weight:bold">do</span> {
+                        next = e.<span style="color:#658b00">next</span>;
+                        <span style="color:#8b008b;font-weight:bold">if</span> ((e.<span style="color:#658b00">hash</span> &amp; oldCap) == 0) {
+                            <span style="color:#8b008b;font-weight:bold">if</span> (loTail == <span style="color:#8b008b;font-weight:bold">null</span>)
+                                loHead = e;
+                            <span style="color:#8b008b;font-weight:bold">else</span>
+                                loTail.<span style="color:#658b00">next</span> = e;
+                            loTail = e;
+                        }
+                        <span style="color:#8b008b;font-weight:bold">else</span> {
+                            <span style="color:#8b008b;font-weight:bold">if</span> (hiTail == <span style="color:#8b008b;font-weight:bold">null</span>)
+                                hiHead = e;
+                            <span style="color:#8b008b;font-weight:bold">else</span>
+                                hiTail.<span style="color:#658b00">next</span> = e;
+                            hiTail = e;
+                        }
+                    } <span style="color:#8b008b;font-weight:bold">while</span> ((e = next) != <span style="color:#8b008b;font-weight:bold">null</span>);
+                    
+                    <span style="color:#228b22">// 尾插法（低位链）
+</span><span style="color:#228b22"></span>                    <span style="color:#8b008b;font-weight:bold">if</span> (loTail != <span style="color:#8b008b;font-weight:bold">null</span>) {
+                        loTail.<span style="color:#658b00">next</span> = <span style="color:#8b008b;font-weight:bold">null</span>;
+                        newTab[j] = loHead;
+                    }
+                    
+                    <span style="color:#228b22">// 尾插法（高位链）
+</span><span style="color:#228b22"></span>                    <span style="color:#8b008b;font-weight:bold">if</span> (hiTail != <span style="color:#8b008b;font-weight:bold">null</span>) {
+                        hiTail.<span style="color:#658b00">next</span> = <span style="color:#8b008b;font-weight:bold">null</span>;
+                        newTab[j + oldCap] = hiHead;
+                    }
+                }
+            }
+        }
+    }
+    <span style="color:#8b008b;font-weight:bold">return</span> newTab;
+}
+</code></pre></div><h2 id="哈希算法">
+  哈希算法
+  <a class="anchor" href="#%e5%93%88%e5%b8%8c%e7%ae%97%e6%b3%95">#</a>
+</h2>
+<ul>
+<li>Hash，一般称“散列”，也译为“哈希”</li>
+<li>哈希函数：将任意长度的数据，通过散列算法，变换成固定长度的数据摘要（哈希值）</li>
+<li>哈希碰撞：两个不同的输入值，根据同一散列函数计算出的哈希值相同的现象</li>
+<li>基本特性：根据同一散列函数计算出的散列值，
+<ul>
+<li>如果不同，那么输入值肯定也不同。</li>
+<li>如果相同，输入值不一定相同。</li>
+</ul>
+</li>
+</ul>
+<h3 id="应用密码学">
+  应用：密码学
+  <a class="anchor" href="#%e5%ba%94%e7%94%a8%e5%af%86%e7%a0%81%e5%ad%a6">#</a>
+</h3>
+<ul>
+<li>在密码学中，哈希算法主要用于对整个消息的完整性进行校验，对于抗碰撞和抗篡改能力要求极高</li>
+<li>抗碰撞能力：
+<ul>
+<li>对于任意两个不同的数据块，其hash值相同的可能性极小；</li>
+<li>对于一个给定的数据块，找到和它hash值相同的数据块极为困难。</li>
+</ul>
+</li>
+<li>抗篡改能力：
+<ul>
+<li>对于一个数据块，哪怕只改动其一个比特位，其hash值的改动也会非常大。</li>
+</ul>
+</li>
+</ul>
+<h3 id="应用数据结构">
+  应用：数据结构
+  <a class="anchor" href="#%e5%ba%94%e7%94%a8%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84">#</a>
+</h3>
+<ul>
+<li>比如HashMap中，哈希算法是为了加速键值对的查找，并将元素均匀地放在各个桶里</li>
+<li>这时候，对于抗碰撞的要求就没有那么高，哈希值的产生速度更为重要。</li>
+</ul>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// java.lang.String
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">int</span> <span style="color:#008b45">hashCode</span>() {
+    <span style="color:#00688b;font-weight:bold">int</span> h = hash;
+    <span style="color:#8b008b;font-weight:bold">if</span> (h == 0 &amp;&amp; value.<span style="color:#658b00">length</span> &gt; 0) {
+        <span style="color:#00688b;font-weight:bold">char</span> val[] = value;
+
+        <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = 0; i &lt; value.<span style="color:#658b00">length</span>; i++) {
+            h = 31 * h + val[i];
+        }
+        hash = h;
+    }
+    <span style="color:#8b008b;font-weight:bold">return</span> h;
+}
+</code></pre></div><h2 id="单链表创建">
+  单链表创建
+  <a class="anchor" href="#%e5%8d%95%e9%93%be%e8%a1%a8%e5%88%9b%e5%bb%ba">#</a>
+</h2>
+<h3 id="头插法">
+  头插法
+  <a class="anchor" href="#%e5%a4%b4%e6%8f%92%e6%b3%95">#</a>
+</h3>
+<img src="/images/202202/jiandar_20220215115522.png"/>
+<h3 id="尾插法">
+  尾插法
+  <a class="anchor" href="#%e5%b0%be%e6%8f%92%e6%b3%95">#</a>
+</h3>
+<ul>
+<li>因为每次都是将新节点插入到链表尾部，所以需要增加一个始终指向表尾节点的指针R</li>
+</ul>
+<img src="/images/202202/jiandar_20220215115523.png"/>
+</article>
+ 
+      
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+  <div><a class="flex align-center" href="https://gitee.com/commit/5dd0a027061d7c14b3c2884c459d85883ca38497" title='最后修改者 jiandar | April 12, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>April 12, 2022</span>
+    </a>
+  </div>
+
+
+
+  <div>
+    <a class="flex align-center" href="https://gitee.com/blob/master/content.zh/docs/java/container/Map/HashMap.md" target="_blank" rel="noopener">
+      <img src="/svg/edit.svg" class="book-icon" alt="Edit" />
+      <span>编辑本页</span>
+    </a>
+  </div>
+
+</div>
+
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      <div class="book-toc-content">
+        
+  
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#概述">概述</a></li>
+    <li><a href="#特点">特点</a></li>
+    <li><a href="#继承关系">继承关系</a></li>
+    <li><a href="#成员变量">成员变量</a></li>
+    <li><a href="#构造方法">构造方法</a></li>
+    <li><a href="#底层结构">底层结构</a></li>
+    <li><a href="#重要函数">重要函数</a>
+      <ul>
+        <li><a href="#新增put">新增：put()</a></li>
+        <li><a href="#查找get">查找：get()</a></li>
+        <li><a href="#扩容resize">扩容：resize()</a></li>
+      </ul>
+    </li>
+    <li><a href="#哈希算法">哈希算法</a>
+      <ul>
+        <li><a href="#应用密码学">应用：密码学</a></li>
+        <li><a href="#应用数据结构">应用：数据结构</a></li>
+      </ul>
+    </li>
+    <li><a href="#单链表创建">单链表创建</a>
+      <ul>
+        <li><a href="#头插法">头插法</a></li>
+        <li><a href="#尾插法">尾插法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+
+ 
+      </div>
+    </aside>
+    
+  </main>
+
+  
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
