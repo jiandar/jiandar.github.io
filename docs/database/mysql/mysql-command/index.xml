@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MySQL 命令 on IWiki</title>
+    <link>https://jiandar.github.io/docs/database/mysql/mysql-command/</link>
+    <description>Recent content in MySQL 命令 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/database/mysql/mysql-command/index.xml" rel="self" type="application/rss+xml" />
+  </channel>
+</rss>

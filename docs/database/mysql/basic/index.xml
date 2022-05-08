@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础 on IWiki</title>
+    <link>https://jiandar.github.io/docs/database/mysql/basic/</link>
+    <description>Recent content in 基础 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/database/mysql/basic/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据类型、运算符</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic/dataType-operator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic/dataType-operator/</guid>
+      <description>数据类型、运算符#数据类型#整数类型#   类型 描述 大小 范围（有符号） 范围（无符号）     TINYINT 迷你整形 1 字节 (-128，127) (0，255)   SMALLINT 小整形 2 字节 (-32 768，32 767) (0，65 535)   MEDIUMINT 中整形 3 字节     INT或INTEGER 标准整形 4 字节     BIGINT 大整形 8 字节      小数类型# 语法：如Float(M,D)，M表示数值总位数，D代表小数部分位数     类型 描述 大小     FLOAT 单精度浮点型 4 字节   DOUBLE 双精度浮点型 8 字节   DECIMAL 数值型 16 字节    日期时间类型#   类型 描述 大小 格式 范围     YEAR 年 1 字节 YYYY 1901 ~ 2155   DATE 日期 3 字节 YYYY-MM-DD 1000-01-01 ~ 9999-12-31   TIME 时间 3 字节 HH:MM:SS &amp;lsquo;-838:59:59&amp;rsquo; ~ &amp;lsquo;838:59:59&amp;rsquo;   TIMESTAMP 时间戳 4 字节 YYYYMMDD HHMMSS 1970-01-01 00:00:00 ~ 2038-1-19 11:14:07   DATETIME 日期时间 8 字节 YYYY-MM-DD HH:MM:SS 1000-01-01 00:00:00 ~9999-12-31 23:59:59    字符串类型#   类型 描述 大小     CHAR 定长字符 0-255字节   VARCHAR 变长字符 0-65535 字节   TINYTEXT 短文本 0-255字节   TEXT 文本 0-65 535字节   MEDIUMTEXT 长文本 0-16 777 215字节   LONGTEXT 极大文本 0-4 294 967 295字节   TINYBLOB 二进制，短文本 0-255字节   BLOB 二进制，文本 0-65 535字节   MEDIUMBLOB 二进制，长文本 0-16 777 215字节   LONGBLOB 二进制，极大文本 0-4 294 967 295字节    运算符#算术运算符#   运算符 描述     + 加法   - 减法   * 乘法   /、DIV 除法   %、MOD 取余    逻辑运算符#   运算符 描述     NOT、!</description>
+    </item>
+    
+    <item>
+      <title>变量、函数</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic/variable-function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic/variable-function/</guid>
+      <description>变量、函数#变量# 局部变量：仅在结构体语句块中有效 会话变量：在当前用户的当次连接有效 全局变量：全局有效  系统变量#show variables [like &amp;#39;...&amp;#39;]; -- 查询多个 select @@varName; -- 查询单个  set varName = value; -- 局部修改（会话级别） set global varName = value; -- 全局修改 set @@global.varName = value; -- 全局修改  -- 示例：修改自动编号步长 SET GLOBAL auto_increment_increment = 1; 会话变量#-- 设置 set @varName = value; set @varName := value; -- 查看 select @varName; -- 示例 SELECT @name := stu_name,@age := stu_age FROM student WHERE stu_id = &amp;#39;1&amp;#39;; SELECT stu_name,stu_age FROM student WHERE stu_id = &amp;#39;1&amp;#39; INTO @name,@age; 局部变量#-- 设置 declare varName dataType [attribute]; -- 示例 declare age int default 18; 函数#内置函数# MySQL 内置函数  自定义函数#  自定义函数是属于用户级别的，只有当前客户端对应的数据库中可以使用</description>
+    </item>
+    
+    <item>
+      <title>列属性</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic/column-attribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic/column-attribute/</guid>
+      <description>列属性#null、notnull# 数据列是否允许NULL值。 在设计表的时候，尽量不要让数据为空。  default# 默认值。 如果没有数据插入，以默认值进行填充，通常是null。  comment# 列的注释说明。  unsigned# 数值型数据，无符号  zerofill# 当存储的数值型数据未达到显示长度时，在左侧补0，适用于正数数值  auto_increment#  自动递增，适用于整数类型
+-- 查询自动递增变量 show variables like &amp;#39;auto_increment%&amp;#39;; -- 修改步长 alter table tableName auto_increment= 2;   primary key#  主键，在一张表中，有且只有一个主键。
+  不能为空，且具有唯一性。
+-- 修改 alter table tableName add primary key(fieldName); -- 删除 alter table tableName drop primary key;   foreign key# 外键，表示两表间的关系。 一般不设外键，影响数据库效率，外键关系一般由业务来实现。  unique#  唯一键，在不为空的情况下，不允许重复。</description>
+    </item>
+    
+    <item>
+      <title>语句</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic/sentence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic/sentence/</guid>
+      <description>语句#分支结构#if 语句#  作为表达式，嵌套在其他语句中使用，可以放在任何地方
+  作为独立的语句去使用，只能放在 begin...end 中
+# 格式：作为表达式if(条件, 判断为ture返回, 判断为false返回) # 格式：作为独立语句if 条件1 then 语句1;elseif 条件2 then 语句2;else 语句n;end if;-- 示例：判断 5&amp;lt;10，true返回“大”，false返回“小” select if(5&amp;lt;10, &amp;#39;大&amp;#39;, &amp;#39;小&amp;#39;); -- 示例：创建函数，根据传入的成绩来显示等级 drop function if exists testIf; delimiter $ create function testIf(score int) returns char(3) begin if score&amp;gt;=90 then return &amp;#39;优秀&amp;#39;; elseif score&amp;gt;=80 then return &amp;#39;良好&amp;#39;; elseif score&amp;gt;=60 then return &amp;#39;及格&amp;#39;; else return &amp;#39;不及格&amp;#39;; end if; end$ select testIf(66) as &amp;#39;成绩&amp;#39;;   case 语句#  作为表达式，嵌套在其他语句中使用，可以放在任何地方</description>
+    </item>
+    
+  </channel>
+</rss>

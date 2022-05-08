@@ -5,14 +5,5 @@
     <link>https://jiandar.github.io/docs/database/</link>
     <description>Recent content in 数据库 on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/database/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>事务</title>
-      <link>https://jiandar.github.io/docs/database/transaction/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jiandar.github.io/docs/database/transaction/</guid>
-      <description>基础知识#事务# Transaction，一个最小的不可再分的工作单元，通常对应一个完整的业务 由事务开始和事务结束之间执行的全体操作组成  事务特性：ACID# 原子性：Atomicity，事务应该当作一个单独单元的操作，要么成功，要么失败 一致性：Consistency，事务的执行不能破坏数据库数据的完整性和一致性 隔离性：Isolation，并发事务执行之间无影响 持久性：Durability，事务一旦执行成功，它对数据库的数据的改变必须是永久的  事务并发问题#   脏读 一个事务处理过程里读取了另一个未提交的事务中的数据。     不可重复读 在一个事务中，对同一条记录，多次查询到的数据值不一致。（针对 update）   幻读 在一个事务中，对于多条记录，多次查询到的记录条数不一致。（针对 insert）    隔离级别#   级别 隔离级别 描述 脏读 不可重复读 幻读     级别一 读未提交 可以读取到其他事务未提交的内容 √ √ √   级别二 读已提交 只能读取到其他事务已经提交的数据 × √ √   级别三 可重复读 整个事务过程中，对同数据的多次读取结果是相同的 × × √   级别四 串行化 所有事务操作都依次顺序执行，性能最差 × × ×    </description>
-    </item>
-    
   </channel>
 </rss>

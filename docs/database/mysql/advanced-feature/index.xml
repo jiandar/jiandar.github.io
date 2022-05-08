@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>高级特性 on IWiki</title>
+    <link>https://jiandar.github.io/docs/database/mysql/advanced-feature/</link>
+    <description>Recent content in 高级特性 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/database/mysql/advanced-feature/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>用户权限</title>
+      <link>https://jiandar.github.io/docs/database/mysql/advanced-feature/user-auth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/advanced-feature/user-auth/</guid>
+      <description>用户权限#用户管理#-- 查询用户信息 select * from mysql.user; -- 创建用户 -- @后为主机域，可使用占位符 create user &amp;#39;username&amp;#39;@&amp;#39;localhost&amp;#39; identified by &amp;#39;password&amp;#39;; -- 删除用户 drop user &amp;#39;username&amp;#39;@&amp;#39;localhost&amp;#39;; -- 修改root用户密码 mysqladmin -u root -h localhost -p password &amp;#34;password&amp;#34; -- root用户修改普通用户密码 set password for &amp;#39;username&amp;#39;@&amp;#39;localhost&amp;#39;=password(&amp;#39;password&amp;#39;); 权限管理# 数据权限：增删改查（select\update\delete\insert） 结构权限：结构操作（create\drop） 管理权限：权限管理（create user\grant\revoke）  # 新增grant 权限列表 on 数据库.表名 to 用户;# 删除revoke 权限列表 on 数据库.表 from 用户;-- 授予username用户，所有数据库所有表的，增删改查权限 grant select,insert,update,delete on *.* to &amp;#39;username&amp;#39;@&amp;#39;localhost&amp;#39;; -- 授予username用户，所有数据库所有表的，所有权限 grant all on *.</description>
+    </item>
+    
+    <item>
+      <title>存储过程</title>
+      <link>https://jiandar.github.io/docs/database/mysql/advanced-feature/store-procedure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/advanced-feature/store-procedure/</guid>
+      <description>存储过程#定义# stored procedure，是一组为了完成特定功能的SQL 语句集，存储在数据库中， 经过第一次编译后再次调用不需要再次编译（效率比较高）  存储过程管理## 创建修改语句结束符create procedure 过程名字([参数列表])begin过程体end 语句结束符 修改语句结束符（改回来）# 查询show procedure status [like &amp;#39;...&amp;#39;];show create procedure 过程名;# 使用call 过程名([实参列表]);# 删除drop procedure 过程名;-- 示例 DELIMITER $$ CREATE PROCEDURE proc_countUser() BEGIN SELECT COUNT(*) FROM t_user; END $$ DELIMITER ; 存储过程的形参类型# IN：参数从外部传入，供过程内部使用。默认类型 OUT：参数从过程内部传出，供外部使用。 INOUT：参数从外部传入，过程内部使用后，又传出，供外部使用。  DELIMITER $$ CREATE PROCEDURE set_counter(INOUT count INT(4),IN inc INT(4)) BEGIN SET count = count + inc; END $$ DELIMITER ; 存储过程 vs 函数#   区别 存储过程 函数     标识符 PROCEDURE FUNCTION   返回值 无 有   使用 不能在select语句中使用 可以在select语句中使用    </description>
+    </item>
+    
+    <item>
+      <title>触发器</title>
+      <link>https://jiandar.github.io/docs/database/mysql/advanced-feature/trigger/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/advanced-feature/trigger/</guid>
+      <description>触发器#定义# 触发器是一种特殊类型的存储过程，通过触发事件而被执行。 优点：  实现相关表的级联更改。 通过触发器进行安全校验，保证数据安全   缺点：  过分依赖触发器，会影响数据库结构，增加了维护难度。 由于执行触发器不可见，很难弄清数据库层情况 对数据库服务器资源的开销较大   建议：  尽量不使用触发器 如果要使用，需确保触发器高效低耗    触发器管理# 触发时机：before/after 触发事件：insert/update/delete  # 创建修改语句结束符create trigger 触发器名 触发时机 触发事件 on 表名 for each rowbegin执行体end 语句结束符修改语句结束符# 查看show triggers [like &amp;#39;...&amp;#39;];show create trigger 触发器名;# 删除drop trigger 触发器名;-- 示例 DELIMITER $$ CREATE TRIGGER demo BEFORE DELETE ON users FOR EACH ROW BEGIN INSERT INTO logs VALUES(NOW()); INSERT INTO logs VALUES(NOW()); END $$ DELIMITER ; 触发器新旧数据# 触发器，针对数据表中的每一行，会记录其操作前后的数据  -- 在触发器中，可通过“old/new.</description>
+    </item>
+    
+    <item>
+      <title>索引</title>
+      <link>https://jiandar.github.io/docs/database/mysql/advanced-feature/mysql-index/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/advanced-feature/mysql-index/</guid>
+      <description>索引#定义# 索引是一种特殊的文件，它们包含着对所有记录的引用指针 优点：类似书的目录，可以极大地提高数据检索速度 缺点：维护索引会增加额外的开销  原则# 最左侧原则：表的最左侧的一列，往往数据不会发生改变，不影响其他列的数据 命名短小原则：索引命名过长会使索引文件变大，损耗内存  分类# 普通索引：最基本的索引，没有任何限制 唯一索引：索引列的值必须唯一 ，允许有空值 主键索引：一种特殊的唯一索引，一张表中只能定义一个，用来标识一条数据，不能为空 全文索引：仅可用于 MyISAM 表，针对较大的数据，生成全文索引很耗时耗空间 聚合索引：覆盖多个数据列的索引  实现# B-Tree：比较适合用作&#39;&amp;gt;&amp;lsquo;或&amp;rsquo;&amp;lt;&amp;lsquo;这样的范围查询，在MySQL中最为常用 R-Tree：用于处理多维数据的数据结构，可以对地理数据进行空间索引。运用较少 Hash：使用散列表来对数据进行索引。效率高于B-Tree，但是不支持范围查找和排序。运用较少 FullText：全文索引，是一种记录关键字与对应文档关系的倒排索引。  </description>
+    </item>
+    
+    <item>
+      <title>视图</title>
+      <link>https://jiandar.github.io/docs/database/mysql/advanced-feature/view/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/advanced-feature/view/</guid>
+      <description>视图#定义# 视图是一种虚拟存在的表，对于使用视图的用户来说基本上是透明的 视图并不在数据库中实际存在，行和列数据来自定义视图的查询中使用的表，并且是在使用视图时动态生成  优点# 简单：视图中数据即为目标数据，用户不需要关心对应的表的结构 安全：使用视图，可以限制用户只能访问他们被允许查询的结果集 数据独立：一旦视图的结构确定了，可以屏蔽表结构变化对用户的影响  视图管理## 创建视图 create view 视图名 as select指令; # 使用视图# 视图是一张虚拟表，可以直接把视图当做“表”来操作。 # 修改视图alter view 视图名字 as 新select指令; # 删除视图drop view 视图名;</description>
+    </item>
+    
+    <item>
+      <title>事务</title>
+      <link>https://jiandar.github.io/docs/database/mysql/advanced-feature/transaction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/advanced-feature/transaction/</guid>
+      <description>事务#定义# Transaction，一个最小的不可再分的工作单元，通常对应一个完整的业务 由事务开始和事务结束之间执行的全体操作组成  事务特性：ACID# 原子性：Atomicity，事务应该当作一个单独单元的操作，要么成功，要么失败 一致性：Consistency，事务的执行不能破坏数据库数据的完整性和一致性 隔离性：Isolation，并发事务执行之间无影响 持久性：Durability，事务一旦执行成功，它对数据库的数据的改变必须是永久的  事务并发问题#   脏读 一个事务处理过程里读取了另一个未提交的事务中的数据。     不可重复读 在一个事务中，对同一条记录，多次查询到的数据值不一致。（针对 update）   幻读 在一个事务中，对于多条记录，多次查询到的记录条数不一致。（针对 insert）    隔离级别#   级别 隔离级别 描述 脏读 不可重复读 幻读     级别一 读未提交 可以读取到其他事务未提交的内容 √ √ √   级别二 读已提交 只能读取到其他事务已经提交的数据 × √ √   级别三 可重复读 整个事务过程中，对同数据的多次读取结果是相同的 × × √   级别四 串行化 所有事务操作都依次顺序执行，性能最差 × × ×    事务管理## 开始一个事务begin # 事务回滚rollback # 事务确认commit # 增加回滚点savepoint 回滚点名; # 回到回滚点rollback to 回滚点名; -- 创建数据表 create table runoob_transaction_test( id int(5)) engine=innodb; -- 开启事务 begin; -- 事务操作 insert into runoob_transaction_test value(5); insert into runoob_transaction_test value(6); -- 回滚事务 -- rollback;  -- 提交事务 commit; </description>
+    </item>
+    
+  </channel>
+</rss>

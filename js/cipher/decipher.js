@@ -7,7 +7,7 @@ if (isEmpty(token)) {
         + '<img src="/images/000000/jiandar_00000000000000.png">'
         + '</div>'
         + '<div style="font-size: 36px;" class="style-center">Jiandar</div>';
-    $("article.markdown").append(html);
+    $("article.markdown").prepend(html);
     $("nav#TableOfContents").prepend("<ul></ul>");
 } else {
     decryptHtml();
@@ -21,18 +21,18 @@ function decryptHtml() {
     }
     try {
         // 目录：catalog
-        var catalogAes = $("#catalogAes").text().trim();
-        var catalogBase64 = decryptByAes(secretKey, catalogAes);
+        var catalogData = $("#catalogData").text().trim();
+        var catalogBase64 = decryptByAes(secretKey, catalogData);
         var catalogHtml = decodeBase64(catalogBase64);
 
         // 正文：content
-        var contentAes = $("#contentAes").text().trim();
-        var contentBase64 = decryptByAes(secretKey, contentAes)
+        var contentData = $("#contentData").text().trim();
+        var contentBase64 = decryptByAes(secretKey, contentData)
         var contentHtml = decodeBase64(contentBase64);
 
         // 文档：article
-        var articleAes = $("#articleAes").text().trim();
-        var articleBase64 = decryptByAes(secretKey, articleAes);
+        var articleData = $("#articleData").text().trim();
+        var articleBase64 = decryptByAes(secretKey, articleData);
         var articleHtml = '<div id="articleBase64" class="style-hide">' + articleBase64 + '</div>';
 
         // fileName

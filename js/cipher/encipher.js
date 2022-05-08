@@ -68,22 +68,24 @@ function encryptFile() {
     // 目录：catalog
     var catalogHtml = $("nav#TableOfContents").prop("outerHTML");
     var catalogBase64 = encodeBase64(catalogHtml);
-    var catalogAes = encryptByAes(secretKey, catalogBase64);
+    var catalogData = encryptByAes(secretKey, catalogBase64);
 
     // 正文：content
     var contentHtml = $("article.markdown").prop("outerHTML");
     var contentBase64 = encodeBase64(contentHtml);
-    var contentAes = encryptByAes(secretKey, contentBase64);
+    var contentData = encryptByAes(secretKey, contentBase64);
 
     // 文档：article
     var articleBase64 = $("#articleBase64").text();
-    var articleAes = encryptByAes(secretKey, articleBase64);
+    var articleData = encryptByAes(secretKey, articleBase64);
 
     // 下载文件
-    var articleBody = '<p id="catalogAes" class="style-hide">' + catalogAes + '</p>\n\n'
-        + '<p id="contentAes" class="style-hide">' + contentAes + '</p>\n\n'
-        + '<p id="articleAes" class="style-hide">' + articleAes + '</p>\n\n'
-        + '<p id="fileName" class="style-hide">' + fileName + '</p>';
+    var articleBody = '<div class="style-hide">\n\n'
+        + '<p id="catalogData">' + catalogData + '</p>\n\n'
+        + '<p id="contentData">' + contentData + '</p>\n\n'
+        + '<p id="articleData">' + articleData + '</p>\n\n'
+        + '<p id="fileName">' + fileName + '</p>\n\n'
+        + '</div>';
     var text = $("#articleHead").text() + "\n\n" + articleBody;
     var blob = new Blob([text], { type: "text/plain" });
     saveAs(blob, fileName);

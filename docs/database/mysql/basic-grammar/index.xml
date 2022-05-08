@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础语法 on IWiki</title>
+    <link>https://jiandar.github.io/docs/database/mysql/basic-grammar/</link>
+    <description>Recent content in 基础语法 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/database/mysql/basic-grammar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据类型</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic-grammar/data-type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic-grammar/data-type/</guid>
+      <description>数据类型#整数类型#   类型 描述 大小 范围（有符号） 范围（无符号）     TINYINT 迷你整形 1 字节 (-128，127) (0，255)   SMALLINT 小整形 2 字节 (-32 768，32 767) (0，65 535)   MEDIUMINT 中整形 3 字节     INT或INTEGER 标准整形 4 字节     BIGINT 大整形 8 字节      小数类型# 语法：如Float(M,D)，M表示数值总位数，D代表小数部分位数     类型 描述 大小     FLOAT 单精度浮点型 4 字节   DOUBLE 双精度浮点型 8 字节   DECIMAL 数值型 16 字节    日期时间类型#   类型 描述 大小 格式 范围     YEAR 年 1 字节 YYYY 1901 ~ 2155   DATE 日期 3 字节 YYYY-MM-DD 1000-01-01 ~ 9999-12-31   TIME 时间 3 字节 HH:MM:SS &amp;lsquo;-838:59:59&amp;rsquo; ~ &amp;lsquo;838:59:59&amp;rsquo;   TIMESTAMP 时间戳 4 字节 YYYYMMDD HHMMSS 1970-01-01 00:00:00 ~ 2038-1-19 11:14:07   DATETIME 日期时间 8 字节 YYYY-MM-DD HH:MM:SS 1000-01-01 00:00:00 ~9999-12-31 23:59:59    字符串类型#   类型 描述 大小     CHAR 定长字符 0-255字节   VARCHAR 变长字符 0-65535 字节   TINYTEXT 短文本 0-255字节   TEXT 文本 0-65 535字节   MEDIUMTEXT 长文本 0-16 777 215字节   LONGTEXT 极大文本 0-4 294 967 295字节   TINYBLOB 二进制，短文本 0-255字节   BLOB 二进制，文本 0-65 535字节   MEDIUMBLOB 二进制，长文本 0-16 777 215字节   LONGBLOB 二进制，极大文本 0-4 294 967 295字节    </description>
+    </item>
+    
+    <item>
+      <title>运算符</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic-grammar/operator/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic-grammar/operator/</guid>
+      <description>运算符#逻辑/算术/位运算符#   逻辑运算符 描述 算术运算符 描述 位运算符 描述     NOT、! 逻辑非 + 加法 &amp;amp; 按位与   AND 逻辑与 - 减法 | 按位或   OR 逻辑或 * 乘法 ^ 按位异或   XOR 逻辑异或 /、DIV 除法 ! 取反     %、MOD 取余 &amp;lt;&amp;lt;、&amp;gt;&amp;gt; 左移、右移    比较运算符#   运算符 描述 运算符 描述     = 等于 [NOT] BETWEEN 【不】在两值之间   &amp;lt;&amp;gt;、!</description>
+    </item>
+    
+    <item>
+      <title>列属性</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic-grammar/column-attribute/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic-grammar/column-attribute/</guid>
+      <description>列属性#null、notnull# 数据列是否允许NULL值。 在设计表的时候，尽量不要让数据为空。  default# 默认值。 如果没有数据插入，以默认值进行填充，通常是null。  comment# 列的注释说明。  unsigned# 数值型数据，无符号  zerofill# 当存储的数值型数据未达到显示长度时，在左侧补0，适用于正数数值  auto_increment#  自动递增，适用于整数类型
+# 查询自动递增变量 show variables like &amp;#39;auto_increment%&amp;#39;; # 修改步长  alter table 表名 auto_increment= 值;   primary key#  主键，在一张表中，有且只有一个主键。
+  不能为空，且具有唯一性。
+# 修改 alter table 表名 add primary key(字段); # 删除 alter table 表名 drop primary key;   foreign key# 外键，表示两表间的关系。 一般不设外键，影响数据库效率，外键关系一般由业务来实现。  unique#  唯一键，在不为空的情况下，不允许重复。</description>
+    </item>
+    
+    <item>
+      <title>变量</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic-grammar/variable/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic-grammar/variable/</guid>
+      <description>变量#</description>
+    </item>
+    
+    <item>
+      <title>语句</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic-grammar/sentence/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic-grammar/sentence/</guid>
+      <description>语句#</description>
+    </item>
+    
+    <item>
+      <title>函数</title>
+      <link>https://jiandar.github.io/docs/database/mysql/basic-grammar/function/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/basic-grammar/function/</guid>
+      <description>函数#</description>
+    </item>
+    
+  </channel>
+</rss>
