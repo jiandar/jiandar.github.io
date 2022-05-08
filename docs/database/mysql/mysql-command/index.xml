@@ -5,5 +5,41 @@
     <link>https://jiandar.github.io/docs/database/mysql/mysql-command/</link>
     <description>Recent content in MySQL 命令 on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/database/mysql/mysql-command/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>数据库管理</title>
+      <link>https://jiandar.github.io/docs/database/mysql/mysql-command/database/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/mysql-command/database/</guid>
+      <description>数据库管理## 创建create database 库名 [charset = 字符集] [collate = 校对集]; # 选择use 库名; # 显示库结构show create database 库名; # 显示库名 show databases [like &amp;#39;...&amp;#39;]; # 显示当前库名 select database(); # 修改alter database 库名 [charset = 字符集]/[collate = 校对集];# 删除drop database 库名;</description>
+    </item>
+    
+    <item>
+      <title>数据表管理</title>
+      <link>https://jiandar.github.io/docs/database/mysql/mysql-command/table/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/mysql-command/table/</guid>
+      <description>数据表管理#创建## 创建表create table 表名(列名 列类型 [长度],...) [engine = 存储引擎] [charset = 字符集] [collate = 校对集];# 复制表结构create table 新表名 like [数据库名.]表名;-- 示例 CREATE TABLE IF NOT EXISTS `runoob_tbl`( `runoob_id` INT UNSIGNED AUTO_INCREMENT, `runoob_title` VARCHAR(100) NOT NULL, `runoob_author` VARCHAR(40) NOT NULL, `submission_date` DATE, PRIMARY KEY ( `runoob_id` ) )ENGINE=InnoDB DEFAULT CHARSET=utf8; 查询#show create table 表名; show columns from 表名; describe 表名; desc 表名; show tables [like &amp;#39;.</description>
+    </item>
+    
+    <item>
+      <title>数据行管理</title>
+      <link>https://jiandar.github.io/docs/database/mysql/mysql-command/line/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/mysql-command/line/</guid>
+      <description>数据行管理#插入## 省略部分列名：列名与列值必须相对应insert into 表名(列名, ...) values(列值, ...); # 省略全部列名：需提供表所有列的值 insert into 表名 values(列值, ....); -- 示例 INSERT INTO table_name ( field1,field2,...,fieldN )VALUES( value1,value2,...,valueN ); 删除#delete from 表名 [where 条件];-- 示例 DELETE FROM table_name WHERE field1 = value1; 修改#update 表名 set 列名=值, ... [where 条件];-- 示例 UPDATE table_name a SET a.field1= value1, a.field2= value2, ... , a.fieldN= valueN WHERE field1 = value1; 查询#select [*]/[列名，.</description>
+    </item>
+    
+    <item>
+      <title>复合查询</title>
+      <link>https://jiandar.github.io/docs/database/mysql/mysql-command/composite-query/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/mysql-command/composite-query/</guid>
+      <description>复合查询#条件查询#select [distinct去重] 字段列表 from数据源 where条件 group by分组 having条件 order by排序 limit分页;    where having     原理 一条条从磁盘读取数据，判断条件，放入内存 将所有数据读入内存，在内存内部，逐条判断   使用别名 不能 可以   使用聚合函数 不能 可以    联合查询# 将多个子查询的结果，组合到一个结果集合中。（子查询所查询的列数量须相同）  -- 格式 SELECT expression1, expression2, ... expression_n FROM tables [WHERE conditions] UNION [ALL | DISTINCT] SELECT expression1, expression2, ... expression_n FROM tables [WHERE conditions]; -- 示例 SELECT country, name FROM Websites WHERE country=&amp;#39;CN&amp;#39; UNION ALL SELECT country, app_name FROM apps WHERE country=&amp;#39;CN&amp;#39; ORDER BY country; 连接查询# 内连接：INNER JOIN，获取两个表中，符合字段匹配关系的记录 左连接：LEFT JOIN，获取左表所有记录，即使右表没有对应匹配的记录 右连接：RIGHT JOIN，获取右表所有记录，即使左表没有对应匹配的记录  -- 示例 SELECT a.</description>
+    </item>
+    
   </channel>
 </rss>

@@ -5,5 +5,15 @@
     <link>https://jiandar.github.io/docs/database/mysql/databas-engine/</link>
     <description>Recent content in 数据库引擎 on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/database/mysql/databas-engine/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>InnoDB</title>
+      <link>https://jiandar.github.io/docs/database/mysql/databas-engine/InnoDB/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/databas-engine/InnoDB/</guid>
+      <description>InnoDB#InnoDB# 是一个事务型的存储引擎，支持行级锁、外键约束、自动增长列。 它的设计目标是处理大容量数据库系统，运行时，InnoDB会在内存中建立缓冲池，用于缓冲数据和索引。  索引结构# InnoDB是B+Tree索引结构，其将主键组织到一棵B+Tree中，而行数据储存在叶节点上（即聚集索引）  检索算法 若对主键列进行条件搜索，则按B+Tree的检索算法即可查找到对应的叶节点，获得行数据。 若对非主键列进行条件搜索，则先在辅助索引B+Tree中检索对应列，到达其叶节点获取对应的主键，在进行“对主键列进行条件搜索”
+适用场景 更新密集的表。 事务。 自动灾难恢复。 外键约束。 支持自动增加列属性。</description>
+    </item>
+    
   </channel>
 </rss>

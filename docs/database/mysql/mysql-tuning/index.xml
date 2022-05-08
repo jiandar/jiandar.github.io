@@ -5,5 +5,44 @@
     <link>https://jiandar.github.io/docs/database/mysql/mysql-tuning/</link>
     <description>Recent content in MySQL 调优 on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/database/mysql/mysql-tuning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>表结构优化</title>
+      <link>https://jiandar.github.io/docs/database/mysql/mysql-tuning/table-tuning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/mysql-tuning/table-tuning/</guid>
+      <description>表结构优化#合理设计表结构# 尽量将表字段定义为 NOT NULL 约束 单表不要有太多字段，建议在20以内 VARCHAR 类型只分配真正需要的空间  选取最适用的字段属性，优先最简单的数据类型# 尽量使用数字型字段 尽量使用 VARCHAR 代替 CHAR 尽量使用 TIMESTAMP 代替 DATETIME 尽量使用 TINYINT、SMALLINT、MEDIUMINT 代替 INT 对于特定类型字段，可用enum、set 等符合的数据类型  将字段多的表分解成多个表，增加中间表。#混用范式与反范式，适当冗余# 第一范式：数据表中每个字段都必须是不可拆分的最小单元 第二范式：满足一范式后，要求每条记录由主键唯一区分，记录中所有属性都依赖于主键。 第三范式：满足二范式后，要求所有属性必须直接依赖主键，不允许间接依赖。  分库分表，读写分离# 垂直分表（按列） 水平分表（按行）：按时间分表、按区间分表、按hash分表  </description>
+    </item>
+    
+    <item>
+      <title>索引优化</title>
+      <link>https://jiandar.github.io/docs/database/mysql/mysql-tuning/index-tuning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/mysql-tuning/index-tuning/</guid>
+      <description>索引优化#建立合适的索引# 索引应建立在区分度高、数据量小的字段上 对数字的索引效率要优于字符串 下列情况，应建立索引  外键 经常作为查询条件的字段 经常与其他表进行连接的字段 经常需要排序、分组和联合操作的字段 执行频率高（几千次/每天）的语句 数据量大（超过300万）的表    控制索引的数量# 删除不再使用或者很少使用的索引 频繁进行数据更新操作的表，不要建立太多的索引  充分利用索引查询，避免全表扫描# 全表扫描：读取表所有数据，检查每一行是否满足给定条件的过程。 导致索引失效的情况  使用 null 、not、&amp;lt;&amp;gt;、!=、参数、内置函数 or 拼接非索引字段 like 前模糊匹配，形如‘%abc’ 对索引字段进行操作运算 不符合复合索引的最左前缀匹配原则 查询的数量是大表的大部分（30％以上） 列与列进行比较 数据类型转换，包括显式与隐式 尽量使用前缀来索引    </description>
+    </item>
+    
+    <item>
+      <title>引擎优化</title>
+      <link>https://jiandar.github.io/docs/database/mysql/mysql-tuning/engine-tuning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/mysql-tuning/engine-tuning/</guid>
+      <description>引擎优化#InnoDB#  禁用唯一性检查
+-- 唯一性校验会降低插入记录的速度， -- 可以在插入记录之前禁用唯一性检查，插入数据完成后再开启  -- 禁用唯一性检查 SET UNIQUE_CHECKS = 0; -- 开启唯一性检查 SET UNIQUE_CHECKS = 1;   禁用外键检查
+-- 插入数据之前执行禁止对外键的检查，数据插入完成后再恢复，可以提高插入速度。  -- 禁用外键检查 SET foreign_key_checks = 0; -- 开启外键检查 SET foreign_key_checks = 1;   禁止自动提交
+-- 插入数据之前执行禁止事务的自动提交，数据插入完成后再恢复，可以提高插入速度。  -- 禁用自动提交 SET autocommit = 0; -- 开启自动提交 SET autocommit = 1;   MyISAM#  禁用索引</description>
+    </item>
+    
+    <item>
+      <title>SQL优化</title>
+      <link>https://jiandar.github.io/docs/database/mysql/mysql-tuning/sql-tuning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/database/mysql/mysql-tuning/sql-tuning/</guid>
+      <description>SQL优化# 避免使用双引号，用单引号代替 避免使用 *，用具体列名代替 避免使用 in，用 exist 代替 尽量使用UNION ALL代替UNION 尽量使用预编译：性能更好、防止SQL注入 尽量少做重复的工作 尽量避免耗时操作：DISTINCT、UNION、MINUS、INTERSECT、ORDER BY 尽量避免使用游标 尽量避免使用临时表 尽量避免大事务操作 尽量避免向客户端返回大数据量 分析 sql 语句：分析慢查询日志 利用分析工具：Explain、Profile  </description>
+    </item>
+    
   </channel>
 </rss>
