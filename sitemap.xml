@@ -78,6 +78,11 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/database/redis/persistence/RDB/</loc>
+    <lastmod>2022-05-09T23:52:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/java/concurrency/container/ThreadLocal/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
   </url>
@@ -165,6 +170,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/java/jvm/gc/reference-type/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/database/redis/persistence/</loc>
+    <lastmod>2022-05-09T23:52:16+08:00</lastmod>
   </url>
   
   <url>
@@ -273,6 +283,11 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/database/redis/persistence/AOF/</loc>
+    <lastmod>2022-05-09T23:52:16+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/java/concurrency/lock/aqs/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
   </url>
@@ -330,6 +345,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/java/jvm/tuning/oom/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/database/redis/</loc>
+    <lastmod>2022-05-09T23:52:16+08:00</lastmod>
   </url>
   
   <url>
@@ -395,6 +415,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/dev-design/algorithm/sort/</loc>
     <lastmod>2022-04-10T23:55:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/database/redis/data-type/</loc>
+    <lastmod>2022-05-09T23:52:16+08:00</lastmod>
   </url>
   
   <url>
