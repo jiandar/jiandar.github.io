@@ -6,6 +6,15 @@
     <description>Recent content in Home on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Bean</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean/</guid>
+      <description>Bean#Bean# 是指由Spring IoC容器实例化、组装和管理的对象 可以把 Spring IoC 容器看作是一个大工厂，Bean 就相当于工厂的产品  Bean 作用域# 对于 prototype 作用域的 Bean 来说，Spring IoC 容器只负责创建     作用域 描述     singleton 默认值，在 spring IoC 容器仅存在一个 Bean 实例   prototype 每次通过 Spring 容器获取 Bean 时，容器都会创建一个新的 Bean 实例   request 每次 HTTP 请求，容器都会创建一个 Bean 实例， 仅在当前 HTTP Request 内有效   session 同一个 HTTP Session 共享一个 Bean 实例，仅在当前 HTTP Session 内有效   application 同一个 Web 应用共享一个 Bean 实例，在当前 ServletContext 内有效   websocket websocket 的作用域是 WebSocket，即在整个 WebSocket 中有效    Bean 生命周期#  Spring 启动，加载类路径下配置文件，解析为 BeanDefinition 并装配到对应容器中</description>
+    </item>
+    
+    <item>
       <title>CountDownLatch</title>
       <link>https://jiandar.github.io/docs/java/concurrency/tool/CountDownLatch/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>

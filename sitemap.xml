@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean/</loc>
+    <lastmod>2022-05-16T01:41:04+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/java/concurrency/tool/CountDownLatch/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
   </url>
@@ -25,6 +30,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/java/io-nio/io/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/</loc>
+    <lastmod>2022-05-16T01:41:04+08:00</lastmod>
   </url>
   
   <url>
@@ -80,6 +90,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/database/redis/persistence/RDB/</loc>
     <lastmod>2022-05-09T23:52:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/spring/</loc>
+    <lastmod>2022-05-16T01:41:04+08:00</lastmod>
   </url>
   
   <url>
@@ -285,6 +300,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/database/redis/persistence/AOF/</loc>
     <lastmod>2022-05-09T23:52:16+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/</loc>
+    <lastmod>2022-05-16T01:41:04+08:00</lastmod>
   </url>
   
   <url>
@@ -914,7 +934,7 @@
   
   <url>
     <loc>https://jiandar.github.io/docs/dev-tool/big-data/</loc>
-    <lastmod>2022-04-25T01:26:18+08:00</lastmod>
+    <lastmod>2022-05-10T00:11:58+08:00</lastmod>
   </url>
   
   <url>
