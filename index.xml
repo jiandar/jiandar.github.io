@@ -7,11 +7,20 @@
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bean</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</guid>
+      <description>Bean#Bean#</description>
+    </item>
+    
+    <item>
+      <title>Bean</title>
       <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean/</guid>
-      <description>Bean#Bean# 是指由Spring IoC容器实例化、组装和管理的对象 可以把 Spring IoC 容器看作是一个大工厂，Bean 就相当于工厂的产品  Bean 作用域# 对于 prototype 作用域的 Bean 来说，Spring IoC 容器只负责创建     作用域 描述     singleton 默认值，在 spring IoC 容器仅存在一个 Bean 实例   prototype 每次通过 Spring 容器获取 Bean 时，容器都会创建一个新的 Bean 实例   request 每次 HTTP 请求，容器都会创建一个 Bean 实例， 仅在当前 HTTP Request 内有效   session 同一个 HTTP Session 共享一个 Bean 实例，仅在当前 HTTP Session 内有效   application 同一个 Web 应用共享一个 Bean 实例，在当前 ServletContext 内有效   websocket websocket 的作用域是 WebSocket，即在整个 WebSocket 中有效    Bean 生命周期#  Spring 启动，加载类路径下配置文件，解析为 BeanDefinition 并装配到对应容器中</description>
+      <description>Bean#Bean# 是指由Spring IoC容器实例化、组装和管理的对象 可以把 Spring IoC 容器看作是一个大工厂，Bean 就相当于工厂的产品  Bean 作用域# 对于 prototype 作用域的 Bean 来说，Spring IoC 容器只负责创建     作用域 描述     singleton 默认值，在 spring IoC 容器仅存在一个 Bean 实例   prototype 每次通过 Spring 容器获取 Bean 时，容器都会创建一个新的 Bean 实例   request 每次 HTTP 请求，容器都会创建一个 Bean 实例， 仅在当前 HTTP Request 内有效   session 同一个 HTTP Session 共享一个 Bean 实例，仅在当前 HTTP Session 内有效   application 同一个 Web 应用共享一个 Bean 实例，在当前 ServletContext 内有效   websocket websocket 的作用域是 WebSocket，即在整个 WebSocket 中有效    Bean 生命周期# 实例化  Spring 启动，加载类路径下配置文件，解析为 BeanDefinition 并装配到对应容器中 查找并加载 Spring 管理的 Bean，进行 Bean 的实例化 对于 prototype 作用域的 Bean 来说，Spring IoC 容器只负责创建，不会再跟踪其生命周期     初始化  Spring 对 bean 进行依赖注入 若 Bean 实现接口 BeanNameAware，则执行 setBeanName()，获取 bean 的名字 若 Bean 实现接口 BeanFactoryAware，则执行 setBeanFactory()，获取 BeanFactory 若 Bean 实现接口 ApplicationContextAware，则执行 setApplicationContext()，获取应用上下文； 若 Bean 实现接口 BeanPostProcessor，则先执行 postProcessBeforeInitialization()； 若 Bean 实现接口 InitializingBean，则执行 afterPropertiesSet()； 在 xml 文件中，若 Bean 配置了 init-method，则执行自定义方法； 若 Bean 实现接口 BeanPostProcessor，则先执行 postProcessAfterInitialization()；     使用  此时 Bean 已经准备就绪，可以被使用了      销毁</description>
     </item>
     
     <item>
@@ -433,6 +442,15 @@ self-introduction.md</description>
     </item>
     
     <item>
+      <title>Bean 定义</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean-definition/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean-definition/</guid>
+      <description>Bean 定义#开启组件扫描# application.xml  &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;beans xmlns=&amp;#34;http://www.springframework.org/schema/beans&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xmlns:context=&amp;#34;http://www.springframework.org/schema/context&amp;#34; xsi:schemaLocation=&amp;#34;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd&amp;#34;&amp;gt; &amp;lt;!-- 开启组件扫描，指定了 base-package 扫描的包 --&amp;gt; &amp;lt;context:component-scan base-package=&amp;#34;xxx.xxx.xxx&amp;#34;/&amp;gt; &amp;lt;/beans&amp;gt; 组件类注解# 这四个注解实现的功能基本一样，只是为了明确的标识类的层次及意图     注解 说明     @Component 将一般的类标识为 Bean 组件，并委托给 Spring 容器进行管理   @Controller 将控制层的类标识为 Bean 组件，是 @Component 的特化   @Service 将业务层的类标识为 Bean 组件，是 @Component 的特化   @Repository 将数据访问层的类标识为 Bean 组件，是 @Component 的特化    配置类注解#   注解 说明     @Configuration 定义配置类，配置类本身也会被注册为 Bean   @Bean 标注在配置类的方法上，将方法返回的实例注册为 Bean    </description>
+    </item>
+    
+    <item>
       <title>BlockingQueue</title>
       <link>https://jiandar.github.io/docs/java/concurrency/container/BlockingQueue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -735,6 +753,15 @@ interview.md</description>
       
       <guid>https://jiandar.github.io/docs/private/p-info/project-exp/</guid>
       <description>项目经验#生命周期# 支撑产品、版本、单板的生命周期规划管理流程，发布产品、版本、单板的生命周期信息查询； 增加产品组合相关流程能力，产业销售目录维护、路标管理以及组合策略管理等功能特性；  华为告警处理系统# 时间：2018.05-2019.04 公司：华为技术有限公司   玉柴车联# 时间：2016.5-2017.6 公司：南宁市企凡信息技术有限公司 项目介绍：玉柴车联是为玉柴货车司机、厂商、运营商提供的运营服务管理平台 技术框架：Html、CSS、JQuery、spring、mybatis、springMvc 主要功能：  位置服务：车辆分组，车辆查询 财产无忧：客户管理，合同管理，借款还款管理，防拆管理，车辆控制，控制提醒 维修无忧：故障库，保养策略，保养历史，车辆故障 运管无忧：报警提醒，车辆报表导出 运营管理：车辆信息导入，终端号、SIM卡、车辆、车主管理 系统管理：角色权限，字典管理，用户管理    其他# 华为告警处理系统 企凡OA系统 五洲天美商城 玉柴车联 CATTC微信公众号  </description>
+    </item>
+    
+    <item>
+      <title>Bean 注入</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean-injection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean-injection/</guid>
+      <description>Bean 注入#自动装配方式#   方式 描述     no 默认模式，没有自动装配   byName 由属性名自动装配。   byType 由属性数据类型自动装配。   constructor 类似于 byType，但该类型适用于构造函数参数类型。   Autodetect 首先尝试通过 constructor 使用自动装配来连接，如果它不执行，再尝试通过 byType 来自动装配。    Bean 注入# @Resource、@Autowired 两者功能相同，都可以标注在字段和setter方法  @Autowired# Spring 提供的注解 默认按 byType 方式进行装配 可配合 @Qualifier，改为按 byName 方式进行装配  @Resource# J2EE 提供的注解，Spring 做了支持 默认按 byName 方式进行装配 属性name 和 type，装配顺序：  如果同时指定了name和type，则寻找唯一匹配的bean进行装配 如果指定了name，则按 byName 方式进行装配 如果指定了type，按 byType 方式进行装配 如果未指定name和type，则按 byName 方式进行装配    </description>
     </item>
     
     <item>

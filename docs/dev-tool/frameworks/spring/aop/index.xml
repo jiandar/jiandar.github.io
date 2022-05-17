@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>AOP on IWiki</title>
+    <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/</link>
+    <description>Recent content in AOP on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Bean</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</guid>
+      <description>Bean#Bean#</description>
+    </item>
+    
+  </channel>
+</rss>
