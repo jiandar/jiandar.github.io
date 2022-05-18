@@ -7,15 +7,6 @@
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bean</title>
-      <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</guid>
-      <description>Bean#Bean#</description>
-    </item>
-    
-    <item>
-      <title>Bean</title>
       <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -127,6 +118,15 @@ String user = &amp;#34;xxx&amp;#34;; String password = &amp;#34;xxx&amp;#34;; St
     </item>
     
     <item>
+      <title>RESTful</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/RESTful/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/RESTful/</guid>
+      <description>RESTful 风格#RESTful# 是一种互联网软件架构，是一种设计风格  RESTful 原则# 网络上的所有事物都被抽象为资源 每个资源都有唯一的标识，对资源的操作不会改变标识 同一个资源具有多种表现形式(xml,json等) 所有的操作都是无状态的  RESTful 规范# 使用 URL 标识资源，URL中原则上不使用“动词”。 使用标准方法（GET、POST、PUT、PATCH、DELETE）操作资源。 使用 Json 格式返回结果，并用HTTP状态码进行标识。  RESTful 示例#//如果占位符中的名称和形参名一致，在@PathVariable可以不指定名称 @RequestMapping(&amp;#34;/item/{id}&amp;#34;) public @ResponseBody Item item(@PathVariable(&amp;#34;id&amp;#34;) Integer itemId){ //.... } </description>
+    </item>
+    
+    <item>
       <title>ThreadLocal</title>
       <link>https://jiandar.github.io/docs/java/concurrency/container/ThreadLocal/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -190,6 +190,17 @@ String user = &amp;#34;xxx&amp;#34;; String password = &amp;#34;xxx&amp;#34;; St
 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
 before-interview.md</description>
+    </item>
+    
+    <item>
+      <title>切面编程</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</guid>
+      <description>切面编程#启用#  Java 配置类
+// 在 Java 配置类中，使用 @EnableAspectJAutoProxy 和 @ComponentScan @Configuration @ComponentScan(basePackages = &amp;#34;xxx.xxx.xxx&amp;#34;) //注解扫描 @EnableAspectJAutoProxy //开启 AspectJ 的自动代理 public class AppConfig { }   XML 配置文件
+&amp;lt;!-- 开启注解扫描 --&amp;gt; &amp;lt;context:component-scan base-package=&amp;#34;xxx.xxx.xxx&amp;#34;/&amp;gt; &amp;lt;!--开启AspectJ 自动代理--&amp;gt; &amp;lt;aop:aspectj-autoproxy/&amp;gt;   示例#// 定义切面 @Aspect public class TestAnnotationAspect { // 定义切点  @Pointcut(&amp;#34;execution(* com.spring.service.*.*(..))&amp;#34;) private void pointCutMethod() { } // 定义环绕通知  @Around(&amp;#34;pointCutMethod()&amp;#34;) public Object doAround(ProceedingJoinPoint pjp) throws Throwable { System.</description>
     </item>
     
     <item>
@@ -580,6 +591,15 @@ self-introduction.md</description>
     </item>
     
     <item>
+      <title>工作流程</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/workflow/</guid>
+      <description>工作流程#核心组件# 前端控制器：DispatcherServlet 处理器映射器：HandlerMapping 处理器适配器：HandlerAdapter 处理器：Handler 视图解析器：ViewResolver 视图：View  工作流程# 发起请求到前端控制器。 前端控制器请求 HandlerMapping 查找 Handler。 HandlerMapping 向前端控制器返回 Handler。 前端控制器调用 HandlerAdapter 去执行 Handler。 HandlerAdapter 执行 Handler。 Handler 执行完成后，向 HandlerAdapter 返回 ModelAndView。 HandlerAdapter 将 ModelAndView返回给前端控制器。 前端控制器将 ModelAndView 传给 ViewReslover。 ViewReslover 解析后，向前端控制器返回具体 View。 前端控制器根据 View 进行渲染视图。 前端控制器响应用户。  </description>
+    </item>
+    
+    <item>
       <title>并发修改异常</title>
       <link>https://jiandar.github.io/docs/java/concurrency/problem/ConcurrentModificationException/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -873,6 +893,18 @@ interview.md</description>
       
       <guid>https://jiandar.github.io/docs/dev-lang/css/style/list/</guid>
       <description>列表样式#属性属性说明属性值属性值说明list-style简写属性&amp;nbsp;空格分隔各值，不分顺序list-style-image列表项标志的图片none无图片，默认URL图片路径list-style-position列表项标志的位置outside标记在文本外，文本与文本对齐。默认inside标记在文本内，文本与标记对齐list-style-type列表项标志的类型none无标记disc实心圆，默认circle空心圆square实心方块decimal数字lower-alpha小写英文字母(a、b、c、...)upper-alpha大写英文字母(A、B、C、...)lower-roman小写罗马数字(i、ii、iii、.</description>
+    </item>
+    
+    <item>
+      <title>参数绑定</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/params-bind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/params-bind/</guid>
+      <description>参数绑定#默认支持的类型# HttpServletRequest HttpServletResponse HttpSession Model/ModelMap  简单类型#  request入参、处理器方法形参，名称相同，可免注解
+  request入参、处理器方法形参，名称不同，使用@RequestParam
+// 属性required，否必须传入 // 属性defaultValue，设置默认值 public String editItem(String id, @RequestParam(value = &amp;#34;name&amp;#34;, required = true) String itemName){ //...... }   简单pojo#  前提条件：接收参数的pojo，内部属性为简单类型，且与request入参名称相同
+//pojo类 public class Label{ private String labelId; private String labelName; //... } //处理器类 @Controller @RequestMapping(method=RequestMethod.POST) public class LabelController { @RequestMapping(&amp;#34;/addLabel&amp;#34;) public ActionResult addLabel(Label label) { //.</description>
     </item>
     
     <item>

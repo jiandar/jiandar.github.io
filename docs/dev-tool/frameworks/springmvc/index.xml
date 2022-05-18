@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring MVC on IWiki</title>
+    <link>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/</link>
+    <description>Recent content in Spring MVC on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RESTful</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/RESTful/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/RESTful/</guid>
+      <description>RESTful 风格#RESTful# 是一种互联网软件架构，是一种设计风格  RESTful 原则# 网络上的所有事物都被抽象为资源 每个资源都有唯一的标识，对资源的操作不会改变标识 同一个资源具有多种表现形式(xml,json等) 所有的操作都是无状态的  RESTful 规范# 使用 URL 标识资源，URL中原则上不使用“动词”。 使用标准方法（GET、POST、PUT、PATCH、DELETE）操作资源。 使用 Json 格式返回结果，并用HTTP状态码进行标识。  RESTful 示例#//如果占位符中的名称和形参名一致，在@PathVariable可以不指定名称 @RequestMapping(&amp;#34;/item/{id}&amp;#34;) public @ResponseBody Item item(@PathVariable(&amp;#34;id&amp;#34;) Integer itemId){ //.... } </description>
+    </item>
+    
+    <item>
+      <title>工作流程</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/workflow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/workflow/</guid>
+      <description>工作流程#核心组件# 前端控制器：DispatcherServlet 处理器映射器：HandlerMapping 处理器适配器：HandlerAdapter 处理器：Handler 视图解析器：ViewResolver 视图：View  工作流程# 发起请求到前端控制器。 前端控制器请求 HandlerMapping 查找 Handler。 HandlerMapping 向前端控制器返回 Handler。 前端控制器调用 HandlerAdapter 去执行 Handler。 HandlerAdapter 执行 Handler。 Handler 执行完成后，向 HandlerAdapter 返回 ModelAndView。 HandlerAdapter 将 ModelAndView返回给前端控制器。 前端控制器将 ModelAndView 传给 ViewReslover。 ViewReslover 解析后，向前端控制器返回具体 View。 前端控制器根据 View 进行渲染视图。 前端控制器响应用户。  </description>
+    </item>
+    
+    <item>
+      <title>参数绑定</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/params-bind/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/params-bind/</guid>
+      <description>参数绑定#默认支持的类型# HttpServletRequest HttpServletResponse HttpSession Model/ModelMap  简单类型#  request入参、处理器方法形参，名称相同，可免注解
+  request入参、处理器方法形参，名称不同，使用@RequestParam
+// 属性required，否必须传入 // 属性defaultValue，设置默认值 public String editItem(String id, @RequestParam(value = &amp;#34;name&amp;#34;, required = true) String itemName){ //...... }   简单pojo#  前提条件：接收参数的pojo，内部属性为简单类型，且与request入参名称相同
+//pojo类 public class Label{ private String labelId; private String labelName; //... } //处理器类 @Controller @RequestMapping(method=RequestMethod.POST) public class LabelController { @RequestMapping(&amp;#34;/addLabel&amp;#34;) public ActionResult addLabel(Label label) { //.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</loc>
-    <lastmod>2022-05-18T02:10:06+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean/</loc>
     <lastmod>2022-05-18T02:10:06+08:00</lastmod>
   </url>
@@ -98,6 +93,10 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/RESTful/</loc>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/dev-tool/frameworks/spring/</loc>
     <lastmod>2022-05-16T01:41:04+08:00</lastmod>
   </url>
@@ -140,6 +139,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/private/employment/interview/before-interview/</loc>
     <lastmod>2022-05-06T23:34:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</loc>
+    <lastmod>2022-05-18T02:10:06+08:00</lastmod>
   </url>
   
   <url>
@@ -383,6 +387,10 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/</loc>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/java/concurrency/theory/synchronized/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
   </url>
@@ -420,6 +428,10 @@
   <url>
     <loc>https://jiandar.github.io/docs/java/oop/encapsulation/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/workflow/</loc>
   </url>
   
   <url>
@@ -645,6 +657,10 @@
   <url>
     <loc>https://jiandar.github.io/docs/dev-lang/css/style/list/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/params-bind/</loc>
   </url>
   
   <url>

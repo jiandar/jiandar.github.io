@@ -6,12 +6,14 @@
     <description>Recent content in AOP on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Bean</title>
+      <title>切面编程</title>
       <link>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/</guid>
-      <description>Bean#Bean#</description>
+      <description>切面编程#启用#  Java 配置类
+// 在 Java 配置类中，使用 @EnableAspectJAutoProxy 和 @ComponentScan @Configuration @ComponentScan(basePackages = &amp;#34;xxx.xxx.xxx&amp;#34;) //注解扫描 @EnableAspectJAutoProxy //开启 AspectJ 的自动代理 public class AppConfig { }   XML 配置文件
+&amp;lt;!-- 开启注解扫描 --&amp;gt; &amp;lt;context:component-scan base-package=&amp;#34;xxx.xxx.xxx&amp;#34;/&amp;gt; &amp;lt;!--开启AspectJ 自动代理--&amp;gt; &amp;lt;aop:aspectj-autoproxy/&amp;gt;   示例#// 定义切面 @Aspect public class TestAnnotationAspect { // 定义切点  @Pointcut(&amp;#34;execution(* com.spring.service.*.*(..))&amp;#34;) private void pointCutMethod() { } // 定义环绕通知  @Around(&amp;#34;pointCutMethod()&amp;#34;) public Object doAround(ProceedingJoinPoint pjp) throws Throwable { System.</description>
     </item>
     
   </channel>

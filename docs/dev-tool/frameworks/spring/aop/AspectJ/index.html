@@ -5,13 +5,13 @@
   <meta name="generator" content="Hugo 0.80.0" />
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Bean">
-<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Bean" />
-<meta property="og:description" content="Bean" />
+<meta name="description" content="切面编程">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="切面编程" />
+<meta property="og:description" content="切面编程" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/" />
 <meta property="article:modified_time" content="2022-05-18T02:10:06+08:00" /><meta property="og:site_name" content="IWiki" />
-<title>Bean | IWiki</title>
+<title>切面编程 | IWiki</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
 <link rel="stylesheet" href="/book.min.6c7c6446dfdee7c8c933e9bbc6e80ee3ed6c913b2a59519f2092c3c6a9d63e55.css" integrity="sha256-bHxkRt/e58jJM&#43;m7xugO4&#43;1skTsqWVGfIJLDxqnWPlU=">
@@ -2862,13 +2862,74 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/" class=" active">Bean</a>
+    <a href="https://jiandar.github.io/docs/dev-tool/frameworks/spring/aop/AspectJ/" class=" active">切面编程</a>
   
 
         </li>
       
     
   </ul>
+
+        </li>
+      
+    
+  </ul>
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <input type="checkbox" id="section-cb0426c9c6b589e5c42a1230a6ff39a3" class="toggle"  />
+    <label for="section-cb0426c9c6b589e5c42a1230a6ff39a3" class="flex justify-between">
+      <a href="https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/" class="">Spring MVC</a>
+      <span>▾</span>
+    </label>
+  
+
+          
+  <ul>
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/RESTful/" class="">RESTful</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/workflow/" class="">工作流程</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/params-bind/" class="">参数绑定</a>
+  
 
         </li>
       
@@ -3670,7 +3731,7 @@
     <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
   </label>
 
-  <strong>Bean</strong>
+  <strong>切面编程</strong>
 
   <label for="toc-control">
     
@@ -3688,7 +3749,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#bean-1">Bean</a></li>
+        <li><a href="#启用">启用</a></li>
+        <li><a href="#示例">示例</a></li>
       </ul>
     </li>
   </ul>
@@ -3703,15 +3765,78 @@
 
       
       
-  <article class="markdown"><h1 id="bean">
-  Bean
-  <a class="anchor" href="#bean">#</a>
+  <article class="markdown"><h1 id="切面编程">
+  切面编程
+  <a class="anchor" href="#%e5%88%87%e9%9d%a2%e7%bc%96%e7%a8%8b">#</a>
 </h1>
-<h3 id="bean-1">
-  Bean
-  <a class="anchor" href="#bean-1">#</a>
+<h3 id="启用">
+  启用
+  <a class="anchor" href="#%e5%90%af%e7%94%a8">#</a>
 </h3>
-</article>
+<ul>
+<li>
+<p>Java 配置类</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 在 Java 配置类中，使用 @EnableAspectJAutoProxy 和 @ComponentScan
+</span><span style="color:#228b22"></span><span style="color:#707a7c">@Configuration</span>
+<span style="color:#707a7c">@ComponentScan</span>(basePackages = <span style="color:#cd5555">&#34;xxx.xxx.xxx&#34;</span>) <span style="color:#228b22">//注解扫描
+</span><span style="color:#228b22"></span><span style="color:#707a7c">@EnableAspectJAutoProxy</span> <span style="color:#228b22">//开启 AspectJ 的自动代理
+</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">AppConfig</span> {
+}
+</code></pre></div></li>
+<li>
+<p>XML 配置文件</p>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#228b22">&lt;!-- 开启注解扫描 --&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;context:component-scan</span> <span style="color:#658b00">base-package=</span><span style="color:#cd5555">&#34;xxx.xxx.xxx&#34;</span><span style="color:#8b008b;font-weight:bold">/&gt;</span>
+<span style="color:#228b22">&lt;!--开启AspectJ 自动代理--&gt;</span>
+<span style="color:#8b008b;font-weight:bold">&lt;aop:aspectj-autoproxy/&gt;</span>
+</code></pre></div></li>
+</ul>
+<h3 id="示例">
+  示例
+  <a class="anchor" href="#%e7%a4%ba%e4%be%8b">#</a>
+</h3>
+<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 定义切面
+</span><span style="color:#228b22"></span><span style="color:#707a7c">@Aspect</span>
+<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">TestAnnotationAspect</span> {
+    <span style="color:#228b22">// 定义切点
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@Pointcut</span>(<span style="color:#cd5555">&#34;execution(* com.spring.service.*.*(..))&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">pointCutMethod</span>() {
+    }
+
+    <span style="color:#228b22">// 定义环绕通知
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@Around</span>(<span style="color:#cd5555">&#34;pointCutMethod()&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> Object <span style="color:#008b45">doAround</span>(ProceedingJoinPoint pjp) <span style="color:#8b008b;font-weight:bold">throws</span> Throwable {
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;进入方法......&#34;</span>);
+        Object o = pjp.<span style="color:#658b00">proceed</span>();
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;退出方法......&#34;</span>);
+        <span style="color:#8b008b;font-weight:bold">return</span> o;
+    }
+
+    <span style="color:#228b22">// 定义前置通知
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@Before</span>(<span style="color:#cd5555">&#34;pointCutMethod()&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">doBefore</span>() {
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;......&#34;</span>);
+    }
+
+    <span style="color:#228b22">// 定义后置通知
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@After</span>(<span style="color:#cd5555">&#34;pointCutMethod()&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">doAfter</span>() {
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;......&#34;</span>);
+    }
+
+    <span style="color:#228b22">// 定义正常返回通知
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@AfterReturning</span>(pointcut = <span style="color:#cd5555">&#34;pointCutMethod()&#34;</span>, returning = <span style="color:#cd5555">&#34;result&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">doAfterReturning</span>(String result) {
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;......&#34;</span>);
+    }
+
+    <span style="color:#228b22">// 定义异常返回通知
+</span><span style="color:#228b22"></span>    <span style="color:#707a7c">@AfterThrowing</span>(pointcut = <span style="color:#cd5555">&#34;pointCutMethod()&#34;</span>, throwing = <span style="color:#cd5555">&#34;e&#34;</span>)
+    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">doAfterThrowing</span>(Exception e) {
+        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;......&#34;</span>);
+    }
+}
+</code></pre></div></article>
  
       
 
@@ -3762,7 +3887,8 @@
   <ul>
     <li>
       <ul>
-        <li><a href="#bean-1">Bean</a></li>
+        <li><a href="#启用">启用</a></li>
+        <li><a href="#示例">示例</a></li>
       </ul>
     </li>
   </ul>
