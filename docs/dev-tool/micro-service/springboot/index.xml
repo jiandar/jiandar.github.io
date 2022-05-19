@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring Boot on IWiki</title>
+    <link>https://jiandar.github.io/docs/dev-tool/micro-service/springboot/</link>
+    <description>Recent content in Spring Boot on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-tool/micro-service/springboot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>工作原理</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/springboot/work-principle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/springboot/work-principle/</guid>
+      <description>工作原理#核心注解# @SpringBootApplication，组合以下注解 @SpringBootConfiguration：Spring Boot 项目的配置注解 @EnableAutoConfiguration：启用自动配置 @ComponentScan：默认扫描 @SpringBootApplication 所在类的同级目录以及它的子目录  自动配置原理# 在 spring 程序 main 方法中，添加 @SpringBootApplication 或者 @EnableAutoConfiguration 后， 框架会自动去 maven 中读取每个 starter 中的 spring.factories 文件。 该文件里配置了所有需要被创建的 spring bean。  </description>
+    </item>
+    
+  </channel>
+</rss>

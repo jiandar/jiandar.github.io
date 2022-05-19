@@ -253,6 +253,26 @@ before-interview.md</description>
     </item>
     
     <item>
+      <title>工作原理</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/springboot/work-principle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/springboot/work-principle/</guid>
+      <description>工作原理#核心注解# @SpringBootApplication，组合以下注解 @SpringBootConfiguration：Spring Boot 项目的配置注解 @EnableAutoConfiguration：启用自动配置 @ComponentScan：默认扫描 @SpringBootApplication 所在类的同级目录以及它的子目录  自动配置原理# 在 spring 程序 main 方法中，添加 @SpringBootApplication 或者 @EnableAutoConfiguration 后， 框架会自动去 maven 中读取每个 starter 中的 spring.factories 文件。 该文件里配置了所有需要被创建的 spring bean。  </description>
+    </item>
+    
+    <item>
+      <title>工作原理</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/eureka/work-principle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/eureka/work-principle/</guid>
+      <description>工作原理#服务注册与发现# 服务注册与发现对于微服务架构来说是非常重要的 有了服务发现与注册，只需要使用服务的标识符，就可以访问到服务，而不需要修改服务调用的配置文件了。 Eureka 功能类似于 dubbo 的注册中心，比如 Zookeeper。  工作原理# Eureka 采用了 C-S 的设计架构。 Eureka Server 作为服务注册功能的服务器，是服务注册中心。 而系统中的其他微服务，使用 Eureka Client 连接到 Eureka Server 并维持心跳连接。 这样系统的维护人员就可以通过 Eureka Server 来监控系统中各个微服务是否正常运行。 SpringCloud 的其他模块（比如Zuul）就可以通过 Eureka Server 来发现系统中的其他微服务，并执行相关的逻辑。  核心组件#  Eureka Server
+ 提供服务注册服务 各个节点启动后，会在 Eureka Server 中进行注册，这样 Eureka Server 中将会存储所有可用服务的节点信息。      Eureka Client
+ 是一个 Java 客户端，用于简化与 Eureka Server 的交互。 作为轮询负载均衡器，并提供服务的故障切换支持。 在应用启动后，将会向 Eureka Server 周期性发送心跳。    Eureka 角色# Eureka Server：提供服务注册和发现 Service Provider：服务提供方，将自身服务注册到 Eureka，从而使服务消费方能够找到 Service Consumer：服务消费方，从 Eureka 获取注册服务列表，从而能够消费服务  #</description>
+    </item>
+    
+    <item>
       <title>引用类型</title>
       <link>https://jiandar.github.io/docs/java/jvm/gc/reference-type/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -513,6 +533,15 @@ self-introduction.md</description>
       
       <guid>https://jiandar.github.io/docs/java/jvm/tuning/oom/</guid>
       <description>OOM 问题#内存溢出# Out Of Memory，内存溢出 java.lang.OutOfMemoryError     OOM 异常信息     栈内存溢出 java.lang.StackOverflowError   堆内存溢出 java.lang.OutOfMemoryError：Java heap space   元空间内存溢出 java.lang.OutOfMemoryError：MetaSpace   直接内存溢出 java.lang.OutOfMemoryError：Direct buffer memory    GC 回收时间过长# java.lang.OutOfMemoryError：GC overhead limit exceeded 超过 98% 的时间都在用来做 GC，且回收了不到 2% 的堆内存  不能再创建新的线程# java.lang.OutOfMemoryError：unable to create new native thread 原因：创建了太多的线程，超过系统承载极限 解决：想办法减少应用程序创建的线程的数量  </description>
+    </item>
+    
+    <item>
+      <title>Q&amp;A</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/eureka/question-answer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/eureka/question-answer/</guid>
+      <description>Q&amp;amp;A#CAP# 一致性：Consistency，所有节点在同一时间具有相同的数据。 可用性：Availability，保证每个请求不管成功或者失败都有响应。 分区容错：Partitiontolerance，系统中任意信息的丢失或失败不会影响系统的继续运作。  CAP 定理# 一个分布式系统不可能同时很好的满足 CAP 这三个需求，最多只能同时较好的满足两个  Eureka &amp;amp; Zookeeper#Eureka 自我保护模式# 当 EurekaServer 节点在短时间内丢失过多客户端时，那么这个节点就会进入自我保护模式。 自我保护模式下，EurekaServer 就会保护服务注册表中的信息，即不会注销任何微服务。 当网络故障恢复后，该 EurekaServer 节点会自动退出自我保护模式。  Eureka 保证 AP# Eureka优先保证高可用性，其各个节点都是平等的。  只要有一台EurekaServer在，就能保证注册服务可用，只不过查到的信息可能不是最新的     Eureka自我保护机制，  当15分钟内超过85%的节点都没有正常的心跳时， Eureka不再从注册列表中移除因为长时间没接收到心跳而应该过期的服务， Eureka仍然能够接受新服务的注册和查询请求，但是不会被同步在其他节点上。 当网络稳定时，当前实例新的注册信息会被同步到其他节点上。    Zookeeper 保证 CP# zk会出现这样一种情况，当master节点因为网络故障与其他节点失去联系时，剩余的节点要重新进行leader选举。 选举的时间太长，30-120s，选举期间整个zk集群式不可用，这导致注册服务瘫痪。 在云部署的环境下，由于网络问题使得这种情况有较大概率发生，而注册服务长期不可用是不能接受的。  #</description>
     </item>
     
     <item>
@@ -1323,10 +1352,10 @@ after-interview.md</description>
     
     <item>
       <title>Q&amp;A</title>
-      <link>https://jiandar.github.io/docs/computer/question/</link>
+      <link>https://jiandar.github.io/docs/computer/question-answer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jiandar.github.io/docs/computer/question/</guid>
+      <guid>https://jiandar.github.io/docs/computer/question-answer/</guid>
       <description>Q&amp;amp;A#URL &amp;amp; URI#   URI URL     Uniform Resource Identifier，统一资源标识符 Uniform Resource Location，统一资源定位符   是一种语义上的抽象概念 是URI的一个子集，一种具体的URI   唯一标识了资源 唯一标识并定位了资源    GET &amp;amp; POST#    GET POST     书签 可收藏为书签 不可收藏为书签   缓存 能被缓存 不能缓存   历史 参数保留在浏览器历史中 参数不会保存在浏览器历史中   安全性 安全性比POST低，因为所发送的数据是 URL 的一部分 比GET更安全，因为参数不会被保存在浏览器历史或服务器日志中   可见性 数据在 URL 中对所有人都是可见的 数据不会显示在 URL 中   数据长度 受限，URL 的最大长度是 2048 个字符 无限制   数据类型 只允许 ASCII 字符 无限制   编码类型 application/x-www-form-urlencoded application/x-www-form-urlencoded multipart/form-data   后退/刷新 无害 数据会被重新提交    HTTP &amp;amp; HTTPS# https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。 http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。 http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。 http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。  Cookie &amp;amp; Session# Cookie、Session 都是一种用于维持客户端与服务端之间会话的机制      Cookie Session     数据存放位置 客户的浏览器 服务器   安全程度 可能会被篡改 安全   性能方面 只影响客户的浏览器 占用服务器性能   存储数据量 客户的浏览器对其有限制 不影响   存储结构 键值对形式的文本 哈希表结构    forward &amp;amp; redirect# 转发是服务器行为，重定向是客户端行为     请求转发 请求重定向     服务器内部跳转，所有地址栏上的路径不会改变 是浏览器再次发送请求，地址栏上的路径会发生改变   只发送一次请求 会发送两次请求   只能在当前应用内部跳转 可以在内部跳转，也可以跳出当前应用   可以共享reqeust 不能可以共享reqeust   request.</description>
     </item>
     
