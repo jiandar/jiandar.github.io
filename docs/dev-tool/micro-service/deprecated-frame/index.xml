@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日落组件 on IWiki</title>
+    <link>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/</link>
+    <description>Recent content in 日落组件 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eureka</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/eureka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/eureka/</guid>
+      <description>Eureka#Eureka#  服务注册中心
+  一个基于 REST 的服务，用于定位服务，以实现云端中间层服务发现和故障转移。
+  工作原理# Eureka 采用了 C-S 的设计架构。 Eureka Server 作为服务注册功能的服务器，是服务注册中心。 而系统中的其他微服务，使用 Eureka Client 连接到 Eureka Server 并维持心跳连接。 这样系统的维护人员就可以通过 Eureka Server 来监控系统中各个微服务是否正常运行。 SpringCloud 的其他模块（比如Zuul）就可以通过 Eureka Server 来发现系统中的其他微服务，并执行相关的逻辑。  核心组件#  Eureka Server
+ 提供服务注册服务 各个节点启动后，会在 Eureka Server 中进行注册，这样 Eureka Server 中将会存储所有可用服务的节点信息。      Eureka Client
+ 是一个 Java 客户端，用于简化与 Eureka Server 的交互。 作为轮询负载均衡器，并提供服务的故障切换支持。 在应用启动后，将会向 Eureka Server 周期性发送心跳。    角色# Eureka Server：提供服务注册和发现 Service Provider：服务提供方，将自身服务注册到 Eureka，从而使服务消费方能够找到 Service Consumer：服务消费方，从 Eureka 获取注册服务列表，从而能够消费服务  自我保护模式# 当 EurekaServer 节点在短时间内丢失过多客户端时，那么这个节点就会进入自我保护模式。 自我保护模式下，EurekaServer 就会保护服务注册表中的信息，即不会注销任何微服务。 当网络故障恢复后，该 EurekaServer 节点会自动退出自我保护模式。  Eureka 保证 AP# Eureka 优先保证高可用性，其各个节点都是平等的。 只要有一台 EurekaServer 在，就能保证注册服务可用，只不过查到的信息可能不是最新的  </description>
+    </item>
+    
+    <item>
+      <title>Ribbon</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/ribbon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/ribbon/</guid>
+      <description>Ribbon#Ribbon# 负载均衡 是一个基于 HTTP 和 TCP 的客户端负载均衡工具  工作原理# 先访问注册中心，获取可用的服务列表 再根据用户指定的策略，再从服务列表中选择一个地址。  Ribbon 自带 LB 策略# Load Balance，即负载均衡  </description>
+    </item>
+    
+    <item>
+      <title>Feign</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/feign/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/feign/</guid>
+      <description>Feign#Feign# 服务调用 Feign 集成了 Ribbon，是一个声明式的Web服务客户端 使得编写Web服务客户端变得非常容易，只需要创建一个接口，然后在上面添加注解即可。  </description>
+    </item>
+    
+    <item>
+      <title>Hystrix</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/hystrix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/hystrix/</guid>
+      <description>Hystrix#Hystrix# 服务降级 是一个用于处理分布式系统的延迟和容错的开源库 能保证在一个依赖出问题的情况下，不会导致整体服务失败，避免级联故障，以提高分布式系统的弹性  工作原理# 当某个服务单元发生故障之后，通过断路器的故障监控（类似熔断保险丝）， 向调用方返回一个符合预期的、可处理的备选响应，而不是长时间的等待或者抛出调用方无法处理的异常， 这样就保证了服务调用方的线程不会被长时间、不必要地占用，从而避免了故障在分布式系统中蔓延乃至雪崩。  扇入、扇出# 扇入：表示一个模块被多个模块调用 扇出：表示一个模块调用多个模块。  雪崩效应# 分布式系统环境下，应用程序有众多依赖关系。某些情况下，许多依赖不可避免的会调用失败。 如果扇出链路上某个微服务不可用，对其的调用就会占用越来越多的系统资源，进而引起系统崩溃。 这种因“服务提供者的不可用”导致“服务调用者不可用”，并将不可用逐渐放大的现象，即“雪崩效应”。  服务熔断# 当某服务出现不可用或响应超时的情况时，为了防止整个系统出现雪崩，暂时停止对该服务的调用  服务降级# 从整个系统的负荷情况考虑，对某些负荷会比较高的某些功能（业务场景），当其熔断后将不再被调用。 此时客户端可以自己准备一个本地的fallback回调，返回一个缺省值。达到虽服务水平下降但还可用的目的。 服务降级处理是在客户端实现完成的，与服务端没有关系  </description>
+    </item>
+    
+    <item>
+      <title>Zuul</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/zuul/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/zuul/</guid>
+      <description>Zuul#Zuul# 服务网关 路由：将外部请求转发到具体的微服务实例上，是实现外部访问统一入口的基础 过滤：对请求的处理过程进行干预，是实现请求校验、服务聚合等功能的基础  </description>
+    </item>
+    
+    <item>
+      <title>Config</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/config/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/config/</guid>
+      <description>Config#Config# 配置中心 为微服务框架中的微服务提供统一的外部配置支持  工作原理# Config Server：分布式配置中心，它是一个独立的微服务，用来连接配置服务器并为客户端提供配置信息 Config Client：通过配置中心，获取对应的配置来管理应用。  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eureka on IWiki</title>
+    <link>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/deprecated-frame/eureka/</link>
+    <description>Recent content in Eureka on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/deprecated-frame/eureka/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Eureka</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/deprecated-frame/eureka/eureka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/deprecated-frame/eureka/eureka/</guid>
+      <description>Eureka#服务注册与发现# 服务注册与发现对于微服务架构来说是非常重要的 有了服务发现与注册，只需要使用服务的标识符，就可以访问到服务，而不需要修改服务调用的配置文件了。 Eureka 功能类似于 dubbo 的注册中心，比如 Zookeeper。  工作原理# Eureka 采用了 C-S 的设计架构。 Eureka Server 作为服务注册功能的服务器，是服务注册中心。 而系统中的其他微服务，使用 Eureka Client 连接到 Eureka Server 并维持心跳连接。 这样系统的维护人员就可以通过 Eureka Server 来监控系统中各个微服务是否正常运行。 SpringCloud 的其他模块（比如Zuul）就可以通过 Eureka Server 来发现系统中的其他微服务，并执行相关的逻辑。  核心组件#  Eureka Server
+ 提供服务注册服务 各个节点启动后，会在 Eureka Server 中进行注册，这样 Eureka Server 中将会存储所有可用服务的节点信息。      Eureka Client
+ 是一个 Java 客户端，用于简化与 Eureka Server 的交互。 作为轮询负载均衡器，并提供服务的故障切换支持。 在应用启动后，将会向 Eureka Server 周期性发送心跳。    Eureka 角色# Eureka Server：提供服务注册和发现 Service Provider：服务提供方，将自身服务注册到 Eureka，从而使服务消费方能够找到 Service Consumer：服务消费方，从 Eureka 获取注册服务列表，从而能够消费服务  </description>
+    </item>
+    
+    <item>
+      <title>Q&amp;A</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/deprecated-frame/eureka/question-answer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/deprecated-frame/eureka/question-answer/</guid>
+      <description>Q&amp;amp;A#Eureka &amp;amp; Zookeeper#Eureka 自我保护模式# 当 EurekaServer 节点在短时间内丢失过多客户端时，那么这个节点就会进入自我保护模式。 自我保护模式下，EurekaServer 就会保护服务注册表中的信息，即不会注销任何微服务。 当网络故障恢复后，该 EurekaServer 节点会自动退出自我保护模式。  Eureka 保证 AP# Eureka优先保证高可用性，其各个节点都是平等的。  只要有一台EurekaServer在，就能保证注册服务可用，只不过查到的信息可能不是最新的     Eureka自我保护机制，  当15分钟内超过85%的节点都没有正常的心跳时， Eureka不再从注册列表中移除因为长时间没接收到心跳而应该过期的服务， Eureka仍然能够接受新服务的注册和查询请求，但是不会被同步在其他节点上。 当网络稳定时，当前实例新的注册信息会被同步到其他节点上。    Zookeeper 保证 CP# zk会出现这样一种情况，当master节点因为网络故障与其他节点失去联系时，剩余的节点要重新进行leader选举。 选举的时间太长，30-120s，选举期间整个zk集群式不可用，这导致注册服务瘫痪。 在云部署的环境下，由于网络问题使得这种情况有较大概率发生，而注册服务长期不可用是不能接受的。  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -5,5 +5,16 @@
     <link>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/</link>
     <description>Recent content in Spring Cloud on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Q&amp;A</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/question-answer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/question-answer/</guid>
+      <description>Q&amp;amp;A#Spring Cloud &amp;amp; Spring Boot# SpringBoot 专注于快速、方便的开发单个微服务个体 SpringCloud 是关注全局的微服务协调治理框架，它将 SpringBoot 开发的一个个单体微服务整合并管理起来。 SpringBoot 可以离开 SpringCloud 独立使用开发项目，但是 SpringCloud 离不开 SpringBoot，属于依赖的关系。  Spring Cloud &amp;amp; Dubbo#  社区活跃度：SpringCloud 优于 Dubbo
+  文档质量：Dubbo 略优于 SpringCloud
+    Spring Cloud Dubbo     背景 Apache 旗下的 Spring 体系下的微服务解决方案 阿里系的分布式服务治理框架   通信机制 基于 HTTP 的 REST 方式 RPC 通信   技术维度 覆盖了微服务架构下的方方面面 只是实现了服务治理      RPC &amp;amp; REST# RPC ：服务提供方与调用方接口依赖方式太强、服务对平台敏感，难以简单复用。 REST ：牺牲了服务调用的性能，但避免了RPC带来的问题。  </description>
+    </item>
+    
   </channel>
 </rss>

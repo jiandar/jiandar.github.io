@@ -18,8 +18,8 @@
   </url>
   
   <url>
-    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/eureka/</loc>
-    <lastmod>2022-05-20T01:02:02+08:00</lastmod>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/eureka/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
   </url>
   
   <url>
@@ -108,11 +108,6 @@
   </url>
   
   <url>
-    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springboot/</loc>
-    <lastmod>2022-05-20T01:02:02+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jiandar.github.io/docs/java/concurrency/container/ThreadLocal/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
   </url>
@@ -150,6 +145,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/private/employment/interview/before-interview/</loc>
     <lastmod>2022-05-06T23:34:22+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/distributed/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
   </url>
   
   <url>
@@ -199,11 +199,6 @@
   
   <url>
     <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springboot/work-principle/</loc>
-    <lastmod>2022-05-20T01:02:02+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/eureka/work-principle/</loc>
     <lastmod>2022-05-20T01:02:02+08:00</lastmod>
   </url>
   
@@ -403,18 +398,13 @@
   </url>
   
   <url>
-    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/eureka/question-answer/</loc>
-    <lastmod>2022-05-20T01:02:02+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://jiandar.github.io/docs/database/redis/</loc>
     <lastmod>2022-05-09T23:52:16+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/</loc>
-    <lastmod>2022-05-20T01:02:02+08:00</lastmod>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/ribbon/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
   </url>
   
   <url>
@@ -533,6 +523,11 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/private/employment/</loc>
     <lastmod>2022-05-04T23:00:00+08:00</lastmod>
   </url>
@@ -623,6 +618,11 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/feign/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/java/container/Map/HashTable/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
   </url>
@@ -655,6 +655,16 @@
   <url>
     <loc>https://jiandar.github.io/docs/java/container/Set/</loc>
     <lastmod>2022-04-10T23:55:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springboot/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
   </url>
   
   <url>
@@ -833,6 +843,11 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/hystrix/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/java/basic-feature/Java8/stream-api/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
   </url>
@@ -993,6 +1008,11 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/zuul/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/private/employment/interview/interview-question/</loc>
     <lastmod>2022-05-06T23:34:22+08:00</lastmod>
   </url>
@@ -1045,6 +1065,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/java/concurrency/lock/</loc>
     <lastmod>2022-04-10T23:55:58+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/deprecated-frame/config/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
   </url>
   
   <url>
@@ -1140,6 +1165,11 @@
   <url>
     <loc>https://jiandar.github.io/docs/dev-design/design-pattern/structural/09-composite/</loc>
     <lastmod>2022-05-06T22:50:25+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/question-answer/</loc>
+    <lastmod>2022-05-21T01:43:59+08:00</lastmod>
   </url>
   
   <url>
