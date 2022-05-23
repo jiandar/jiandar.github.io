@@ -11,7 +11,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jiandar.github.io/docs/dev-tool/frameworks/springmvc/RESTful/</guid>
-      <description>RESTful 风格#RESTful# 是一种互联网软件架构，是一种设计风格  RESTful 原则# 网络上的所有事物都被抽象为资源 每个资源都有唯一的标识，对资源的操作不会改变标识 同一个资源具有多种表现形式(xml,json等) 所有的操作都是无状态的  RESTful 规范# 使用 URL 标识资源，URL中原则上不使用“动词”。 使用标准方法（GET、POST、PUT、PATCH、DELETE）操作资源。 使用 Json 格式返回结果，并用HTTP状态码进行标识。  RESTful 示例#//如果占位符中的名称和形参名一致，在@PathVariable可以不指定名称 @RequestMapping(&amp;#34;/item/{id}&amp;#34;) public @ResponseBody Item item(@PathVariable(&amp;#34;id&amp;#34;) Integer itemId){ //.... } </description>
+      <description>RESTful 风格#RESTful# 是一种互联网软件架构，是一种设计风格 即 REST，是 REST 的形容词形式  RESTful 原则# 网络上的所有事物都被抽象为资源 每个资源都有唯一的标识，对资源的操作不会改变标识 同一个资源具有多种表现形式(xml,json等) 所有的操作都是无状态的  RESTful 规范# 使用 URL 标识资源，URL中原则上不使用“动词”。 使用标准方法（GET、POST、PUT、PATCH、DELETE）操作资源。 使用 Json 格式返回结果，并用HTTP状态码进行标识。  RESTful 示例#//如果占位符中的名称和形参名一致，在@PathVariable可以不指定名称 @RequestMapping(&amp;#34;/item/{id}&amp;#34;) public @ResponseBody Item item(@PathVariable(&amp;#34;id&amp;#34;) Integer itemId){ //.... } </description>
     </item>
     
     <item>

@@ -5,5 +5,14 @@
     <link>https://jiandar.github.io/docs/dev-tool/micro-service/</link>
     <description>Recent content in 微服务 on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-tool/micro-service/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Spring Cloud</title>
+      <link>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/</guid>
+      <description>Spring Cloud# 分布式微服务架构下的一站式解决方案，是各个微服务架构落地技术的集合体，俗称微服务全家桶 中文参考文档   推荐：Nacos、LoadBalancer、OpenFeign、sentienl、gateway 停更：Eureka、Feign、Hystrix、Zuul、Config、Bus  Spring Cloud &amp;amp; Spring Boot# SpringBoot 专注于快速、方便的开发单个微服务个体 SpringCloud 是关注全局的微服务协调治理框架，它将 SpringBoot 开发的一个个单体微服务整合并管理起来。 SpringBoot 可以离开 SpringCloud 独立使用开发项目，但是 SpringCloud 离不开 SpringBoot，属于依赖的关系。  </description>
+    </item>
+    
   </channel>
 </rss>
