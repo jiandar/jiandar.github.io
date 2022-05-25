@@ -5,5 +5,23 @@
     <link>https://jiandar.github.io/docs/dev-tool/frameworks/kafka/</link>
     <description>Recent content in Kafka on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/dev-tool/frameworks/kafka/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>MQ</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/kafka/mq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/kafka/mq/</guid>
+      <description>消息队列#MQ# Message Queue，消息队列 是基础数据结构中“先进先出”的一种数据结构。  原理# 点对点模式：一对一，消费者主动拉取数据，消息收到后消息清除 发布/订阅模式：一对多，数据生产后，推送给所有订阅者  优点# 解耦：解耦消息处理过程，使得扩展变得容易 异步：允许异步处理消息 削峰：提高峰值处理能力 缓冲：控制和优化数据流经过系统的速度，解决生产消息和消费消息的处理速度不一致的情况 保证数据安全：消息队列把数据进行持久化直到它们已经被完全处理。这规避了数据丢失风险。 保证消息的有序性：保证数据会按照特定的顺序来处理  缺点# 系统可用性降低 系统复杂性提高 一致性问题  消息中间件#    单机吞吐量 时效性 可用性 消息可靠性     ActiveMQ 万级 ms 级 高，主从架构 有较低的概率丢失数据   RabbitMQ 万级 μs 级 高，主从架构    RocketMQ 10万级 ms 级 非常高，分布式架构 可零丢失   Kafka 10万级 ms 级 非常高，分布式架构 可零丢失    ActiveMQ# 非常成熟，功能强大，在业内大量的公司以及项目中都有应用 偶尔会有较低概率丢失消息 社区活跃度低，官方对其维护也越来越少 而且确实主要是基于解耦和异步来用的，较少在大规模吞吐的场景中使用  RabbitMQ# erlang语言开发，性能极其好，延时很低； 吞吐量到万级，MQ功能比较完备 而且开源提供的管理界面非常棒，用起来很好用 社区相对比较活跃，几乎每个月都发布几个版本 RabbitMQ确实吞吐量会低一些，这是因为他做的实现机制比较重 erlang语言本身带来的问题。很难读源码，很难定制和掌控  RocketMQ# 接口简单易用，有阿里品牌保障 日处理消息上百亿之多，可以做到大规模吞吐，性能也非常好，分布式扩展也很方便 社区维护还可以，可靠性和可用性都是ok的，还可以支撑大规模的topic数量，支持复杂MQ业务场景 java系的，可以自己阅读源码，定制自己公司的MQ，可以掌控  Kafka# 仅仅提供较少的核心功能 但是提供超高的吞吐量，ms级的延迟，极高的可用性以及可靠性，而且分布式可以任意扩展 kafka最好是支撑较少的topic数量即可，保证其超高吞吐量 kafka唯一的一点劣势是有可能消息重复消费，在大数据领域中以及日志采集中，这点轻微影响可以忽略。  </description>
+    </item>
+    
+    <item>
+      <title>工作原理</title>
+      <link>https://jiandar.github.io/docs/dev-tool/frameworks/kafka/work-principle/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/dev-tool/frameworks/kafka/work-principle/</guid>
+      <description>工作原理#术语# producer：生产者，生产 message 发送到 topic consumer：消费者，订阅 topic 消费 message consumer group：消费者组，同组的不同消费者不能同时消费同一个分区的数据 broker：指 Kafka 节点，一个 Kafka 集群由多个 Kafka 节点组成。 topic：指消息类别，每条发布到 kafka 集群的消息都属于某个类别。 partition：指 topic 的分区，每个 topic 多个 partition。 segment：指 partition 的分段，每个 partition 包含多个 segment 段，每个 Segment 存着 message 信息。 offset：指 Message 在 partition 中的偏移量，可理解为消息在 partition 中的索引  存储设计# partition 在物理上对应一个 log 文件夹，包含多个 segment 段，每个 segment 大小相等，顺序读写。 segment 在物理上对应一个.log 数据文件和一个 .index 索引文件，文件以该段中最小的 offset 进行命名。 Kafka 并没有为每条 Message 建立索引，而是采用了稀疏存储的方式，每隔一定字节的数据建立一条索引。 这样在查找指定 offset 的 Message 时，用二分查找就可以快速定位到该 Message  </description>
+    </item>
+    
   </channel>
 </rss>

@@ -2970,6 +2970,32 @@
           
   <ul>
     
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jiandar.github.io/docs/dev-tool/frameworks/kafka/mq/" class="">MQ</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jiandar.github.io/docs/dev-tool/frameworks/kafka/work-principle/" class="">工作原理</a>
+  
+
+        </li>
+      
+    
   </ul>
 
         </li>
@@ -3781,8 +3807,8 @@
   
 
   
-    <input type="checkbox" id="section-4604dc5b0352ee2d8a152be1fb91c65b" class="toggle"  />
-    <label for="section-4604dc5b0352ee2d8a152be1fb91c65b" class="flex justify-between">
+    <input type="checkbox" id="section-7b129ef49cfc7b10ee0ab9a2e5bca794" class="toggle"  />
+    <label for="section-7b129ef49cfc7b10ee0ab9a2e5bca794" class="flex justify-between">
       <a  class="">个人信息</a>
       <span>▾</span>
     </label>
@@ -3798,7 +3824,7 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/private/p-info/self-introduction/" class="">自我介绍</a>
+    <a href="https://jiandar.github.io/docs/private/personal-info/self-introduction/" class="">自我介绍</a>
   
 
         </li>
@@ -3811,7 +3837,7 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/private/p-info/project-exp/" class="">项目经验</a>
+    <a href="https://jiandar.github.io/docs/private/personal-info/project-experience/" class="">项目经验</a>
   
 
         </li>
@@ -4025,7 +4051,16 @@
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#kafka">Kafka</a></li>
+        <li><a href="#kafka-特性">Kafka 特性</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
 
@@ -4036,7 +4071,44 @@
 
       
       
-  <article class="markdown"><p>Kafka</p>
+  <article class="markdown"><h3 id="kafka">
+  Kafka
+  <a class="anchor" href="#kafka">#</a>
+</h3>
+<ul>
+<li>是一种高吞吐量的分布式发布订阅消息系统</li>
+<li>使用场景：日志收集、消息系统、用户活动跟踪、运营指标</li>
+</ul>
+<h3 id="kafka-特性">
+  Kafka 特性
+  <a class="anchor" href="#kafka-%e7%89%b9%e6%80%a7">#</a>
+</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"><div style="font-weight:400">高吞吐量、低延迟</div></th>
+<th style="text-align:left"><div style="font-weight:400">kafka每秒可以处理几十万条消息，它的延迟最低只有几毫秒</div></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">可扩展性</td>
+<td style="text-align:left">kafka集群支持热扩展</td>
+</tr>
+<tr>
+<td style="text-align:left">持久性、可靠性</td>
+<td style="text-align:left">消息被持久化到本地磁盘，并且支持数据备份防止数据丢失</td>
+</tr>
+<tr>
+<td style="text-align:left">容错性</td>
+<td style="text-align:left">允许集群中节点失败（若副本数量为n,则允许n-1个节点失败）</td>
+</tr>
+<tr>
+<td style="text-align:left">高并发</td>
+<td style="text-align:left">支持数千个客户端同时读写</td>
+</tr>
+</tbody>
+</table>
 </article>
  
       
@@ -4046,6 +4118,12 @@
   <div class="flex flex-wrap justify-between">
 
 
+
+  <div><a class="flex align-center" href="https://gitee.com/commit/84487add0c9ed8adf4caed38a718ffd69a65389b" title='最后修改者 jiandar | May 22, 2022' target="_blank" rel="noopener">
+      <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
+      <span>May 22, 2022</span>
+    </a>
+  </div>
 
 
 
@@ -4078,7 +4156,16 @@
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents"></nav>
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#kafka">Kafka</a></li>
+        <li><a href="#kafka-特性">Kafka 特性</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
 
 
  

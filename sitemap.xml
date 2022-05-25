@@ -83,6 +83,11 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/kafka/mq/</loc>
+    <lastmod>2022-05-22T17:57:37+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/database/mysql/</loc>
     <lastmod>2022-05-07T01:45:56+08:00</lastmod>
   </url>
@@ -133,8 +138,7 @@
   </url>
   
   <url>
-    <loc>https://jiandar.github.io/docs/private/p-info/</loc>
-    <lastmod>2022-05-04T23:00:00+08:00</lastmod>
+    <loc>https://jiandar.github.io/docs/private/personal-info/</loc>
   </url>
   
   <url>
@@ -303,8 +307,7 @@
   </url>
   
   <url>
-    <loc>https://jiandar.github.io/docs/private/p-info/self-introduction/</loc>
-    <lastmod>2022-05-06T23:34:22+08:00</lastmod>
+    <loc>https://jiandar.github.io/docs/private/personal-info/self-introduction/</loc>
   </url>
   
   <url>
@@ -463,6 +466,11 @@
   </url>
   
   <url>
+    <loc>https://jiandar.github.io/docs/dev-tool/frameworks/kafka/work-principle/</loc>
+    <lastmod>2022-05-22T17:57:37+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://jiandar.github.io/docs/dev-tool/micro-service/dubbo/work-principle/</loc>
     <lastmod>2022-05-21T15:29:22+08:00</lastmod>
   </url>
@@ -608,8 +616,7 @@
   </url>
   
   <url>
-    <loc>https://jiandar.github.io/docs/private/p-info/project-exp/</loc>
-    <lastmod>2022-05-06T22:50:25+08:00</lastmod>
+    <loc>https://jiandar.github.io/docs/private/personal-info/project-experience/</loc>
   </url>
   
   <url>
@@ -654,6 +661,7 @@
   
   <url>
     <loc>https://jiandar.github.io/docs/dev-tool/frameworks/kafka/</loc>
+    <lastmod>2022-05-22T17:57:37+08:00</lastmod>
   </url>
   
   <url>
@@ -893,7 +901,7 @@
   
   <url>
     <loc>https://jiandar.github.io/docs/dev-tool/micro-service/springcloud/</loc>
-    <lastmod>2022-05-21T15:29:22+08:00</lastmod>
+    <lastmod>2022-05-22T17:57:37+08:00</lastmod>
   </url>
   
   <url>
@@ -1098,7 +1106,7 @@
   
   <url>
     <loc>https://jiandar.github.io/docs/dev-tool/micro-service/dubbo/</loc>
-    <lastmod>2022-05-22T14:56:55+08:00</lastmod>
+    <lastmod>2022-05-22T17:57:37+08:00</lastmod>
   </url>
   
   <url>
