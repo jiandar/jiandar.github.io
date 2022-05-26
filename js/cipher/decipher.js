@@ -3,10 +3,10 @@
 //var token = $.cookie("Blog.IWiki.token");
 var token = "";
 if (isEmpty(token)) {
-    var html = '<div class="style-center" onclick="decryptHtml()">'
+    var html = '<div class="style-center" onclick="decryptHtml()" style="cursor:pointer">'
         + '<img src="/images/000000/jiandar_00000000000000.png">'
         + '</div>'
-        + '<div style="font-size: 36px;" class="style-center">Jiandar</div>';
+        + '<div class="style-center" style="font-size: 36px;">Jiandar</div>';
     $("article.markdown").prepend(html);
     $("nav#TableOfContents").prepend("<ul></ul>");
 } else {
