@@ -28,7 +28,7 @@ function getSecretKey() {
         alert("无效口令！");
     } else {
         var date = new Date();
-        date.setTime(date.getTime() + (15 * 60 * 1000));
+        date.setTime(date.getTime() + (5 * 60 * 1000));
         $.cookie(tokenKey, token, { expires: date, path: '/' });
     }
 

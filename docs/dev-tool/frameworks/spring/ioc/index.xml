@@ -29,7 +29,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jiandar.github.io/docs/dev-tool/frameworks/spring/ioc/bean-injection/</guid>
-      <description>Bean 注入#自动装配方式#   方式 描述     no 默认模式，没有自动装配   byName 由属性名自动装配。   byType 由属性数据类型自动装配。   constructor 类似于 byType，但该类型适用于构造函数参数类型。   Autodetect 首先尝试通过 constructor 使用自动装配来连接，如果它不执行，再尝试通过 byType 来自动装配。    Bean 注入# @Resource、@Autowired 两者功能相同，都可以标注在字段和setter方法  @Autowired# Spring 提供的注解 默认按 byType 方式进行装配 可配合 @Qualifier，改为按 byName 方式进行装配  @Resource# J2EE 提供的注解，Spring 做了支持 默认按 byName 方式进行装配 属性name 和 type，装配顺序：  如果同时指定了name和type，则寻找唯一匹配的bean进行装配 如果指定了name，则按 byName 方式进行装配 如果指定了type，按 byType 方式进行装配 如果未指定name和type，则按 byName 方式进行装配    </description>
+      <description>Bean 注入#自动装配方式#   方式 描述     no 默认模式，没有自动装配   byName 由属性名自动装配。   byType 由属性数据类型自动装配。   constructor 类似于 byType，但该类型适用于构造函数参数类型。   Autodetect 首先尝试通过 constructor 使用自动装配来连接，如果它不执行，再尝试通过 byType 来自动装配。    Bean 注入# @Resource、@Autowired 两者功能相同，都可以标注在字段和setter方法  @Autowired# Spring 提供的注解 默认按 byType 方式进行装配 可配合 @Qualifier，改为按 byName 方式进行装配  @Resource# J2EE 提供的注解，Spring 做了支持 默认按 byName 方式进行装配 属性 name 和 type，装配顺序：  如果同时指定了 name 和 type，则寻找唯一匹配的 bean 进行装配 如果指定了 name，则按 byName 方式进行装配 如果指定了 type，按 byType 方式进行装配 如果未指定 name 和 type，则按 byName 方式进行装配    </description>
     </item>
     
   </channel>

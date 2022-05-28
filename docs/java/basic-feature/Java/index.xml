@@ -25,7 +25,7 @@
  RuntimeException及其子类，又称非受检异常 在运行期间出现的异常，可延后处理 比如：NullPointerException    抛出异常#  默认方式
  JVM会把异常信息输出在了控制台，并停止程序    throw 方式
  用在方法内，后面跟异常对象    thorws 方式
- 用在方法声明上，后面跟异常类名 可以跟多个，用逗号隔开    // 在方法内 throw new Exception(); // 在方法声明上 public void method() throws Exception { } 捕获异常# try - catch - finally  try { // 可能出现异常的语句 } catch (异常类 变量){ // 处理异常的代码，可以有多个  // 出现异常，才会执行 } finally { // 不是必须的  // 无论是否产生异常，一定会执行的语句 } 自定义异常# 自定义类，使之继承 Exception 等异常类  // 用法与内置异常类一样 public class MyException extends Exception { MyException(String message) { super(message); } } finally &amp;amp; return# 执行逻辑  // finally块前的return语句，记为out-return // finally块内的return语句，记为in-return  // finally块中无return： // 执行out-return，保存结果到缓存槽，执行finally块，返回缓存槽的数据  // finally块中有return： // 执行out-return，保存结果到缓存槽，执行finally块，执行in-return提前退出  场景示例  // finally块中无return，且未操作变量 public static void test1() { try { System.</description>
+ 用在方法声明上，后面跟异常类名 可以跟多个，用逗号隔开    // 在方法内 throw new Exception(); // 在方法声明上 public void method() throws Exception { } 捕获异常# try - catch - finally  try { // 可能出现异常的语句 } catch (异常类 变量){ // 处理异常的代码，可以有多个  // 出现异常，才会执行 } finally { // 不是必须的  // 无论是否产生异常，一定会执行的语句 } 自定义异常# 自定义类，使之继承 Exception 等异常类  // 用法与内置异常类一样 public class MyException extends Exception { MyException(String message) { super(message); } } finally &amp;amp; return# 执行逻辑  finally块前的return语句，记为out-return finally块内的return语句，记为in-return finally块中无return： 执行out-return，保存结果到缓存槽，执行finally块，返回缓存槽的数据 finally块中有return： 执行out-return，保存结果到缓存槽，执行finally块，执行in-return提前退出  场景示例  // finally块中无return，且未操作变量 public static void test() { try { System.</description>
     </item>
     
     <item>
