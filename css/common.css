@@ -15,6 +15,9 @@ body {
   max-height: 48rem;
   z-index: 10;
 }
+aside.book-menu{
+  z-index: 11;
+}
 
 /* 文章目录 */
 .book-toc .book-toc-content {
