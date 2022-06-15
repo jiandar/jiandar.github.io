@@ -10,7 +10,7 @@
 <meta property="og:description" content="HashMap" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://jiandar.github.io/docs/java/container/Map/HashMap/" />
-<meta property="article:modified_time" content="2022-05-06T22:50:25+08:00" /><meta property="og:site_name" content="IWiki" />
+<meta property="article:modified_time" content="2022-06-16T02:03:46+08:00" /><meta property="og:site_name" content="IWiki" />
 <title>HashMap | IWiki</title>
 <link rel="manifest" href="/manifest.json">
 <link rel="icon" href="/favicon.png" type="image/x-icon">
@@ -3823,7 +3823,20 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/interview/java-basic/basic/" class="">基础</a>
+    <a href="https://jiandar.github.io/docs/interview/java-basic/basic/" class="">易错题</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jiandar.github.io/docs/interview/java-basic/container/" class="">集合容器</a>
   
 
         </li>
@@ -4326,7 +4339,7 @@
 <img src="/images/202202/jiandar_20220214092944.png"/>
 </li>
 <li>
-<p>JDK1.8：数组 + 链表或红黑树</p>
+<p>JDK1.8：数组 + 链表 + 红黑树</p>
 <img src="/images/202202/jiandar_20220214093538.png"/>
 <p>​</p>
 </li>
@@ -4373,17 +4386,17 @@
   <a class="anchor" href="#%e6%96%b0%e5%a2%9eput">#</a>
 </h3>
 <ul>
-<li>计算key的hash值，算出元素在底层数组中的下标位置</li>
-<li>如果哈希表为空，则初始化哈希表</li>
-<li>如果没有发生碰撞(hashCode值相同)，直接添加元素到哈希表中去</li>
-<li>如果发生了碰撞，则进行三种判断。
+<li>调用 hash()，计算 key  的 hash 值</li>
+<li>再通过哈希算法，将 hash 值转换成数组的下标</li>
+<li>如果下标位置为空，则新增一个节点</li>
+<li>如果下标位置上为红黑树，则就调用树方法插入节点</li>
+<li>如果下标位置上有链表或单个节点（即发生哈希碰撞），则将 key 和链表每个节点上的 key 依次进行 equals()  对比
 <ul>
-<li>如果key地址相同或者equals后内容相同，则替换旧值</li>
-<li>如果是红黑树结构，就调用树方法插入。</li>
-<li>如果是链表结构，则循环遍历查找目标节点，找到则覆盖。如果找不到则在尾部插入新节点，并判断是否需要转换为红黑树；</li>
+<li>如果有节点返回 true，则覆盖该节点</li>
+<li>如果所有节点都返回 false，则将新节点添加到链表的末尾。并判断是否需要转换为红黑树。</li>
 </ul>
 </li>
-<li>如果数组满了大于阀值，则resize进行扩容。</li>
+<li>如果数组长度大于阀值，则 resize() 进行扩容</li>
 </ul>
 <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">public</span> V <span style="color:#008b45">put</span>(K key, V value) {
     <span style="color:#228b22">// 调用hash(key)计算key的hashcode值
@@ -4460,7 +4473,8 @@
   <a class="anchor" href="#%e6%9f%a5%e6%89%beget">#</a>
 </h3>
 <ul>
-<li>计算key的hash值，算出元素在底层数组中的下标位置</li>
+<li>调用 hash()，计算 key  的 hash 值</li>
+<li>再通过哈希算法，将 hash 值转换成数组的下标</li>
 <li>判断索引处第一个key与传入key是否相等，如果相等直接返回</li>
 <li>如果不相等，判断链表是否是红黑二叉树，如果是，直接从树中取值</li>
 <li>如果不是树，就遍历链表查找</li>
@@ -4500,12 +4514,12 @@
 <ul>
 <li>新表是旧表的两倍容量，以(e.hash &amp; oldCap) == 0把单链表拆分为两队，</li>
 <li>如果等于0，则将元素迁移到新数组 “原位置”的位置上</li>
-<li>如果不等于0，则将元素迁移到新数组 “原位置+oldCap”的位置上
-<img src="/images/202202/jiandar_20220215105850.png"/>
-<img src="/images/202202/jiandar_20220215105851.png"/></li>
+<li>如果不等于0，则将元素迁移到新数组 “原位置+oldCap”的位置上</li>
 </ul>
 </li>
 </ul>
+<img src="/images/202202/jiandar_20220215105850.png" style="zoom:50%;"/>
+<img src="/images/202202/jiandar_20220215105851.png" style="zoom:50%;"/>
 <div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#8b008b;font-weight:bold">final</span> Node&lt;K,V&gt;[] <span style="color:#008b45">resize</span>() {
     Node&lt;K,V&gt;[] oldTab = table;
     <span style="color:#228b22">// 原容量
@@ -4678,9 +4692,9 @@
 
 
 
-  <div><a class="flex align-center" href="https://gitee.com/commit/ae5cbcb970712d154eac8dc11c5013720f75767b" title='最后修改者 jiandar | May 6, 2022' target="_blank" rel="noopener">
+  <div><a class="flex align-center" href="https://gitee.com/commit/dec2d5c979b7859df89983ee133766ea3f29758c" title='最后修改者 jiandar | June 16, 2022' target="_blank" rel="noopener">
       <img src="/svg/calendar.svg" class="book-icon" alt="Calendar" />
-      <span>May 6, 2022</span>
+      <span>June 16, 2022</span>
     </a>
   </div>
 

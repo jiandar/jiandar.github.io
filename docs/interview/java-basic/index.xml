@@ -6,12 +6,28 @@
     <description>Recent content in Java 基础 on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/interview/java-basic/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>基础</title>
+      <title>易错题</title>
       <link>https://jiandar.github.io/docs/interview/java-basic/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jiandar.github.io/docs/interview/java-basic/basic/</guid>
-      <description>范德萨发生的</description>
+      <description>易错题</description>
+    </item>
+    
+    <item>
+      <title>集合容器</title>
+      <link>https://jiandar.github.io/docs/interview/java-basic/container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/interview/java-basic/container/</guid>
+      <description>HashMap 实现原理#1、底层使用哈希表# 数组结构：存储区间连续、内存占用严重、空间复杂度大，寻址容易，插入和删除困难 链表结构：存储区间离散、内存占用宽松、空间复杂度小，寻址困难，插入和删除容易 哈希表结构：数组与链表的结合体，是一种寻址容易，插入删除也容易的数据结构。 每个节点包含四个属性：key、value、hash 和 next引用 JDK1.7：数组 + 链表   JDK1.8：数组 + 链表 + 红黑树  2、新增：put()#  调用 hash()，计算 key 的 hash 值
+  再通过哈希算法，将 hash 值转换成数组的下标
+  如果下标位置为空，则新增一个节点
+  如果下标位置上为红黑树，则就调用树方法插入节点
+  如果下标位置上有链表或单个节点（即发生哈希碰撞），则将 key 和链表每个节点上的 key 依次进行 equals() 对比
+  如果有节点返回 true，则覆盖该节点
+  如果所有节点都返回 false，则将新节点添加到链表的末尾。并判断是否需要转换为红黑树。
+    如果数组长度大于阀值，则 resize() 进行扩容</description>
     </item>
     
   </channel>

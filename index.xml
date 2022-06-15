@@ -264,15 +264,6 @@ before-interview.md</description>
     </item>
     
     <item>
-      <title>基础</title>
-      <link>https://jiandar.github.io/docs/interview/java-basic/basic/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jiandar.github.io/docs/interview/java-basic/basic/</guid>
-      <description>范德萨发生的</description>
-    </item>
-    
-    <item>
       <title>基础知识</title>
       <link>https://jiandar.github.io/docs/computer/basic/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -363,6 +354,15 @@ before-interview.md</description>
       
       <guid>https://jiandar.github.io/docs/dev-design/algorithm/time-complexity/</guid>
       <description>时间复杂度#算法的效率# 由以下两个复杂度来评估，算法主要研究的是时间复杂度 时间复杂度：评估执行程序所需的时间。 空间复杂度：评估执行程序所需的存储空间。  时间频度# 一个算法花费的时间与算法中语句的执行次数，是成正比的 一个算法中语句的执行次数，称为时间频度，记为T(n)  时间复杂度# 记作 T(n)=O(f(n))，表示随问题规模 n 的增大，算法执行时间的增长率和 f(n) 的增长率相同 n：问题规模 f(n)：是 n 的某个函数 T(n)：算法中语句总的执行次数，是 n 的某个函数  推导时间复杂度# 用常数1取代运行时间中的所有加法常数。 在修改后的运行次数函数中，只保留最高阶项。 如果最高阶项存在且不是1，则去除与这个项相乘的常数。  示例：T(n) = 2n²+7n+6 =&amp;gt; T(n) = 2n²+7n+1 =&amp;gt; T(n) = 2n² =&amp;gt; T(n) = n² 记为 O(n²) 常见时间复杂度# O(1) &amp;lt; O(logn) &amp;lt; O(n) &amp;lt; O(nlogn)&amp;lt; O(n²) &amp;lt; O(n³ ) &amp;lt; O(2ⁿ ) &amp;lt; O(n!</description>
+    </item>
+    
+    <item>
+      <title>易错题</title>
+      <link>https://jiandar.github.io/docs/interview/java-basic/basic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/interview/java-basic/basic/</guid>
+      <description>易错题</description>
     </item>
     
     <item>
@@ -847,6 +847,22 @@ resume-edit.md</description>
       
       <guid>https://jiandar.github.io/docs/dev-design/algorithm/sort/selection/</guid>
       <description>选择排序#算法步骤# 首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置。 再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。 重复第二步，直到所有元素均排序完毕。  动图演示#代码实现#public class SelectionSort implements IArraySort { @Override public int[] sort(int[] arr) throws Exception { // 总共要经过 N-1 轮比较  for (int i = 0; i &amp;lt; arr.length - 1; i++) { int min = i; // 每轮需要比较的次数 N-i  for (int j = i + 1; j &amp;lt; arr.length; j++) { if (arr[j] &amp;lt; arr[min]) { // 记录目前能找到的最小值元素的下标  min = j; } } // 将找到的最小值和i位置所在的值进行交换  if (i !</description>
+    </item>
+    
+    <item>
+      <title>集合容器</title>
+      <link>https://jiandar.github.io/docs/interview/java-basic/container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/interview/java-basic/container/</guid>
+      <description>HashMap 实现原理#1、底层使用哈希表# 数组结构：存储区间连续、内存占用严重、空间复杂度大，寻址容易，插入和删除困难 链表结构：存储区间离散、内存占用宽松、空间复杂度小，寻址困难，插入和删除容易 哈希表结构：数组与链表的结合体，是一种寻址容易，插入删除也容易的数据结构。 每个节点包含四个属性：key、value、hash 和 next引用 JDK1.7：数组 + 链表   JDK1.8：数组 + 链表 + 红黑树  2、新增：put()#  调用 hash()，计算 key 的 hash 值
+  再通过哈希算法，将 hash 值转换成数组的下标
+  如果下标位置为空，则新增一个节点
+  如果下标位置上为红黑树，则就调用树方法插入节点
+  如果下标位置上有链表或单个节点（即发生哈希碰撞），则将 key 和链表每个节点上的 key 依次进行 equals() 对比
+  如果有节点返回 true，则覆盖该节点
+  如果所有节点都返回 false，则将新节点添加到链表的末尾。并判断是否需要转换为红黑树。
+    如果数组长度大于阀值，则 resize() 进行扩容</description>
     </item>
     
     <item>
