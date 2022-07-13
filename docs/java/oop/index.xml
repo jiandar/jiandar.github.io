@@ -20,7 +20,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jiandar.github.io/docs/java/oop/encapsulation/</guid>
-      <description>封装#封装# 将属性和行为绑定起来，并隐藏部分实现的细节，对外只提供访问接口。  优点# 降低耦合 隐藏细节 类内部可自由修改  示例# 设为私有 对外提供公共访问方法  public class Person{ private String name; public String getName(){ return name; } public void setName(String name){ this.name = name; } } </description>
+      <description>封装#概念# 封装：将属性和行为绑定起来，并隐藏部分实现的细节，对外只提供访问接口。 优点：降低耦合、隐藏细节、类内部可自由修改  示例# 设为私有 对外提供公共访问方法  public class Person{ private String name; public String getName(){ return name; } public void setName(String name){ this.name = name; } } </description>
     </item>
     
     <item>
@@ -38,7 +38,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://jiandar.github.io/docs/java/oop/polymorphism/</guid>
-      <description>多态#多态# 指允许不同子类对象对同一消息作出不同的响应  前提# 继承 重写 父类引用指向子类对象  示例#abstract class Animal { public abstract void run(); } class Cat extends Animal { public void run() { System.out.println(&amp;#34;猫跑了......&amp;#34;); } } class Dog extends Animal { public void run() { System.out.println(&amp;#34;狗跑了......&amp;#34;); } } class Lady { private Animal pet; Lady(Animal pet) { this.pet = pet; } public void myPetRun(){ pet.run(); } } public class Test { public static void main(String args[]){ Cat c = new Cat(); Dog d = new Dog(); Lady l1 = new Lady(c); Lady l2 = new Lady(d); l1.</description>
+      <description>多态#概念# 多态：指允许不同子类对象对同一消息作出不同的响应 前提：继承、重写、父类引用指向子类对象  示例#abstract class Animal { public abstract void run(); } class Cat extends Animal { public void run() { System.out.println(&amp;#34;猫跑了......&amp;#34;); } } class Dog extends Animal { public void run() { System.out.println(&amp;#34;狗跑了......&amp;#34;); } } class Lady { private Animal pet; Lady(Animal pet) { this.pet = pet; } public void myPetRun(){ pet.run(); } } public class Test { public static void main(String args[]){ Cat c = new Cat(); Dog d = new Dog(); Lady l1 = new Lady(c); Lady l2 = new Lady(d); l1.</description>
     </item>
     
     <item>

@@ -16,16 +16,5 @@ Class.forName(&amp;#34;com.mysql.jdbc.Driver&amp;#34;);   建立连接
 String user = &amp;#34;xxx&amp;#34;; String password = &amp;#34;xxx&amp;#34;; String url = &amp;#34;jdbc:mysql://127.0.0.1:3306/xxx?useUnicode=true&amp;#34;; Connection conn = DriverManager.</description>
     </item>
     
-    <item>
-      <title>日期时间</title>
-      <link>https://jiandar.github.io/docs/java/basic-class/datetime/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://jiandar.github.io/docs/java/basic-class/datetime/</guid>
-      <description>日期时间#Java8 Time API# 新增的日期时间类都是不可变的    Instant 时间戳     LocalDateTime 年月日时分秒毫秒   LocalDate 年月日   LocalTime 时分秒毫秒      转换：新旧日期时间#  Date &amp;lt;&amp;mdash;&amp;gt; Instant
-// 新旧日期类，都是通过Instant进行互转 Date now = new Date(); Instant instant = now.toInstant(); Date date = Date.from(instant);   Instant &amp;lt;&amp;mdash;&amp;gt; ZonedDateTime、LocalDateTime、LocalDate、LocalTime
-Instant now = Instant.now(); // Instant &amp;lt;=&amp;gt; ZonedDateTime ZonedDateTime zonedDateTime = now.</description>
-    </item>
-    
   </channel>
 </rss>

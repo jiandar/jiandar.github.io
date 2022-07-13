@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>基础语法 on IWiki</title>
+    <link>https://jiandar.github.io/docs/java/basic-syntax/</link>
+    <description>Recent content in 基础语法 on IWiki</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/java/basic-syntax/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>语法元素</title>
+      <link>https://jiandar.github.io/docs/java/basic-syntax/syntax-element/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/java/basic-syntax/syntax-element/</guid>
+      <description>语法元素#Hello World#public class HelloWorld { public static void main(String []args) { System.out.println(&amp;#34;Hello World&amp;#34;); } }  将以上代码，保存为文件HelloWorld.java 进入cmd 命令窗口，进入目标文件所在的位置 编译代码： javac HelloWorld.java 运行：java HelloWorld  标识符# 大小写敏感 命名规则  由字母、数字、美元符$、下划线_组成 不可以数字开头 不可以使用关键字       包名 xxxyyyzzz     类名、接口名、枚举名 XxxYyyZzz   方法名、变量名 xxxYyyZzz   常量名 XXX_YYY_ZZZ    关键字#  Java语言里事先定义的、有特别意义的标识符，即保留字，均为小写</description>
+    </item>
+    
+    <item>
+      <title>数据类型</title>
+      <link>https://jiandar.github.io/docs/java/basic-syntax/data-type/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/java/basic-syntax/data-type/</guid>
+      <description>数据类型#计算机容量单位# 1Byte = 8 bit， 1KB = 1024Byte bit：位，比特，是计算机运算的基础，代表二进制数位，取值范围：0或1 Byte：字节，计算机文件大小的基本计算单位，用于表示计算机中的一个字符  基本数据类型#   数据类型 描述 字节 默认值 取值范围 举例说明     byte 位 1 0 -128 ~ 127 byte b = 10;   short 短整数 2 0 -32768 ~ 32767 short s = 10;   int 整数 4 0 -2^31 - 2^31-1 int i = 10;   long 长整数 8 0l -2^63 - 2^63-1 long l = 10l;   float 单精度 4 0.</description>
+    </item>
+    
+    <item>
+      <title>流程控制</title>
+      <link>https://jiandar.github.io/docs/java/basic-syntax/process-control/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/java/basic-syntax/process-control/</guid>
+      <description>流程控制#if#// 格式 if (布尔表达式){ // 如果true,执行... } else { // 如果false,执行... } //示例 int i = 30; if (i &amp;lt; 20) { System.out.print(&amp;#34;true&amp;#34;); } else { System.out.print(&amp;#34;false&amp;#34;); } for#// 格式 for (初始化; 布尔表达式; 步进) { // 循环内容 } // 增强 for 循环 for (变量类型 变量 : 数组或集合){ // 循环内容 } // 示例 for (int i = 0; i &amp;lt; 10; i++) { System.</description>
+    </item>
+    
+    <item>
+      <title>数组</title>
+      <link>https://jiandar.github.io/docs/java/basic-syntax/array/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/java/basic-syntax/array/</guid>
+      <description>数组#概述# 数组是相同类型数据的有序集合，代表着一串连续的内存空间  特点# 数组元素必须是相同类型 数组一旦被创建，其长度就是不可变的 数组元素的索引（下标），从 0 开始 数值类型元素的默认值为 0，引用类型元素的默认值为 null  创建数组#// 一维数组 dataType[] arrayRefVar; dataType[] arrayRefVar = new dataType[arraySize]; dataType[] arrayRefVar = {value0, value1, ..., valuek}; // 示例 int[] arr1; int[] arr2 = new int[2]; int[] arr3 = {1, 2, 3} // 多维数组 dataType[][] arrayRefVar = new dataType[arraySize1][arraySize2]; dataType[][] arrayRefVar = {{value0, value1, ..., valuek},{...},...}; // 示例 int[][] arr1 = new int[2][3]; int[][] arr2 = {{1, 2, 3},{4, 5},{6, 7, 8, 9}}; 操作数组#int a,b; int[] arr = {0, 1, 2, 3}; a = arr[0]; // 元素引用 b = arr.</description>
+    </item>
+    
+    <item>
+      <title>方法</title>
+      <link>https://jiandar.github.io/docs/java/basic-syntax/method/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://jiandar.github.io/docs/java/basic-syntax/method/</guid>
+      <description>方法#方法的定义# 方法包含于类中 方法中不能定义方法 若无返回值，用 void 代替  // 格式 修饰符 返回值类型 方法名(参数类型 参数名){ ... 方法体 ... return 返回值; } // 示例 public static int age(int birthday){ //... } 方法的调用#// 格式 对象名.函数名（实参列表） // 示例 public int max(int a,int b){ if(a&amp;gt;b){ return a; } return b; } public static void main(String []args) { int larger = max(30, 40); //... } 重载 &amp;amp; 重写#  重载 overload</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>其他 on IWiki</title>
+    <title>Queue on IWiki</title>
     <link>https://jiandar.github.io/docs/java/container/Queue/</link>
-    <description>Recent content in 其他 on IWiki</description>
+    <description>Recent content in Queue on IWiki</description>
     <generator>Hugo -- gohugo.io</generator><atom:link href="https://jiandar.github.io/docs/java/container/Queue/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Queue</title>
-      <link>https://jiandar.github.io/docs/java/container/Queue/Queue/</link>
+      <title>BlockingQueue</title>
+      <link>https://jiandar.github.io/docs/java/container/Queue/BlockingQueue/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://jiandar.github.io/docs/java/container/Queue/Queue/</guid>
-      <description>Queue#队列# 队列是一种数据结构，它支持FIFO，即先进先出  队列类型# 有界队列：有固定大小的队列 无界队列：没有设置固定大小的队列 阻塞队列：  当队列为空时，从队列中获取元素的操作，会被阻塞 当队列为满时，往队列里添加元素的操作，会被阻塞       队列 描述     ConcurrentLinkedQueue 基于链表的并发队列   PriorityQueue 优先级队列   ArrayDeque 数组双端队列   LinkedList 链表双端队列       DelayQueue 延期阻塞队列   SynchronousQueue 并发同步阻塞队列   ArrayBlockingQueue 基于数组的阻塞队列   LinkedBlockingQueue 基于链表的阻塞队列   PriorityBlockingQueue 带优先级的阻塞队列   LinkedBlockingDeque 基于链表的双端阻塞队列    </description>
+      <guid>https://jiandar.github.io/docs/java/container/Queue/BlockingQueue/</guid>
+      <description>BlockingQueue#阻塞队列# 队列，Queue，是一种先进先出（first in first out：FIFO）的抽象的数据结构 BlockingQueue，是一个支持两个附加操作的队列 当阻塞队列是空时，从队列中获取元素的操作将会被阻塞 当阻塞队列是满时，往队列中添加元素的操作将会被阻塞  核心方法#    抛出异常 返回特殊值 超时退出 一直阻塞     插入 add(e) offer(e) offer(e,time,unit) put(e)   移除 remove() poll() poll(time,unit) take()   检查 element() peek() / /        说明     抛出异常 当阻塞队列满时，再往队列 add 元素会抛 IllegalStateException:Queuefull当阻塞队列空时，再往队列 Remove 元素时候会抛出 NoSuchElementException   返回特殊值 插入方法，成功返回 true，失败返回 false移除方法，成功返回元素，队列里面没有就返回null   超时退出 当阻塞队列满时，队列会阻塞生产者线程一定时间，超过时限后生产者线程就会退出当阻塞队列空时，队列会阻塞消费者线程一定时间，超过时限后消费者线程就会退出   一直阻塞 当阻塞队列满时，生产者继续往队列里面 put 元素，队列会一直阻塞直到 put 数据 or 响应中断退出当阻塞队列空时，消费者试图从队列 take 元素，队列会一直阻塞消费者线程，直到队列可用    常用队列#   队列 说明 实现     ArrayBlockingQueue 有界阻塞队列 由数组实现   LinkedBlockingQueue 有界阻塞队列 由链表实现   LinkedTransferQueue 无界阻塞队列 由链表实现   LinkedBlockingDeque 双端有界阻塞队列 由链表实现   DelayQueue 延迟无界阻塞队列    SynchronousQueue 单元素的阻塞队列    PriorityBlockingQueue 支持优先级的无界阻塞队列     应用# 线程池、消息中间件、生产者消费者模式  // 生产者消费者模式-传统版 public class ShareData { private int num = 0; private Lock lock = new ReentrantLock(); private Condition condition = lock.</description>
     </item>
     
   </channel>

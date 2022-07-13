@@ -73,7 +73,7 @@
   
     <input type="checkbox" id="section-eca69da21de5b0cd25d8421dec09a327" class="toggle" checked />
     <label for="section-eca69da21de5b0cd25d8421dec09a327" class="flex justify-between">
-      <a href="https://jiandar.github.io/docs/java/" class="">Java - 开发</a>
+      <a  class="">Java - 开发</a>
       <span>▾</span>
     </label>
   
@@ -88,9 +88,9 @@
   
 
   
-    <input type="checkbox" id="section-701a5e4b70e899af26f3b4581b8e335c" class="toggle"  />
-    <label for="section-701a5e4b70e899af26f3b4581b8e335c" class="flex justify-between">
-      <a  class="">基础语法</a>
+    <input type="checkbox" id="section-803b1c581bfc0cf633b78dfd2d2d4ce3" class="toggle"  />
+    <label for="section-803b1c581bfc0cf633b78dfd2d2d4ce3" class="flex justify-between">
+      <a href="https://jiandar.github.io/docs/java/basic-syntax/" class="">基础语法</a>
       <span>▾</span>
     </label>
   
@@ -105,7 +105,7 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/java/basic-grammar/syntax-element/" class="">语法元素</a>
+    <a href="https://jiandar.github.io/docs/java/basic-syntax/syntax-element/" class="">语法元素</a>
   
 
         </li>
@@ -118,7 +118,7 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/java/basic-grammar/data-type/" class="">数据类型</a>
+    <a href="https://jiandar.github.io/docs/java/basic-syntax/data-type/" class="">数据类型</a>
   
 
         </li>
@@ -131,7 +131,7 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/java/basic-grammar/process-control/" class="">流程控制</a>
+    <a href="https://jiandar.github.io/docs/java/basic-syntax/process-control/" class="">流程控制</a>
   
 
         </li>
@@ -144,7 +144,7 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/java/basic-grammar/array/" class="">数组</a>
+    <a href="https://jiandar.github.io/docs/java/basic-syntax/array/" class="">数组</a>
   
 
         </li>
@@ -157,7 +157,7 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/java/basic-grammar/method/" class="">方法</a>
+    <a href="https://jiandar.github.io/docs/java/basic-syntax/method/" class="">方法</a>
   
 
         </li>
@@ -264,7 +264,7 @@
   
     <input type="checkbox" id="section-7eed87a13764aa0eb626ebbc547f3eeb" class="toggle"  />
     <label for="section-7eed87a13764aa0eb626ebbc547f3eeb" class="flex justify-between">
-      <a href="https://jiandar.github.io/docs/java/container/" class="">集合容器</a>
+      <a  class="">集合容器</a>
       <span>▾</span>
     </label>
   
@@ -490,7 +490,7 @@
   
     <input type="checkbox" id="section-402b0e9453b26ea851a0a20299cde4df" class="toggle"  />
     <label for="section-402b0e9453b26ea851a0a20299cde4df" class="flex justify-between">
-      <a  class="">其他</a>
+      <a href="https://jiandar.github.io/docs/java/container/Queue/" class="">Queue</a>
       <span>▾</span>
     </label>
   
@@ -505,7 +505,7 @@
   
 
   
-    <a href="https://jiandar.github.io/docs/java/container/Queue/Queue/" class="">Queue</a>
+    <a href="https://jiandar.github.io/docs/java/container/Queue/BlockingQueue/" class="">BlockingQueue</a>
   
 
         </li>
@@ -546,19 +546,6 @@
 
   
     <a href="https://jiandar.github.io/docs/java/basic-class/jdbc/" class="">JDBC</a>
-  
-
-        </li>
-      
-    
-      
-        <li>
-          
-  
-  
-
-  
-    <a href="https://jiandar.github.io/docs/java/basic-class/datetime/" class="">日期时间</a>
   
 
         </li>
@@ -733,6 +720,19 @@
 
   
     <a href="https://jiandar.github.io/docs/java/basic-feature/Java8/stream-api/" class="">Java8 Stream</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+  
+
+  
+    <a href="https://jiandar.github.io/docs/java/basic-feature/Java8/time-api/" class="">Java8 Time</a>
   
 
         </li>
@@ -4164,14 +4164,7 @@
   <aside class="hidden clearfix">
     
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#阻塞队列">阻塞队列</a></li>
-    <li><a href="#核心方法">核心方法</a></li>
-    <li><a href="#常用队列">常用队列</a></li>
-    <li><a href="#应用">应用</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
 
@@ -4186,284 +4179,8 @@
   BlockingQueue
   <a class="anchor" href="#blockingqueue">#</a>
 </h1>
-<h2 id="阻塞队列">
-  阻塞队列
-  <a class="anchor" href="#%e9%98%bb%e5%a1%9e%e9%98%9f%e5%88%97">#</a>
-</h2>
-<ul>
-<li>队列，Queue，是一种先进先出（first in first out：FIFO）的抽象的数据结构</li>
-<li>BlockingQueue，是一个支持两个附加操作的队列</li>
-<li>当阻塞队列是空时，从队列中获取元素的操作将会被阻塞</li>
-<li>当阻塞队列是满时，往队列中添加元素的操作将会被阻塞</li>
-</ul>
-<h2 id="核心方法">
-  核心方法
-  <a class="anchor" href="#%e6%a0%b8%e5%bf%83%e6%96%b9%e6%b3%95">#</a>
-</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th>抛出异常</th>
-<th>返回特殊值</th>
-<th>超时退出</th>
-<th>一直阻塞</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">插入</td>
-<td>add(e)</td>
-<td>offer(e)</td>
-<td>offer(e,time,unit)</td>
-<td>put(e)</td>
-</tr>
-<tr>
-<td style="text-align:center">移除</td>
-<td>remove()</td>
-<td>poll()</td>
-<td>poll(time,unit)</td>
-<td>take()</td>
-</tr>
-<tr>
-<td style="text-align:center">检查</td>
-<td>element()</td>
-<td>peek()</td>
-<td>/</td>
-<td>/</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center"></th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">抛出异常</td>
-<td>当阻塞队列满时，再往队列 add 元素会抛 IllegalStateException:Queuefull<br/>当阻塞队列空时，再往队列 Remove 元素时候会抛出 NoSuchElementException</td>
-</tr>
-<tr>
-<td style="text-align:center">返回特殊值</td>
-<td>插入方法，成功返回 true，失败返回 false<br/>移除方法，成功返回元素，队列里面没有就返回null</td>
-</tr>
-<tr>
-<td style="text-align:center">超时退出</td>
-<td>当阻塞队列满时，队列会阻塞生产者线程一定时间，超过时限后生产者线程就会退出<br/>当阻塞队列空时，队列会阻塞消费者线程一定时间，超过时限后消费者线程就会退出</td>
-</tr>
-<tr>
-<td style="text-align:center">一直阻塞</td>
-<td>当阻塞队列满时，生产者继续往队列里面 put 元素，队列会一直阻塞直到 put 数据 or 响应中断退出<br/>当阻塞队列空时，消费者试图从队列 take 元素，队列会一直阻塞消费者线程，直到队列可用</td>
-</tr>
-</tbody>
-</table>
-<h2 id="常用队列">
-  常用队列
-  <a class="anchor" href="#%e5%b8%b8%e7%94%a8%e9%98%9f%e5%88%97">#</a>
-</h2>
-<table>
-<thead>
-<tr>
-<th>队列</th>
-<th>说明</th>
-<th>实现</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ArrayBlockingQueue</td>
-<td>有界阻塞队列</td>
-<td>由数组实现</td>
-</tr>
-<tr>
-<td>LinkedBlockingQueue</td>
-<td>有界阻塞队列</td>
-<td>由链表实现</td>
-</tr>
-<tr>
-<td>LinkedTransferQueue</td>
-<td>无界阻塞队列</td>
-<td>由链表实现</td>
-</tr>
-<tr>
-<td>LinkedBlockingDeque</td>
-<td>双端有界阻塞队列</td>
-<td>由链表实现</td>
-</tr>
-<tr>
-<td>DelayQueue</td>
-<td>延迟无界阻塞队列</td>
-<td></td>
-</tr>
-<tr>
-<td>SynchronousQueue</td>
-<td>单元素的阻塞队列</td>
-<td></td>
-</tr>
-<tr>
-<td>PriorityBlockingQueue</td>
-<td>支持优先级的无界阻塞队列</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<h2 id="应用">
-  应用
-  <a class="anchor" href="#%e5%ba%94%e7%94%a8">#</a>
-</h2>
-<ul>
-<li>线程池、消息中间件、生产者消费者模式</li>
-</ul>
-<div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 生产者消费者模式-传统版
-</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">ShareData</span> {
-    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#00688b;font-weight:bold">int</span> num = 0;
-    <span style="color:#8b008b;font-weight:bold">private</span> Lock lock = <span style="color:#8b008b;font-weight:bold">new</span> ReentrantLock();
-    <span style="color:#8b008b;font-weight:bold">private</span> Condition condition = lock.<span style="color:#658b00">newCondition</span>();
-
-    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">increment</span>() <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
-        lock.<span style="color:#658b00">lock</span>();
-        <span style="color:#8b008b;font-weight:bold">try</span> {
-            <span style="color:#8b008b;font-weight:bold">while</span> (num != 0) {
-                condition.<span style="color:#658b00">await</span>();
-            }
-            num++;
-            System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(Thread.<span style="color:#658b00">currentThread</span>().<span style="color:#658b00">getName</span>() + <span style="color:#cd5555">&#34;\t&#34;</span> + num);
-            condition.<span style="color:#658b00">signalAll</span>();
-        } <span style="color:#8b008b;font-weight:bold">finally</span> {
-            lock.<span style="color:#658b00">unlock</span>();
-        }
-    }
-
-    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">deIncrement</span>() <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
-        lock.<span style="color:#658b00">lock</span>();
-        <span style="color:#8b008b;font-weight:bold">try</span> {
-            <span style="color:#8b008b;font-weight:bold">while</span> (num == 0) {
-                condition.<span style="color:#658b00">await</span>();
-            }
-            num--;
-            System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(Thread.<span style="color:#658b00">currentThread</span>().<span style="color:#658b00">getName</span>() + <span style="color:#cd5555">&#34;\t&#34;</span> + num);
-            condition.<span style="color:#658b00">signalAll</span>();
-        } <span style="color:#8b008b;font-weight:bold">finally</span> {
-            lock.<span style="color:#658b00">unlock</span>();
-        }
-    }
-}
-
-<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">ProdConsumerTraditionDemo</span> {
-    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) {
-        ShareData shareData = <span style="color:#8b008b;font-weight:bold">new</span> ShareData();
-
-        <span style="color:#8b008b;font-weight:bold">new</span> Thread(() -&gt; {
-            <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = 1; i &lt;= 5; i++) {
-                <span style="color:#8b008b;font-weight:bold">try</span> {
-                    shareData.<span style="color:#658b00">increment</span>();
-                } <span style="color:#8b008b;font-weight:bold">catch</span> (Exception e) {
-                    e.<span style="color:#658b00">printStackTrace</span>();
-                }
-            }
-        }, <span style="color:#cd5555">&#34;AA&#34;</span>).<span style="color:#658b00">start</span>();
-
-        <span style="color:#8b008b;font-weight:bold">new</span> Thread(() -&gt; {
-            <span style="color:#8b008b;font-weight:bold">for</span> (<span style="color:#00688b;font-weight:bold">int</span> i = 1; i &lt;= 5; i++) {
-                <span style="color:#8b008b;font-weight:bold">try</span> {
-                    shareData.<span style="color:#658b00">deIncrement</span>();
-                } <span style="color:#8b008b;font-weight:bold">catch</span> (Exception e) {
-                    e.<span style="color:#658b00">printStackTrace</span>();
-                }
-            }
-        }, <span style="color:#cd5555">&#34;BB&#34;</span>).<span style="color:#658b00">start</span>();
-    }
-}
-</code></pre></div><div class="highlight"><pre style="background-color:#eed;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#228b22">// 生产者消费者模式-阻塞队列版
-</span><span style="color:#228b22"></span><span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">MyResource</span> {
-    <span style="color:#228b22">/**
-</span><span style="color:#228b22">     * 默认开启 进行生产消费的交互
-</span><span style="color:#228b22">     */</span>
-    <span style="color:#8b008b;font-weight:bold">private</span> <span style="color:#8b008b;font-weight:bold">volatile</span> <span style="color:#00688b;font-weight:bold">boolean</span> flag = <span style="color:#8b008b;font-weight:bold">true</span>;
-    <span style="color:#228b22">/**
-</span><span style="color:#228b22">     * 默认值是0
-</span><span style="color:#228b22">     */</span>
-    <span style="color:#8b008b;font-weight:bold">private</span> AtomicInteger atomicInteger = <span style="color:#8b008b;font-weight:bold">new</span> AtomicInteger();
-    <span style="color:#8b008b;font-weight:bold">private</span> BlockingQueue&lt;String&gt; blockingQueue = <span style="color:#8b008b;font-weight:bold">null</span>;
-
-    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#008b45">MyResource</span>(BlockingQueue&lt;String&gt; blockingQueue) {
-        <span style="color:#8b008b;font-weight:bold">this</span>.<span style="color:#658b00">blockingQueue</span> = blockingQueue;
-        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(blockingQueue.<span style="color:#658b00">getClass</span>().<span style="color:#658b00">getName</span>());
-    }
-
-    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">produce</span>() <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
-        String data = <span style="color:#8b008b;font-weight:bold">null</span>;
-        <span style="color:#00688b;font-weight:bold">boolean</span> returnValue;
-        String threadName = Thread.<span style="color:#658b00">currentThread</span>().<span style="color:#658b00">getName</span>();
-        <span style="color:#8b008b;font-weight:bold">while</span> (flag) {
-            data = atomicInteger.<span style="color:#658b00">incrementAndGet</span>() + <span style="color:#cd5555">&#34;&#34;</span>;
-            returnValue = blockingQueue.<span style="color:#658b00">offer</span>(data, 2L, TimeUnit.<span style="color:#658b00">SECONDS</span>);
-            <span style="color:#8b008b;font-weight:bold">if</span> (returnValue) {
-                System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(threadName + <span style="color:#cd5555">&#34; 插入队列数据&#34;</span> + data + <span style="color:#cd5555">&#34;成功&#34;</span>);
-            } <span style="color:#8b008b;font-weight:bold">else</span> {
-                System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(threadName + <span style="color:#cd5555">&#34; 插入队列数据&#34;</span> + data + <span style="color:#cd5555">&#34;失败&#34;</span>);
-            }
-            TimeUnit.<span style="color:#658b00">SECONDS</span>.<span style="color:#658b00">sleep</span>(1);
-        }
-        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(threadName + <span style="color:#cd5555">&#34; 停止 表示 flag=&#34;</span> + flag);
-    }
-
-    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">consume</span>() <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
-        String result = <span style="color:#8b008b;font-weight:bold">null</span>;
-        String threadName = Thread.<span style="color:#658b00">currentThread</span>().<span style="color:#658b00">getName</span>();
-        <span style="color:#8b008b;font-weight:bold">while</span> (flag) {
-            result = blockingQueue.<span style="color:#658b00">poll</span>(2L, TimeUnit.<span style="color:#658b00">SECONDS</span>);
-            <span style="color:#8b008b;font-weight:bold">if</span> (<span style="color:#8b008b;font-weight:bold">null</span> == result || <span style="color:#cd5555">&#34;&#34;</span>.<span style="color:#658b00">equalsIgnoreCase</span>(result)) {
-                flag = <span style="color:#8b008b;font-weight:bold">false</span>;
-                System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(threadName + <span style="color:#cd5555">&#34; 超过2s没有取到 消费退出&#34;</span>);
-                System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>();
-                System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>();
-                <span style="color:#8b008b;font-weight:bold">return</span>;
-            }
-            System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(threadName + <span style="color:#cd5555">&#34; 消费队列&#34;</span> + result + <span style="color:#cd5555">&#34;成功&#34;</span>);
-        }
-    }
-
-    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">stop</span>() <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
-        flag = <span style="color:#8b008b;font-weight:bold">false</span>;
-    }
-}
-
-<span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">class</span> <span style="color:#008b45;font-weight:bold">ProdConsumerBlockQueueDemo</span> {
-    <span style="color:#8b008b;font-weight:bold">public</span> <span style="color:#8b008b;font-weight:bold">static</span> <span style="color:#00688b;font-weight:bold">void</span> <span style="color:#008b45">main</span>(String[] args) <span style="color:#8b008b;font-weight:bold">throws</span> Exception {
-        MyResource myResource = <span style="color:#8b008b;font-weight:bold">new</span> MyResource(<span style="color:#8b008b;font-weight:bold">new</span> ArrayBlockingQueue&lt;&gt;(10));
-        <span style="color:#8b008b;font-weight:bold">new</span> Thread(() -&gt; {
-            System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(Thread.<span style="color:#658b00">currentThread</span>().<span style="color:#658b00">getName</span>() + <span style="color:#cd5555">&#34;\t启动&#34;</span>);
-            <span style="color:#8b008b;font-weight:bold">try</span> {
-                myResource.<span style="color:#658b00">produce</span>();
-            } <span style="color:#8b008b;font-weight:bold">catch</span> (Exception e) {
-                e.<span style="color:#658b00">printStackTrace</span>();
-            }
-        }, <span style="color:#cd5555">&#34;producer&#34;</span>).<span style="color:#658b00">start</span>();
-
-        <span style="color:#8b008b;font-weight:bold">new</span> Thread(() -&gt; {
-            System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(Thread.<span style="color:#658b00">currentThread</span>().<span style="color:#658b00">getName</span>() + <span style="color:#cd5555">&#34;\t启动&#34;</span>);
-            <span style="color:#8b008b;font-weight:bold">try</span> {
-                myResource.<span style="color:#658b00">consume</span>();
-            } <span style="color:#8b008b;font-weight:bold">catch</span> (Exception e) {
-                e.<span style="color:#658b00">printStackTrace</span>();
-            }
-        }, <span style="color:#cd5555">&#34;consumer&#34;</span>).<span style="color:#658b00">start</span>();
-        <span style="color:#8b008b;font-weight:bold">try</span> {
-            TimeUnit.<span style="color:#658b00">SECONDS</span>.<span style="color:#658b00">sleep</span>(5);
-        } <span style="color:#8b008b;font-weight:bold">catch</span> (InterruptedException e) {
-            e.<span style="color:#658b00">printStackTrace</span>();
-        }
-        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>();
-        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>();
-        System.<span style="color:#658b00">out</span>.<span style="color:#658b00">println</span>(<span style="color:#cd5555">&#34;时间到,停止活动&#34;</span>);
-        myResource.<span style="color:#658b00">stop</span>();
-    }
-}
-</code></pre></div></article>
+<p><a href="/docs/java/container/Queue/BlockingQueue/" target="_blank">BlockingQueue</a></p>
+</article>
  
       
 
@@ -4510,14 +4227,7 @@
       <div class="book-toc-content">
         
   
-<nav id="TableOfContents">
-  <ul>
-    <li><a href="#阻塞队列">阻塞队列</a></li>
-    <li><a href="#核心方法">核心方法</a></li>
-    <li><a href="#常用队列">常用队列</a></li>
-    <li><a href="#应用">应用</a></li>
-  </ul>
-</nav>
+<nav id="TableOfContents"></nav>
 
 
  
